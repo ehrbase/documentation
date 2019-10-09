@@ -1,0 +1,112 @@
+.. _h-what-is-reference-label:
+
+Release Notes EHRbase 0.9.0 (pre-alpha)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As the initital open source version of EHRbase, this release note is a bit more comprehensive. Please be aware that this is a pre-alpha version. We
+will soonly release the alpha version containing EHR_STATUS and DIRECTORY Endpoints of the official openEHR REST API. Please be aware that the 
+current state can be used to develop openEHR applications but should not be used for real patient data in production. 
+
+Here is an overview of the features implemented:
+
+Features
+********
+
+- openEHR Reference Model Version 1.0.4
+- Serialisation of Reference Model Objects in Canonical JSON and XML 
+- Archetype Definition Language 1.4
+- Data Validation against Operational Templates 
+
+openEHR REST API 
+^^^^^^^^^^^^^^^^
+- EHR (CREATE EHR, CREATE EHR with Id)
+- COMPOSITION (Create, Update, Delete, Get Composition by Version Id, Get composition at time)
+- CONTRIBUTION (Create, Get of compositions. Other versioned object like EHR_STATUS coming soonly)
+- QUERY (Execute ad-hoc (non-stored) AQL Query, Execute stored query))
+- STORED_QUERY (List Stored Queries, Store a query, Get stored query, delete)
+- ADL 1.4 TEMPLATE (Upload a Template, List Templates, Get Template)
+
+
+.. note::  The Swagger UI currently does not distinguish between between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
+
+.. note::  The data format for contributions sent through the REST API is not yet defined in the openEHR. Please refer to the examples. Also note that the format might be subject of change.   
+
+Conformance Tests 
+^^^^^^^^^^^^^^^^^
+- EHR
+- COMPOSITION
+- CONTRIBUTION
+- ADL 1.4 TEMPLATE
+- DIRECTORY
+
+Java Client Library
+^^^^^^^^^^^^^^^^^^^
+- Create EHR
+- Upload/Sync Templates
+- Send Composition
+- Creation of Java (DTO) classes from Operational Templates (OPTs)
+
+What you might miss
+*******************
+- DIRECTORY Endpoints will be added soonly
+- EHR_STATUS Endpoints will be added soonly
+- VERSIONED_STATUS Endpoints are not implemented
+- Authentication is not implemented (you can use Spring Security to enable this)
+- Connection to external terminology service (like FHIR TS) is not yet supported
+- EHR functions like is_modifyable and is_queryable are not yet supported
+
+Known Issues
+************
+
+As EHRbase is still in a pre-alpha state, there are plenty of known issues. If you try things out, please be aware that the 
+following issues are known and documented: 
+
+Archetype Query Language 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::  As of now, partial paths will return RM objects in the JSON format used by the Better Platform. Canonical JSON will be supported soonly   
+
+- ehr/time_created/value projection is not supported
+
+.. code-block:: sql
+
+   SELECT e/time_created/value FROM EHR e
+
+- ehr/ehr_id projection is not supported (instead, an internal ehr/uid is supported)
+
+.. code-block:: sql
+
+   SELECT e/ehr_id FROM EHR e
+
+-  ehr/uid projection not supported (EHRBASE supports ehr/uid/value but not ehr/uid)
+
+.. code-block:: sql
+
+   SELECT e/uid, e/time_created, e/system_id FROM EHR e
+
+- Not supported variables in archetype_id predicates
+
+.. code-block:: sql
+
+   select e/ehr_id/value, e/time_created/value, e/system_id/value from EHR 
+   e CONTAINS COMPOSITION c [$archetype_id]
+   
+- composition/language projection not supported
+
+.. code-block:: sql
+
+   SELECT c/uid/value, c/name/value, c/archetype_node_id, c/language, c/territory, c/category/value 
+   FROM EHR e [ehr_id/value='dd616472-9432-4004-ad85-fd47affb1cc8'] CONTAINS COMPOSITION c 
+
+- TIMEWINDOW keyword is not supported
+
+.. code-block:: sql
+
+   SELECT e/ehr_id/value FROM EHR e TIMEWINDOW PT12H/2019-10-24
+
+
+Java Client Library 
+^^^^^^^^^^^^^^^^^^^
+- Occurences are not recognized (for example events in observations) when auto-generating a dto from an operational template
+
+

@@ -3,14 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ehrbase's documentation!
-===================================
+.. image:: images/ehrbase_logo.png
+	:width: 50%
+
+Welcome to the EHRbase documentation!
+=====================================
+
 
 .. toctree::
-   :maxdepth: 2
+   :numbered:
+   :maxdepth: 1
    :caption: Contents:
 
+   01_release_notes/index
+   02_getting_started/test
 
+	
 
 Indices and tables
 ==================
