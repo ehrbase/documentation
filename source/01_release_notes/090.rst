@@ -3,7 +3,7 @@
 Release Notes EHRbase 0.9.0 (pre-alpha)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As the initital open source version of EHRbase, this release note is a bit more comprehensive. Please be aware that this is a pre-alpha version. We
+As the initial open source version of EHRbase, this release note is a bit more comprehensive. Please be aware that this is a pre-alpha version. We
 will soonly release the alpha version containing EHR_STATUS and DIRECTORY Endpoints of the official openEHR REST API. Please be aware that the 
 current state can be used to develop openEHR applications but should not be used for real patient data in production. 
 
@@ -19,6 +19,10 @@ Features
 
 openEHR REST API 
 ^^^^^^^^^^^^^^^^
+
+Based on the `official openEHR REST API <https://specifications.openehr.org/releases/ITS-REST/latest/>`_ the following endpoints are implemented:
+
+
 - EHR (CREATE EHR, CREATE EHR with Id)
 - COMPOSITION (Create, Update, Delete, Get Composition by Version Id, Get composition at time)
 - CONTRIBUTION (Create, Get of compositions. Other versioned object like EHR_STATUS coming soonly)
@@ -27,12 +31,15 @@ openEHR REST API
 - ADL 1.4 TEMPLATE (Upload a Template, List Templates, Get Template)
 
 
-.. note::  The Swagger UI currently does not distinguish between between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
+.. note::  The Swagger UI is generally WIP and currently does not distinguish between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
 
 .. note::  The data format for contributions sent through the REST API is not yet defined in the openEHR. Please refer to the examples. Also note that the format might be subject of change.   
 
 Conformance Tests 
 ^^^^^^^^^^^^^^^^^
+
+EHRbase ships with a set of tests verifying the conformance with the openEHR REST API. For now the tests include the following endpoints: 
+
 - EHR
 - COMPOSITION
 - CONTRIBUTION
@@ -41,6 +48,9 @@ Conformance Tests
 
 Java Client Library
 ^^^^^^^^^^^^^^^^^^^
+
+The client library has the following features:
+
 - Create EHR
 - Upload/Sync Templates
 - Send Composition
@@ -51,9 +61,10 @@ What you might miss
 - DIRECTORY Endpoints will be added soonly
 - EHR_STATUS Endpoints will be added soonly
 - VERSIONED_STATUS Endpoints are not implemented
-- Authentication is not implemented (you can use Spring Security to enable this)
+- Authentication is not implemented (planned to be implemented using Spring Security)
 - Connection to external terminology service (like FHIR TS) is not yet supported
 - EHR functions like is_modifyable and is_queryable are not yet supported
+- Database transactions and rollback (planned to implemented using Spring Transaction Management)
 
 Known Issues
 ************
@@ -107,6 +118,4 @@ Archetype Query Language
 
 Java Client Library 
 ^^^^^^^^^^^^^^^^^^^
-- Occurences are not recognized (for example events in observations) when auto-generating a dto from an operational template
-
-
+- Occurrences are not recognized (for example events in observations) when auto-generating a dto from an operational template
