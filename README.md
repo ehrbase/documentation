@@ -21,4 +21,4 @@ To build the project (for example as html pages), type:
 
 License
 -------
-EHRbase Documentation uses the Apache 2 license.
+EHRbase Documentation uses the Apache 2.0 license.
