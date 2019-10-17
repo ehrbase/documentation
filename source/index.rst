@@ -9,6 +9,7 @@
 Welcome to the EHRbase documentation!
 =====================================
 
+For now, there is only the Release Notes. We will add detailed documentation as soon as possible
 
 .. toctree::
    :numbered:
@@ -16,7 +17,7 @@ Welcome to the EHRbase documentation!
    :caption: Contents:
 
    01_release_notes/index
-   02_getting_started/test
+   
 
 	
 
