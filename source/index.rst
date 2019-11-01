@@ -3,23 +3,32 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. heading semantics throughout this documentation:
+    1. # with overline, for parts
+    2. * with overline, for chapters
+    3. =, for sections
+    4. -, for subsections
+    5. ^, for subsubsections
+    6. “, for paragraphs
+
 .. image:: images/ehrbase_logo.png
-	:width: 50%
+    :width: 50%
 
+#####################################
 Welcome to the EHRbase documentation!
-=====================================
+#####################################
 
-For now, there is only the Release Notes. We will add detailed documentation as soon as possible
+For now, there is only the Release Notes.
+We will add detailed documentation as soon as possible.
 
 .. toctree::
    :numbered:
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
    01_release_notes/index
-   
-
-	
+   02_getting_started/index
+   03_development/index
 
 Indices and tables
 ==================
