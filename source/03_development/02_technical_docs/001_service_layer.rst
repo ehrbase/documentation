@@ -35,15 +35,22 @@ in the official documentation.
 .. csv-table::
    :header: "Method", "Implemented", "Pre", "Post"
 
-        has_ehr
-        has_ehr_for_subject
-        create_ehr
-        create_ehr_with_id
-        create_ehr_for_subject
-        create_ehr_for_subject_with_id
-        get_ehr
-        get_ehrs_for_subject
-        i_ehr
+        has_ehr, Yes, /, /
+        has_ehr_for_subject, I, /, /
+        create_ehr, C, /, No
+        create_ehr_with_id, C, No, No
+        create_ehr_for_subject, No, /, /
+        create_ehr_for_subject_with_id, No, No, /
+        get_ehr, No, No, /
+        get_ehrs_for_subject, No, /, /
+        i_ehr, No, /, /
+
+Methods with **I** note are currently indirectly implemented. Their
+functionality is available, but the general signature might
+be different.
+
+Methods with **C** note are currently combined in a more general `createEhr`
+method.
 
 EHR_STATUS
 ^^^^^^^^^^
@@ -55,17 +62,23 @@ the in official documentation.
 .. csv-table::
    :header: "Method", "Implemented", "Pre", "Post"
 
-        has_ehr_status_version
-        get_ehr_status
-        get_ehr_status_at_time
-        set_ehr_queryable
-        set_ehr_modifiable
-        clear_ehr_queryable
-        clear_ehr_modifiable
-        update_other_details
-        get_ehr_status_at_version
-        get_versioned_ehr_status
+        has_ehr_status_version, I, Yes, /
+        get_ehr_status, Yes, Yes, /
+        get_ehr_status_at_time, I, Yes, /
+        set_ehr_queryable, C, No, No
+        set_ehr_modifiable, C, No, No
+        clear_ehr_queryable, C, No, No
+        clear_ehr_modifiable, C, No, No
+        update_other_details, C, /, /
+        get_ehr_status_at_version, Yes, Yes, /
+        get_versioned_ehr_status, No, No, No
 
+Methods with **I** note are currently indirectly implemented. Their
+functionality is available, but the general signature might
+be different.
+
+Methods with **C** note are currently combined in a more general `updateStatus`
+method.
 
 DIRECTORY
 ^^^^^^^^^
