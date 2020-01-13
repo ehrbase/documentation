@@ -1,4 +1,4 @@
-.. _highmed-reference-label:
+.. _release_notes:
 
 =========================================
 Release Notes
@@ -6,4 +6,11 @@ Release Notes
 
 The following pages show the release notes
 
-.. include:: 090.rst
+.. toctree::
+   :name: Development
+   :maxdepth: 3
+
+   0100.rst
+   090.rst
+   
+
