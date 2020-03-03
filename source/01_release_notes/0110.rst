@@ -1,0 +1,121 @@
+.. _h-what-is-reference-label:
+
+Release Notes EHRbase 0.11.0 (alpha)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This release of EHRbase (2020-03-03) provides several improvements, especially regarding stability and bug fixes. However, we consider EHRbase to be 
+still in alpha status.  
+
+The following changes are included in this version:
+
+### Added
+
+- Docker and docker-compose support for both application and database
+- Get folder with version_at_time parameter
+- Get Folder with path parameter
+
+
+### Changed
+
+- FasterXML Jackson version raised to 2.10.2
+- Java version raised from 8 to 11
+- Jooq version raised to 3.12.3
+- Spring Boot raised to version 2 
+
+### Fixed
+
+- Response code when composition is logically deleted (see: https://github.com/ehrbase/ehrbase/pull/144)
+- Response and `PREFER` header handling of `/ehr` endpoints (see: https://github.com/ehrbase/ehrbase/pull/165)
+- Deserialization of EhrStatus attributes is_modifiable and is_queryable are defaulting to `true` now (see: https://github.com/ehrbase/ehrbase/pull/158)
+- Updating of composition with invalid template (e.g. completely different template than the previous version) (see: https://github.com/ehrbase/ehrbase/pull/166)
+- Folder names are checked for duplicates (see: https://github.com/ehrbase/ehrbase/pull/168)
+- AQL parser threw an unspecific exception when an alias was used in a WHERE clause (https://github.com/ehrbase/ehrbase/pull/149)
+- Improved exception handling in composition validation (see: https://github.com/ehrbase/ehrbase/pull/147)
+- Improved Reference Model validation (see: https://github.com/ehrbase/ehrbase/pull/147)
+- Error when reading a composition that has a provider name set(see: https://github.com/ehrbase/ehrbase/pull/143)
+- Allow content to be null inside a composition (see: https://github.com/ehrbase/ehrbase/pull/129)
+- Fixed deletion of compositions through a contribution (see: https://github.com/ehrbase/ehrbase/pull/128)
+- Start time of a composition was not properly updated (see: https://github.com/ehrbase/ehrbase/pull/137)
+- Fixed validation of null values on participations (see: https://github.com/ehrbase/ehrbase/pull/132)
+- Order by in AQL did not work properly (see: https://github.com/ehrbase/ehrbase/pull/112)
+- Order of variables in AQL result was not preserved (see: https://github.com/ehrbase/ehrbase/pull/103)
+- Validation of compositions for unsupported language(see: https://github.com/ehrbase/ehrbase/pull/107)
+- Duplicated ehr attributes in query due to cartesian product (see: https://github.com/ehrbase/ehrbase/pull/106)
+- Retrieve of EHR_STATUS gave Null Pointer Exception for non-existing EHRs (see: https://github.com/ehrbase/ehrbase/pull/136)
+- Correct resolution of ehr/system_id in AQL (see: https://github.com/ehrbase/ehrbase/pull/102)
+- Detection of duplicate aliases in aql select (see: https://github.com/ehrbase/ehrbase/pull/98)
+- 
+ 
+General Features
+****************
+
+- openEHR Reference Model Version 1.0.4
+- Serialisation of Reference Model Objects in Canonical JSON and XML 
+- Archetype Definition Language 1.4
+- Data Validation against Operational Templates
+- openEHR REST API Endpoints (see below for details)
+
+
+openEHR REST API 
+^^^^^^^^^^^^^^^^
+
+Based on the `official openEHR REST API <https://specifications.openehr.org/releases/ITS-REST/latest/>`_ the following endpoints are implemented:
+
+- EHR (CREATE EHR, CREATE EHR with Id)
+- EHR_STATUS
+- COMPOSITION (Create, Update, Delete, Get Composition by Version Id, Get composition at time)
+- CONTRIBUTION (Create, Get of compositions. Other versioned object like EHR_STATUS coming soonly)
+- DIRECTORY (Create, Update, Delete, Get folder in directory version, get folder in directory version at time)
+- QUERY (Execute ad-hoc (non-stored) AQL Query, Execute stored query, parameters))
+- STORED_QUERY (List Stored Queries, Store a query, Get stored query, delete, parameters)
+- ADL 1.4 TEMPLATE (Upload a Template, List Templates, Get Template)
+
+.. note::  The Swagger UI is generally WIP and currently does not distinguish between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
+
+.. note::  The data format for contributions sent through the REST API is not yet defined in the openEHR. Please refer to the examples. Also note that the format might be subject of change.   
+
+Conformance Tests 
+^^^^^^^^^^^^^^^^^
+
+EHRbase ships with a set of tests verifying the conformance with the openEHR REST API. For now the tests include the following endpoints: 
+
+- EHR
+- EHR_STATUS
+- COMPOSITION
+- CONTRIBUTION
+- ADL 1.4 TEMPLATE
+- DIRECTORY
+- QUERY
+
+
+What (basic) features you might miss
+**********************************
+- VERSIONED_OBJECT Endpoints are not implemented
+- Authentication is not implemented (planned to be implemented using Spring Security)
+- Connection to external terminology service (like FHIR TS) is not yet supported
+- EHR functions like is_modifyable and is_queryable are not yet supported
+
+Known Issues
+************
+
+As EHRbase is still in alpha status, there are plenty of known issues. If you try things out, please be aware that the 
+following issues are known and documented: 
+
+Archetype Query Language 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ehr e projection not supported
+
+- Not supported variables in archetype_id predicates
+
+.. code-block:: sql
+
+   select e/ehr_id/value, e/time_created/value, e/system_id/value from EHR 
+   e CONTAINS COMPOSITION c [$archetype_id]
+   
+- TIMEWINDOW keyword is not supported
+
+.. code-block:: sql
+
+   SELECT e/ehr_id/value FROM EHR e TIMEWINDOW PT12H/2019-10-24
+
