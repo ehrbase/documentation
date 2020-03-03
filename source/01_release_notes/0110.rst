@@ -8,21 +8,24 @@ still in alpha status.
 
 The following changes are included in this version:
 
-### Added
+Added
+*****
 
 - Docker and docker-compose support for both application and database
 - Get folder with version_at_time parameter
 - Get Folder with path parameter
 
 
-### Changed
+Changed
+*******
 
 - FasterXML Jackson version raised to 2.10.2
 - Java version raised from 8 to 11
 - Jooq version raised to 3.12.3
 - Spring Boot raised to version 2 
 
-### Fixed
+Fixed
+*****
 
 - Response code when composition is logically deleted (see: https://github.com/ehrbase/ehrbase/pull/144)
 - Response and `PREFER` header handling of `/ehr` endpoints (see: https://github.com/ehrbase/ehrbase/pull/165)
@@ -44,7 +47,6 @@ The following changes are included in this version:
 - Retrieve of EHR_STATUS gave Null Pointer Exception for non-existing EHRs (see: https://github.com/ehrbase/ehrbase/pull/136)
 - Correct resolution of ehr/system_id in AQL (see: https://github.com/ehrbase/ehrbase/pull/102)
 - Detection of duplicate aliases in aql select (see: https://github.com/ehrbase/ehrbase/pull/98)
-- 
  
 General Features
 ****************

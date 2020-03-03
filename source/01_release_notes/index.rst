@@ -10,6 +10,7 @@ The following pages show the release notes
    :name: Development
    :maxdepth: 3
 
+   0110.rst
    0100.rst
    090.rst
    
