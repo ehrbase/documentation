@@ -72,8 +72,6 @@ EHRbase ships with a set of tests verifying the conformance with the openEHR RES
 What (basic) features you might miss
 **********************************
 - VERSIONED_OBJECT Endpoints are not implemented
-- Authentication is not implemented (planned to be implemented using Spring Security)
-- Connection to external terminology service (like FHIR TS) is not yet supported
 - EHR functions like is_modifyable and is_queryable are not yet supported
 
 Known Issues
