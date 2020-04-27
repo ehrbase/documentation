@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "e947952c-e752-4bce-a5ff-648e1801b8a7",
-		"name": "EHRbase copy",
+		"_postman_id": "431c2a7b-6dd0-4c27-b1f2-9d5c1ca5ca02",
+		"name": "EHRbase copy copy",
 		"description": "Requests for usage and testing of EHRbase openEHR implementation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a7a34faf-882d-46a7-b5f9-4e3f5c3c8651",
+								"id": "e8757c95-49c4-41ae-8521-6f11f8e786d1",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -68,7 +68,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bdf985ca-f434-4061-8d66-7aee9be62451",
+								"id": "177c2109-70ef-4433-a4ce-ef660356d155",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -529,7 +529,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6be3cebc-be20-46d0-8259-aa25678a7591",
+								"id": "10c393dc-b200-4c53-a030-8785d8a932ac",
 								"exec": [
 									"pm.test(\"Status code is 204\", function () {",
 									"    pm.response.to.have.status(204);",
@@ -794,6 +794,40 @@
 					"response": []
 				},
 				{
+					"name": "Create Virology Finding with Specimen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Prefer",
+								"type": "text",
+								"value": "return=representation"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_type\" : \"COMPOSITION\",\r\n  \"name\" : {\r\n    \"_type\" : \"DV_TEXT\",\r\n    \"value\" : \"Ergebnisbericht\"\r\n  },\r\n  \"archetype_details\" : {\r\n    \"archetype_id\" : {\r\n      \"value\" : \"openEHR-EHR-COMPOSITION.report-result.v1\"\r\n    },\r\n    \"template_id\" : {\r\n      \"value\" : \"Virologischer Befund\"\r\n    },\r\n    \"rm_version\" : \"1.0.4\"\r\n  },\r\n  \"language\" : {\r\n    \"terminology_id\" : {\r\n      \"value\" : \"ISO_639-1\"\r\n    },\r\n    \"code_string\" : \"de\"\r\n  },\r\n  \"territory\" : {\r\n    \"terminology_id\" : {\r\n      \"value\" : \"ISO_3166-1\"\r\n    },\r\n    \"code_string\" : \"DE\"\r\n  },\r\n  \"category\" : {\r\n    \"_type\" : \"DV_CODED_TEXT\",\r\n    \"value\" : \"event\",\r\n    \"defining_code\" : {\r\n      \"terminology_id\" : {\r\n        \"value\" : \"openehr\"\r\n      },\r\n      \"code_string\" : \"433\"\r\n    }\r\n  },\r\n  \"composer\" : {\r\n    \"_type\" : \"PARTY_IDENTIFIED\",\r\n    \"name\" : \"Test\"\r\n  },\r\n  \"context\" : {\r\n    \"_type\" : \"EVENT_CONTEXT\",\r\n    \"start_time\" : {\r\n      \"_type\" : \"DV_DATE_TIME\",\r\n      \"value\" : \"2020-04-02T12:00:00Z\"\r\n    },\r\n    \"setting\" : {\r\n      \"_type\" : \"DV_CODED_TEXT\",\r\n      \"value\" : \"secondary medical care\",\r\n      \"defining_code\" : {\r\n        \"terminology_id\" : {\r\n          \"value\" : \"openehr\"\r\n        },\r\n        \"code_string\" : \"232\"\r\n      }\r\n    },\r\n    \"other_context\" : {\r\n      \"_type\" : \"ITEM_TREE\",\r\n      \"name\" : {\r\n        \"_type\" : \"DV_TEXT\",\r\n        \"value\" : \"Baum\"\r\n      },\r\n      \"items\" : [ {\r\n        \"_type\" : \"ELEMENT\",\r\n        \"name\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Bericht-ID\"\r\n        },\r\n        \"value\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"15a69a62-1ea7-4111-98a5-28aeae854bcd\"\r\n        },\r\n        \"archetype_node_id\" : \"at0002\"\r\n      }, {\r\n        \"_type\" : \"ELEMENT\",\r\n        \"name\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Status\"\r\n        },\r\n        \"value\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Endbefund\"\r\n        },\r\n        \"archetype_node_id\" : \"at0005\"\r\n      }, {\r\n        \"_type\" : \"CLUSTER\",\r\n        \"name\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Fallnummer\"\r\n        },\r\n        \"items\" : [ {\r\n          \"_type\" : \"ELEMENT\",\r\n          \"name\" : {\r\n            \"_type\" : \"DV_TEXT\",\r\n            \"value\" : \"Fall-Kennung\"\r\n          },\r\n          \"value\" : {\r\n            \"_type\" : \"DV_TEXT\",\r\n            \"value\" : \"9251377\"\r\n          },\r\n          \"archetype_node_id\" : \"at0001\"\r\n        } ],\r\n        \"archetype_node_id\" : \"openEHR-EHR-CLUSTER.case_identification.v0\"\r\n      } ],\r\n      \"archetype_node_id\" : \"at0001\"\r\n    }\r\n  },\r\n  \"content\" : [ {\r\n    \"_type\" : \"OBSERVATION\",\r\n    \"name\" : {\r\n      \"_type\" : \"DV_TEXT\",\r\n      \"value\" : \"Laborergebnis\"\r\n    },\r\n    \"language\" : {\r\n      \"terminology_id\" : {\r\n        \"value\" : \"ISO_639-1\"\r\n      },\r\n      \"code_string\" : \"de\"\r\n    },\r\n    \"encoding\" : {\r\n      \"terminology_id\" : {\r\n        \"value\" : \"IANA_character-sets\"\r\n      },\r\n      \"code_string\" : \"UTF-8\"\r\n    },\r\n    \"subject\" : {\r\n      \"_type\" : \"PARTY_SELF\"\r\n    },\r\n    \"protocol\" : {\r\n      \"_type\" : \"ITEM_TREE\",\r\n      \"name\" : {\r\n        \"_type\" : \"DV_TEXT\",\r\n        \"value\" : \"Tree\"\r\n      },\r\n      \"items\" : [ {\r\n        \"_type\" : \"CLUSTER\",\r\n        \"name\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Details der Testanforderung\"\r\n        },\r\n        \"items\" : [ {\r\n          \"_type\" : \"ELEMENT\",\r\n          \"name\" : {\r\n            \"_type\" : \"DV_TEXT\",\r\n            \"value\" : \"Auftrags-ID des anfordernden/einsendenden Systems\"\r\n          },\r\n          \"value\" : {\r\n            \"_type\" : \"DV_IDENTIFIER\",\r\n            \"issuer\" : \"SAP ish med\",\r\n            \"id\" : \"6d057bac-08ae-4a20-9557-22d2cbf57ce6\"\r\n          },\r\n          \"archetype_node_id\" : \"at0062\"\r\n        }, {\r\n          \"_type\" : \"ELEMENT\",\r\n          \"name\" : {\r\n            \"_type\" : \"DV_TEXT\",\r\n            \"value\" : \"Auftrags-ID (Empfänger)\"\r\n          },\r\n          \"value\" : {\r\n            \"_type\" : \"DV_IDENTIFIER\",\r\n            \"issuer\" : \"SAP ish med\",\r\n            \"id\" : \"5d335154-c276-4f73-9427-22d70052ac97\"\r\n          },\r\n          \"archetype_node_id\" : \"at0063\"\r\n        } ],\r\n        \"archetype_node_id\" : \"at0094\"\r\n      } ],\r\n      \"archetype_node_id\" : \"at0004\"\r\n    },\r\n    \"data\" : {\r\n      \"name\" : {\r\n        \"_type\" : \"DV_TEXT\",\r\n        \"value\" : \"Event Series\"\r\n      },\r\n      \"origin\" : {\r\n        \"_type\" : \"DV_DATE_TIME\",\r\n        \"value\" : \"2020-04-02T12:00:00Z\"\r\n      },\r\n      \"events\" : [ {\r\n        \"_type\" : \"POINT_EVENT\",\r\n        \"name\" : {\r\n          \"_type\" : \"DV_TEXT\",\r\n          \"value\" : \"Jedes Ereignis\"\r\n        },\r\n        \"time\" : {\r\n          \"_type\" : \"DV_DATE_TIME\",\r\n          \"value\" : \"2020-04-02T14:00:00Z\"\r\n        },\r\n        \"data\" : {\r\n          \"_type\" : \"ITEM_TREE\",\r\n          \"name\" : {\r\n            \"_type\" : \"DV_TEXT\",\r\n            \"value\" : \"Tree\"\r\n          },\r\n          \"items\" : [ {\r\n            \"_type\" : \"ELEMENT\",\r\n            \"name\" : {\r\n              \"_type\" : \"DV_TEXT\",\r\n              \"value\" : \"Labortest-Bezeichnung\"\r\n            },\r\n            \"value\" : {\r\n              \"_type\" : \"DV_TEXT\",\r\n              \"value\" : \"Virologische Untersuchung\"\r\n            },\r\n            \"archetype_node_id\" : \"at0005\"\r\n          }, {\r\n            \"_type\" : \"CLUSTER\",\r\n            \"name\" : {\r\n              \"_type\" : \"DV_TEXT\",\r\n              \"value\" : \"Probe\"\r\n            },\r\n            \"items\" : [ {\r\n              \"_type\" : \"ELEMENT\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Probenart\"\r\n              },\r\n              \"value\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Blut\"\r\n              },\r\n              \"archetype_node_id\" : \"at0029\"\r\n            }, {\r\n              \"_type\" : \"ELEMENT\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Zeitpunkt des Probeneingangs\"\r\n              },\r\n              \"value\" : {\r\n                \"_type\" : \"DV_DATE_TIME\",\r\n                \"value\" : \"2020-04-02T09:00:00Z\"\r\n              },\r\n              \"archetype_node_id\" : \"at0034\"\r\n            }, {\r\n              \"_type\" : \"ELEMENT\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Kommentar des Probennehmers\"\r\n              },\r\n              \"value\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Kommentar\"\r\n              },\r\n              \"archetype_node_id\" : \"at0079\"\r\n            }, {\r\n              \"_type\" : \"ELEMENT\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Zeitpunkt der Probenentnahme\"\r\n              },\r\n              \"value\" : {\r\n                \"_type\" : \"DV_DATE_TIME\",\r\n                \"value\" : \"2020-04-01T12:00:00Z\"\r\n              },\r\n              \"archetype_node_id\" : \"at0015\"\r\n            }, {\r\n              \"_type\" : \"ELEMENT\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Kommentar\"\r\n              },\r\n              \"value\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Kommentar zur Probe\"\r\n              },\r\n              \"archetype_node_id\" : \"at0045\"\r\n            } ],\r\n            \"archetype_node_id\" : \"openEHR-EHR-CLUSTER.specimen.v1\"\r\n          }, {\r\n            \"_type\" : \"CLUSTER\",\r\n            \"name\" : {\r\n              \"_type\" : \"DV_TEXT\",\r\n              \"value\" : \"Test Panel\"\r\n            },\r\n            \"items\" : [ {\r\n              \"_type\" : \"CLUSTER\",\r\n              \"name\" : {\r\n                \"_type\" : \"DV_TEXT\",\r\n                \"value\" : \"Probe\"\r\n              },\r\n              \"items\" : [ {\r\n                \"_type\" : \"ELEMENT\",\r\n                \"name\" : {\r\n                  \"_type\" : \"DV_TEXT\",\r\n                  \"value\" : \"Blut\"\r\n                },\r\n                \"value\" : {\r\n                  \"_type\" : \"DV_TEXT\",\r\n                  \"value\" : \"SARS-Cov-2\"\r\n                },\r\n                \"archetype_node_id\" : \"at0024\"\r\n              }, {\r\n                \"_type\" : \"ELEMENT\",\r\n                \"name\" : {\r\n                  \"_type\" : \"DV_TEXT\",\r\n                  \"value\" : \"Wert\"\r\n                },\r\n                \"value\" : {\r\n                  \"_type\" : \"DV_QUANTITY\",\r\n                  \"units\" : \"ct\",\r\n                  \"magnitude\" : 32.29986924248519\r\n                },\r\n                \"archetype_node_id\" : \"at0001\"\r\n              } ],\r\n              \"archetype_node_id\" : \"openEHR-EHR-CLUSTER.laboratory_test_analyte.v1\"\r\n            } ],\r\n            \"archetype_node_id\" : \"openEHR-EHR-CLUSTER.laboratory_test_panel.v0\"\r\n          } ],\r\n          \"archetype_node_id\" : \"at0003\"\r\n        },\r\n        \"archetype_node_id\" : \"at0002\"\r\n      } ],\r\n      \"archetype_node_id\" : \"at0001\"\r\n    },\r\n    \"archetype_node_id\" : \"openEHR-EHR-OBSERVATION.laboratory_test_result.v1\"\r\n  } ],\r\n  \"archetype_node_id\" : \"openEHR-EHR-COMPOSITION.report-result.v1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api_uri}}/ehr/{{ehr_id}}/composition"
+					},
+					"response": []
+				},
+				{
 					"name": "Create Stationärer Fall (Episode) Composition",
 					"request": {
 						"method": "POST",
@@ -1023,7 +1057,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e79ca9c8-c385-49c4-afd4-205947f71807",
+								"id": "17ca8609-de14-481f-a56d-35ff27d2ffa4",
 								"exec": [
 									"pm.test(\"Folder has been created\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -1082,7 +1116,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "728ba92f-279c-43b6-9aa4-931e0125a785",
+								"id": "c3932e49-4a3f-4835-99fe-bb4974ea9034",
 								"exec": [
 									"pm.test(\"Update successful\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1194,7 +1228,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "0c64966a-b629-46a7-af2e-fabae47a200d",
+								"id": "2515c226-2df1-4375-93df-812f8e066f4c",
 								"exec": [
 									"pm.environment.set(\"current_time\", new Date().toISOString());"
 								],
@@ -1292,7 +1326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6cbb336a-c5d2-4363-97db-4f67117226f9",
+				"id": "52949b4d-5693-4c35-9a65-3a2ccb295f49",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1302,7 +1336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3a8dffac-850b-4482-ba86-cc883987aec6",
+				"id": "1b7b2c00-f4e4-49ba-b592-70b1dd100672",
 				"type": "text/javascript",
 				"exec": [
 					""
