@@ -1,0 +1,4 @@
+Directory Endpoint
+------------------
+
+.. warning:: WIP

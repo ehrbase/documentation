@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'EHRbase'
-copyright = '2019, Vitasystem GmbH and Hannover Medical School'
+copyright = '2019-2020, Vitasystem GmbH and Hannover Medical School'
 author = 'Birger Haarbrandt'
 
 # The short X.Y version

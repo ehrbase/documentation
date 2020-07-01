@@ -29,6 +29,7 @@ We will add detailed documentation as soon as possible.
    01_release_notes/index
    02_getting_started/index
    03_development/index
+   04_sdk/index
 
 Indices and tables
 ==================
