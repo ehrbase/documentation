@@ -92,7 +92,7 @@ In the following example a simple exemplary blood pressure type is assumed to be
     );
     // plus some conditions like WHERE, see below
 
-This snippet shows two things:
+This snippet shows three things:
 
 First, the usage of the containment classes to define parts of the query (like select values).
 The internal query handling in ``buildEntityQuery`` will create a correct native AQL query from the input.
@@ -102,4 +102,53 @@ Second, next to being able to retrieve simple types, this query also shows
 automatic parsing and conversation to complex result types like an openEHR `Observation`.
 Specifically, a ``BloodPressureTrainingSampleObservation`` type is directly available for further processing, after the query was executed.
 
-TODO: Where and other conditions
+Third, the ``setContains`` method simplifies the building of native AQL strings like
+``COMPOSITION c0[openEHR-EHR-COMPOSITION.report.v1] contains SECTION s1[openEHR-EHR-SECTION.adhoc.v1]`` (different example).
+
+Additionally, entity queries are supporting an included set of **conditions**:
+
+* ``and``
+* ``or``
+* ``not``
+* ``equal``
+* ``notEqual``
+* ``greaterOrEqual``
+* ``greaterThan``
+* ``lessOrEqual``
+* ``lessThan``
+* ``matches``
+* ``exists``
+
+These methods can be used to build AQL conditions, like in the following example:
+
+.. code-block:: java
+
+    Condition condition1 = Condition.greaterOrEqual(containmentObservation.DIASTOLIC_MAGNITUDE, 13d);
+        Condition condition2 = Condition.notEqual(containmentObservation.MEAN_ARTERIAL_PRESSURE_UNITS, "mh");
+        Condition condition3 = Condition.lessThan(containmentObservation.TIME_VALUE, OffsetDateTime.of(2019, 04, 03, 22, 00, 00, 00, ZoneOffset.UTC));
+
+        Condition cut = condition1.and(condition2.or(condition3));
+
+        assertThat(cut.buildAql()).isEqualTo("(v/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value/magnitude >= 13.0 and " +
+                "(v/data[at0001]/events[at0002]/data[at0003]/items[at1006]/value/units != 'mh' or v/data[at0001]/events[at0002]/time/value < '2019-04-03T22:00:00Z')" +
+                ")");
+
+Finally, entity queries can use those `conditions` and other specific logical expressions to create
+
+* WHERE (see `Observation` above)
+* ORDER BY (``ascending``, ``descending``, ``andThenAscending``, ``andThenDescending``)
+* TOP (``forward``, ``backward``)
+
+clauses. See the following example:
+
+.. code-block:: java
+
+    EntityQuery<Record1<EhrbaseBloodPressureSimpleDeV0Composition>> entityQuery = Query.buildEntityQuery(
+                containmentComposition,
+                containmentComposition.EHRBASE_BLOOD_PRESSURE_SIMPLE_DE_V0_COMPOSITION
+        );
+    Parameter<UUID> ehrIdParameter = entityQuery.buildParameter();
+
+    Condition where = Condition.equal(EhrFields.EHR_ID(), ehrIdParameter);
+    OrderByExpression orderBy = OrderByExpression.descending(containmentObservation.SYSTOLIC_MAGNITUDE).andThenAscending(containmentObservation.DIASTOLIC_MAGNITUDE);
+    entityQuery.where(where).orderBy(orderBy);
