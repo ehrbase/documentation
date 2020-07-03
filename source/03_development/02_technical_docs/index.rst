@@ -8,3 +8,5 @@ technical details of the implementation of EHRbase.
 .. include:: 000_overview.rst
 
 .. include:: 001_service_layer.rst
+
+.. include:: 002_contain_clause_resolution.rst
