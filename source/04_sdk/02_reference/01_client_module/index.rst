@@ -5,6 +5,9 @@ Client module
 
 Reference documentation of the client module.
 
+.. note:: Please have a look at the integration tests for many working examples.
+   (Tests named ``*IT`` in ``src/test/java/org/ehrbase/client/openehrclient/defaultrestclient/``)
+
 .. toctree::
    :name: clientmodule
    :maxdepth: 3
