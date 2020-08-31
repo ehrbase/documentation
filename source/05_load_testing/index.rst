@@ -1,3 +1,5 @@
+.. _load_testing:
+
 ============
 Load Testing
 ============
@@ -46,9 +48,16 @@ Pseudo-code:
         }
         commitTime = getTime() - commitTime // elapsed time
 
-        aqlTime = getTime()
-        server.runAql(aql)
-        aqlTime = getTime() - aqlTime // elapsed time
+        aqlTimes = []
+        for (n in 1.. repeatAql)
+        {
+            aqlTime = getTime()
+            server.runAql(aql)
+            aqlTime = getTime() - aqlTime // elapsed time
+            aqlTimes << aqlTime
+        }
+
+        [aqlTimeMax, aqlTimeMin, aqlTimeAvg] = calculateMaxMinAvg(aqlTimes)
     }
 
 
@@ -57,10 +66,12 @@ For instance, if you provider these parameters:
 - ehrs = 100
 - compositions = 20
 - scaleTemplates = 3
+- repeatAql = 5
 
 The script will do 3 loops over 3 different templates (it's the same template but has different ID),
-will create 100 EHRs, ahd commit 20 COMPOSITIONs, distributed between the 100 EHRs (the ehrsCreated.pick() is random).
-In general, you might want to provide compositions >> ehrs (much greater then).
+will create 100 EHRs, and commit 20 COMPOSITIONs, distributed between the 100 EHRs (the ehrsCreated.pick() is random).
+In general, you might want to provide compositions >> ehrs (much greater then). Then an AQL query will be executed
+'repeatAql' times, and the max, min and avg execution times will be calculated.
 
 
 Script execution

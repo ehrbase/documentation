@@ -111,7 +111,7 @@ The corresponding jsonpath expression to traverse the WebTemplate is:
 
 When applied to template ``Virologischer Befund``\ , the following structure is returned (these are the attributes for the retrieved node)
 
-.. code-block:: json
+.. code-block:: javascript
 
     {
         "min" : "1",
@@ -130,7 +130,7 @@ The corresponding AQL path for node ``openEHR-EHR-CLUSTER.case_identification.v0
 
 The corresponding WebTemplate section for this particular node is represented as follows:
 
-.. code-block:: json
+.. code-block:: javascript
 
                  {
                    "min": 1,
