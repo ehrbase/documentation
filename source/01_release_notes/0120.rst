@@ -1,7 +1,8 @@
 .. _h-what-is-reference-label:
 
+####################################
 Release Notes EHRbase 0.12.0 (alpha)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+####################################
 
 This release of EHRbase (v0.12.0, March 31 2020) adds basic authentication (see details below) and allows to overwrite templates. we consider EHRbase to be 
 still in alpha status.
@@ -70,7 +71,7 @@ EHRbase ships with a set of tests verifying the conformance with the openEHR RES
 
 
 What (basic) features you might miss
-**********************************
+************************************
 - VERSIONED_OBJECT Endpoints are not implemented
 - EHR functions like is_modifyable and is_queryable are not yet supported
 

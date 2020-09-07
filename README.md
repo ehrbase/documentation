@@ -19,6 +19,33 @@ To build the project (for example as html pages), type:
 
 `make html`
 
+
+Linux installation and build
+----------------------------
+
+Prerequisite: sphnix needs python 3.6+, if you have python 2 installed, it won't work.
+
+Installation:
+
+$ apt install python3-sphinx
+$ make html
+
+If the command above returned an error, try to install a newer version of sphinx, the installed version is 1.6.7.
+
+$ pip install "Sphinx=2.4.3"
+$ python -m pip list | grep Sphinx
+$ make html
+
+If the command above returned a module not found error for pip install.
+
+$ pip install sphinx_rtd_theme
+$ python -m pip list | grep sphinx
+$ make html
+
+The command above should build the documentation in the build/ folder.
+
+
+
 License
 -------
 EHRbase Documentation uses the Apache 2 license.

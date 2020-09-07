@@ -30,6 +30,7 @@ We will add detailed documentation as soon as possible.
    02_getting_started/index
    03_development/index
    04_sdk/index
+   05_load_testing/index
 
 Indices and tables
 ==================

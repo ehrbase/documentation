@@ -1,7 +1,8 @@
 .. _h-what-is-reference-label:
 
+#######################################
 Release Notes EHRbase 0.9.0 (pre-alpha)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#######################################
 
 As the initial open source version of EHRbase, this release note is a bit more comprehensive. Please be aware that this is a pre-alpha version. We
 will soonly release the alpha version containing EHR_STATUS and DIRECTORY Endpoints of the official openEHR REST API. Please be aware that the 

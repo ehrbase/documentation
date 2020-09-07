@@ -1,7 +1,8 @@
 .. _h-what-is-reference-label:
 
+####################################
 Release Notes EHRbase 0.10.0 (alpha)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+####################################
 
 This is the alpha release of EHRbase (2020-01-10). This means that the basic set of functions has been implemented. Please be aware that the 
 current state can be used to develop openEHR applications but should not be used for real patient data in production. 
@@ -66,7 +67,7 @@ EHRbase ships with a set of tests verifying the conformance with the openEHR RES
 
 
 What (basic) features you might miss
-**********************************
+************************************
 - VERSIONED_OBJECT Endpoints are not implemented
 - Authentication is not implemented (planned to be implemented using Spring Security)
 - Connection to external terminology service (like FHIR TS) is not yet supported
