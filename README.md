@@ -44,6 +44,7 @@ $ make html
 
 The command above should build the documentation in the build/ folder.
 
+Note: everytime `make html` is executed, before execure `rm -R build` to force updating all the files.
 
 
 License

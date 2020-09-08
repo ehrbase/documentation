@@ -163,3 +163,155 @@ TBD
 
 
 
+Extending FHIR bridge
+---------------------
+
+Each change to the FHIR bridge should have a ticket created, explaining the change. Create a new feature branch with
+ticket number like: feature/123_awesome_new_feature.
+
+    cd fhir-bridge
+    git checkout develop
+    git checkout -b [BRANCH-NAME]
+    # At the first push:
+    git push -u origin [BRANCH-NAME]
+    # For later pushes:
+    git push
+
+
+Tickets are here: https://github.com/orgs/ehrbase/projects/28
+
+Comment out failing tests (temporary problem only)
+
+    * Open "/fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationIT.java" in the editor
+    * Comment out the "createConditionUsingInvalidProfile" and "createObservationUsingUnsupportedProfile" tests
+
+
+Note: the tests class was modified to https://github.com/ehrbase/fhir-bridge/blob/develop/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationTestIT.java
+
+
+
+Build 
+-----
+
+    cd fhir-bridge
+    mvn clean install
+
+IDE
+---
+
+Load project into development environment
+
+  * especially for eclipse: as a Maven project
+
+
+Add external files
+------------------
+
+The following files must be copied into the respective target directories.
+
+  * FHIR data structure (XML format)
+    * Target directory /fhir-bridge/src/main/resources/profiles
+    * Source https://simplifier.net/ForschungsnetzCovid-19 (under Resources/Observation)
+    * Example https://simplifier.net/ForschungsnetzCovid-19/RespiratoryRate/~xml (example)
+  * FHIR observation sample file (JSON format)
+    * Target directory / fhir-bridge / src / test / resources / Observation
+    * Source http://hl7.org/fhir/R4/observation-examples.html
+    * Example http://hl7.org/fhir/R4/observation-example-respiratory-rate.json.html
+  * Operational template (OPT format)
+    * Target directory / fhir-bridge / src / main / resources / opt
+    * Source http://88.198.146.13/ckm/projects/1246.152.26/resourcecentre (GECCO Core)
+    * Example (The example files are listed in the overview)
+
+
+Structure Definition (Enum)
+---------------------------
+
+ * Add an entry with the FHIR URL to src / main / java / org / ehrbase / fhirbridge / fhir / Profile.java
+   * Source http://hl7.org/fhir/R4/observation-vitalsigns.html (search from list)
+   * Example RESPIRATORY_RATE ("http://hl7.org/fhir/StructureDefinition/resprate", ResourceType.Observation)
+
+
+Use the SDK generator to create new classes from the operational template
+-------------------------------------------------------------------------
+
+(Windows example started from the path "../openEHR_SDK/generator/target")
+
+    java
+    -jar generator-0.3.7.jar
+    -opt ../../../fhir-bridge/src/main/resources/opt/Atemfrequenz.opt
+    -out ../../../fhir-bridge/src/main/java
+    -package org.ehrbase.fhirbridge.opt
+
+(Linux example with path information from the perspective of the home directory)
+
+    java
+    -jar ~ / Desktop / nfn / openEHR_SDK / generator / target / generator-0.3.7.jar
+    -opt ~ / Desktop / nfn / 2020-08-28_fhir-bridge / src / main / resources / opt / body size.opt
+    -out ~ / Desktop / nfn / 2020-08-28_fhir-bridge / src / main / java /
+    -package org.ehrbase.fhirbridge.opt
+
+
+Note: Ignore error message regarding missing language packages (temporary problem; TerminologyProvider).
+
+Refresh project in the development environment
+
+  * New classes (example breathing rate):
+    * Directory / fhir-bridge / src / main / java / org / ehrbase / fhirbridge / opt / breathing frequency composition
+    * Breath rateComposition.java and Breath rateCompositionContainment.java classes
+    * Directory / fhir-bridge / src / main / java / org / ehrbase / fhirbridge / opt / breath frequency composition / definition
+    * Respiratory RateObservation.java and Respiratory RateObservationContainment.java classes
+
+
+Implement mapping (example breathing rate)
+------------------------------------------
+
+Create a new class in /fhir-bridge/src/main/java/org/ehrbase/fhirbridge/mapping
+
+  * Example FHIRObservationRespRateOpenehrRespRate.java
+    (The example is here FHIRObservationRespRateOpenehrRespRate.java.txt)
+
+
+CreateObservation
+-----------------
+
+In /fhir-bridge/src/main/java/org/ehrbase/fhirbridge/fhir/provider.ObservationResourceProvider.java
+add an else branch in the createObservation method (Orientation using the example of BodyTemperature;
+copy, rename and adapt the content of the else branch)
+
+To do this, create the appropriate method in /fhir-bridge/src/main/java/org/ehrbase/fhirbridge/rest/EhrbaseService.java
+(Orientation on the example of saveTemp; copy, rename and adapt content)
+[temporary approach; in the future there should be a generic method]
+
+
+Unit test
+---------
+
+Adjust the name of the file in /fhir-bridge/src/test/resources/Observation/observation-resprate-example.json
+add a test in /fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationIT.java
+
+  * Example createObservationRespRate (Orientation on the example createBodyTemp; copy, rename and adapt the test)
+
+
+Upload templates (POSTMAN)
+--------------------------
+
+Download these files: https://github.com/ehrbase/documentation/tree/master/examples
+
+Import the environment and the collection into POSTMAN
+
+  * to do this, find and use the various import buttons individually
+  * select a post entry under Collections-> EHRbase copy copy-> Templates (any), right-click, duplicate in the context menu
+  * rename to Create [opt-name] Template to create your own OPT file
+  * above change the url to localhost:8080/ehrbase/rest/openehr/v1/definition/template/adl1.4
+  * replace the existing content in the body with the content of your own / to be mapped OPT file
+  * upload the template using SEND (Docker should be running;))
+
+
+Test whether the template is available in Ehrbase
+-------------------------------------------------
+
+Swagger UI http://localhost:8080/ehrbase/swagger-ui.html -> Templates
+
+  * GET (/rest/openehr/v1/definition/template/adl1.4) -> Try it out -> Execute
+  * Response Body -> an item (example breathing rate) should be in the ArrayList
+  * Response code 200 -> successful
