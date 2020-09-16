@@ -328,7 +328,7 @@ Unit test
 
     "subject": {
     "reference": "Patient/07f602e0-579e-4fe3-95af-381728bf0d49"
-  },
+    },
 
 Upload templates (POSTMAN)
 --------------------------
