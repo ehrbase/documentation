@@ -247,6 +247,10 @@ Structure Definition (Enum)
  
   * Source http://hl7.org/fhir/R4/observation-vitalsigns.html (search from list)
   * Example :code:`RESPIRATORY_RATE ("http://hl7.org/fhir/StructureDefinition/resprate", ResourceType.Observation)`
+  
+* Add an entry in :code:`src/main/java/org/ehrbase/fhirbridge/config/util/OperationalTemplateData.java`
+  
+  * Example :code:`HEART_RATE("", "Herzfrequenz.opt", "Herzfrequenz"),`
 
 
 Use the SDK generator to create new classes from the operational template
