@@ -295,6 +295,7 @@ Implement mapping (example breathing rate)
 * Create a new class in :code:`/fhir-bridge/src/main/java/org/ehrbase/fhirbridge/mapping`
   * :code:`FHIRObservation[MAPPING]Openehr[MAPPING].java`
   * Example :code:`FHIRObservationRespRateOpenehrRespRate.java`
+  * Copy and adapt 
 * The information which entries have to be mapped check the template in HighMed CKM and the excel file from Sarah
 
 
