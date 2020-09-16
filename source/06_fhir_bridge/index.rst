@@ -323,6 +323,12 @@ Unit test
 * Add a test in :code:`/fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationIT.java`
 
   * Therefore copy and adapt the :code:`createBodyTemp` example
+  
+* Adapt the patient-id in the json-example file::
+
+    "subject": {
+    "reference": "Patient/07f602e0-579e-4fe3-95af-381728bf0d49"
+  },
 
 Upload templates (POSTMAN)
 --------------------------
@@ -360,11 +366,11 @@ Reintegrate changes into develop
     git checkout feature/...
     git merge develop
 
-* Do your tests still run without failure? If necessary, then::
+* Do your tests still run without failure? If necessary, then ::
 
-  git add .
-  git commit -m "YOUR MESSAGE"
-  git push
+    git add .
+    git commit -m "YOUR MESSAGE"
+    git push
 
 * Start a pull-request https://github.com/ehrbase/fhir-bridge/branches  and assign a reviewer
 
