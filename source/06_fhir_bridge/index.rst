@@ -305,7 +305,7 @@ CreateObservation
 Temporarily and initial
 """""""""""""""""""""""
 
-* In :code:`/fhir-bridge/src/main/java/org/ehrbase/fhirbridge/rest/EhrbaseService.java` create method :code:`save[MAPPING]
+* In :code:`/fhir-bridge/src/main/java/org/ehrbase/fhirbridge/rest/EhrbaseService.java` create method :code:`save[MAPPING]`
 * Therefore copy and adapt :code:`saveTemp` 
 
 Regularly
