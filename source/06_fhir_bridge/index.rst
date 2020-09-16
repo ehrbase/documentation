@@ -352,18 +352,17 @@ Test whether the template is available in ehrbase
 Reintegrate changes into develop
 ---------------------------------------
 
-* Check that all your tests run without any failure
+* Check that all your tests run without any failure and you do not have uncommited changes
 * Reintegrate the develop branch before sending your pull request::
 
-    git fetch
     git checkout develop
     git pull
     git checkout feature/...
     git merge develop
-    git checkout
 
-* Do your tests still run without failure? Yes, then::
+* Do your tests still run without failure? If necessary, then::
 
+  git add .
   git commit -m "YOUR MESSAGE"
   git push
 
