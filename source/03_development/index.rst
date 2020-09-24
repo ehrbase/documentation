@@ -7,7 +7,7 @@ documents the software in detail.
 
 .. toctree::
    :name: Development
-   :maxdepth: 3
+   :maxdepth: 4
 
    01_developing/index
    02_testing/index

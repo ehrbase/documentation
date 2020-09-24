@@ -11,8 +11,8 @@ Continuous Integration
 
 EHRbase uses `CircleCI <https://app.circleci.com/pipelines/github/ehrbase>`_ for continuous integration and deployment. The CI pipeline consists of the following workflows:
 
-workflow 1/3 - build-and-test
------------------------------
+Pipeline workflow 1/3 - build-and-test
+--------------------------------------
 
 - trigger: commit to any branch (except - release/v*, master, sync/*, feature/sync/*)
 - jobs:
@@ -23,8 +23,8 @@ workflow 1/3 - build-and-test
     - perform sonarcloud analysis and OWASP dependency check
 
 
-workflow 2/3 - release
-----------------------
+Pipeline workflow 2/3 - release
+-------------------------------
 
 - trigger: commit to release/v or master branch
 - jobs:
@@ -37,8 +37,8 @@ workflow 2/3 - release
     - TODO: deploy to Docker Hub
 
 
-workflow 3/3 - synced-feature-check
------------------------------------
+Pipeline workflow 3/3 - synced-feature-check
+--------------------------------------------
 
 ⚠️ This is a special workflow to catch errors that can occur when code changes introduced to EHRbase AND openEHR_SDK repository are related in a way that they have to be tested together and otherwise can't be catched in workflow 1 or 2.
 

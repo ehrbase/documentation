@@ -1,24 +1,3 @@
-Public Docker Images
-====================
-
-This project uses `Docker Hub / Cloud <https://hub.docker.com/>`_ infrastructure to automatically build and publish Docker images on the public Docker Hub Registry whenever there is an update to the code - check recent `EHRbase Docker image tags <https://hub.docker.com/r/ehrbaseorg/ehrbase/tags>`_.
-
-
-
-Docker Hub Autobuilds
-------------------
-
-An EHRbase Docker image is created and published on `Docker Hub Registry <https://hub.docker.com/r/ehrbaseorg/ehrbase>`_ on every push/merge to `master`, `develop` and `release-*` branch.
-Created Docker images are tagged as shown in table below:
-
-.. csv-table::
-   :header: "Branch", "Docker Tag", "Example"
-
-        master, latest, `ehrbaseorg/ehrbase:latest` 
-        develop, next, `ehrbaseorg/ehrbase:next`
-        release-*, semversion, `ehrbaseorg/ehrbase:0.13.0`
-
-
 Docker Hub Configuration
 ------------------------
 

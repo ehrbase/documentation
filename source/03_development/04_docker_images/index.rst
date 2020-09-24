@@ -8,14 +8,11 @@ Docker Images
 
 
 
-This part of the documentation explains how to use EHRbase from a Docker container and/or how to create your own EHRbase Docker image.
+This part of the documentation explains how to use EHRbase from a Docker container and/or how to create your own EHRbase and PostgreSQL DB Docker image.
 
 .. toctree::
-   :name: Getting Started
-   :maxdepth: 3
+   :name: Docker Images
+   :maxdepth: 4
 
-   00_dockerhub_autobuilds/index
-   01_build_image_locally/index
-   02_using_image/index
-
-
+   01_ehrbase/index
+   02_ehrbase_db/index
