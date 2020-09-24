@@ -1,0 +1,85 @@
+Run EHRbase in Docker
+=====================
+
+.. note:: 
+
+    Remember: EHRbase requires a properly configured and running PostgreSQL DB to work.
+    Make sure to set this up first before you try run EHRbase.
+
+To run EHRbase in a Docker Container first pull the official Docker image from Docker Hub:
+
+.. code-block:: bash
+
+    docker pull ehrbaseorg/ehrbase
+
+
+**OR**
+ 
+build your own image form Dockerfile:
+
+
+.. code-block:: bash
+
+    git clone https://github.com/ehrbase/ehrbase.git
+    cd ehrbase
+    docker build -t myehrbase/ehrbase .
+    docker image ls
+
+
+**THEN** use the `docker run` command adjusting parameters to your needs to change Container's default behaviour.
+
+.. note:: 
+
+    Remember: Container's default behaviour is set during Docker image build time.
+
+
+=================  =======================  ====================================
+ Parameter          Usage                    Example
+=================  =======================  ====================================
+DB_URL             | Database URL. Must
+                   | point to the running
+                   | database server.       jdbc:postgresql://ehrdb:5432/ehrbase
+
+DB_USER            | Database user
+                   | configured
+                   | for the ehr schema.    ehrbase
+
+DB_PASS            DB user password         ehrbase
+SYSTEM_NAME        Name of local system     local.ehrbase.org
+SECURITY_AUTHTYPE  HTTP security method     BASIC or OAUTH
+AUTH_USER          Basic Auth username      myuser
+AUTH_PASSWORD      Basic Auth password      myPassword432
+=================  =======================  ====================================
+
+
+
+Run EHRbase + DB with Docker-Compose
+====================================
+
+.. note::
+
+    Prerequisite: docker-compose is installed on your machine
+
+With `Docker-Compose <https://github.com/docker/compose>`_ you can start EHRbase and the required DB from a configuration file written in YAML format.
+
+There is an example `docker-compose.yml <https://github.com/ehrbase/ehrbase/blob/develop/application/docker-compose.yml>`_ configuration file in our Git repository. Using it allows you to set up and start EHRbase along with the required database with a few simple steps:
+
+
+.. code-block:: bash
+
+    # download the docker-compose.yml file to your local
+    wget https://github.com/ehrbase/ehrbase/raw/develop/application/docker-compose.yml
+    docker-compose up
+
+    # OR: start both containers detached, without blocking the terminal
+    docker-compose up -d
+
+
+.. note::
+
+    It is not necessary to have the whole Git repository on your machine, just copy the docker-compose.yml file to a local working directory and run `docker-compose up`.
+
+
+.. note::
+
+    DB data is saved in ./.pgdata for easier access.
