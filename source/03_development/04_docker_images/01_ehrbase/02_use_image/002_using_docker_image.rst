@@ -33,23 +33,43 @@ build your own image form Dockerfile:
     Remember: Container's default behaviour is set during Docker image build time.
 
 
-=================  =======================  ====================================
- Parameter          Usage                    Example
-=================  =======================  ====================================
-DB_URL             | Database URL. Must
-                   | point to the running
-                   | database server.       jdbc:postgresql://ehrdb:5432/ehrbase
+.. code-block:: bash
 
-DB_USER            | Database user
-                   | configured
-                   | for the ehr schema.    ehrbase
+    docker run -e DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase \
+               -e DB_USER=foouser \
+               -e DB_PASS=foopass \
+               -e SYSTEM_NAME=what.ever.org \
+               ehrbaseorg/ehrbase
 
-DB_PASS            DB user password         ehrbase
-SYSTEM_NAME        Name of local system     local.ehrbase.org
-SECURITY_AUTHTYPE  HTTP security method     BASIC or OAUTH
-AUTH_USER          Basic Auth username      myuser
-AUTH_PASSWORD      Basic Auth password      myPassword432
-=================  =======================  ====================================
+
+.. csv-table::
+   :header: "Parameter", "Usage", "Example"
+
+    DB_URL,                     Database URL. Must point to the running database server.,    jdbc:postgresql://ehrdb:5432/ehrbase
+    DB_USER,                    Database user configured for the ehr schema.,                ehrbase
+    DB_PASS,                    DB user password,                                            ehrbase
+    SYSTEM_NAME,                Name of local system,                                        local.ehrbase.org
+    SECURITY_AUTHTYPE,          HTTP security method,                                        BASIC / OAUTH
+    SECURITY_AUTHUSER,          BASIC Auth username,                                         myuser
+    SECURITY_AUTHPASSWORD,      BASIC Auth password,                                         myPassword432
+    SECURITY_AUTHADMINUSER,     BASIC auth admin user,	                                     myadmin
+    SECURITY_AUTHADMINPASSWORD, BASIC auth admin password,                                   mySuperAwesomePassword123
+    ADMINAPI_ACTIVE,            Should admin endpoints be enabled,                           true / false
+    ADMINAPI_ALLOWDELETEALL,    Allow admin to delete all resources - i.e. all EHRs,         true / false
+
+
+.. note::
+
+    Do NOT set `SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI` in combination with `SECURITY_AUTHTYPE=BASIC`!
+    This will crash EHRbase at start up.
+
+
+.. csv-table::
+   :header: "Parameter", "Usage"
+
+    SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI, OAuth2 server isuer uri
+    example:,                                            https://keycloak.example.com/auth/realms/ehrbase
+
 
 
 

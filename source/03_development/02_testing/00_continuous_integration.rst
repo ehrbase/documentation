@@ -45,7 +45,7 @@ Pipeline workflow 3/3 - synced-feature-check
 - trigger: commit to sync/* branch
 - jobs:
     - pull, build, and test SDK from sync/* branch of openEHR_SDK repo
-    - build and test ehrbase (w/ SDK installed in previous step)
+    - build and test ehrbase (with SDK installed in previous step)
     - start ehrbase server (from .jar packaged in previous step)
     - run SDK's (java) integration tests
     - run EHRbase's (robot) integration tests
@@ -68,5 +68,5 @@ Pipeline workflow 3/3 - synced-feature-check
     6. merge BOTH PRs considering below notes:
       - make sure both PRs are reviewed and ready to be merged
         at the same time!
-      - make sure to sync both PRs w/ develop before merging!
+      - make sure to sync both PRs with develop before merging!
       - MERGE BOTH PRs AT THE SAME TIME!

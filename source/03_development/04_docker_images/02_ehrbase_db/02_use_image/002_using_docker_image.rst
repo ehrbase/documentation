@@ -1,4 +1,4 @@
-Run DB w/ default parameters
+Run DB with default parameters
 ----------------------------
 
 .. code-block:: bash
