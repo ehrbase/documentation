@@ -1,7 +1,7 @@
 .. _upload_a_template:
 
 Step 2: Upload a Template
-========================
+=========================
 
 After we created the Template, it's time to put upload it to EHRbase. The data format that is uploaded to an openEHR server 
 like EHRbase is called an Operational Template (OPT-File). You can find an example of an OPT here.

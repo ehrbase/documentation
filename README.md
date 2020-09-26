@@ -15,6 +15,10 @@ Installation should be straight forward.
 
 After successful installation, add also the HTML Domain by executing: `pip install sphinxcontrib-httpdomain`
 
+> If you get the error `ModuleNotFoundError: No module named 'sphinx_rtd_theme'` then install the missing theme separately:
+> 
+> `pip install sphinx_rtd_theme`
+
 To build the project (for example as html pages), type:
 
 `make html`

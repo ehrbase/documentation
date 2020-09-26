@@ -12,7 +12,7 @@ EHRbase as the backend, the example will actually run against every other confor
 openEHR implementation that implements the official openEHR REST API.  
 
 .. toctree::
-   :name: Development
+   :name: Getting Started
    :maxdepth: 3
 
    01_openEHR_introduction/index
