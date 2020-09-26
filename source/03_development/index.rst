@@ -14,3 +14,4 @@ documents the software in detail.
    03_deploying/index
    04_docker_images/index
    05_technical_docs/index
+   06_security/index
