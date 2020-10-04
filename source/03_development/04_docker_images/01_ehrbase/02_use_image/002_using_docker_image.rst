@@ -39,6 +39,7 @@ build your own image form Dockerfile:
                -e DB_USER=foouser \
                -e DB_PASS=foopass \
                -e SYSTEM_NAME=what.ever.org \
+               -p 8080:8080 \
                ehrbaseorg/ehrbase
 
 
