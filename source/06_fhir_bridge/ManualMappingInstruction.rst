@@ -3,8 +3,11 @@
 Extending FHIR bridge
 ---------------------
 
-Create new branch
+Prepare setup
 ^^^^^^^^^^^^^^^^^
+
+Create new branch
+"""""""""""""""""
 
 Each change to the FHIR bridge should have a ticket created, explaining the change. Create a new feature branch with
 ticket number like: :code:`feature/123_awesome_new_feature`, where :code:`123` stands for the issue number::
@@ -19,19 +22,19 @@ ticket number like: :code:`feature/123_awesome_new_feature`, where :code:`123` s
 
 
 Comment out failing tests (temporary problem only)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 * Open :code:`/fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationTestIT.java` in the editor
 * Comment out the :code:`createConditionUsingInvalidProfile` and :code:`createObservationUsingUnsupportedProfile` test
 
 Start docker
-^^^^^^^^^^^^
+""""""""""""
 
-Start docker and the ehrdb if it not already runs
+Start docker and the ehrdb if they don't already run.
 
 
 Build 
-^^^^^
+""""""
 
 Build the current fhir-bridge::
 
@@ -39,7 +42,7 @@ Build the current fhir-bridge::
     mvn clean install
 
 IDE
-^^^
+"""
 
 Load project into development environment
 
@@ -60,14 +63,19 @@ The following files must be copied into the respective target directories.
 * FHIR observation sample file (JSON format)
 
   * Target directory :code:`fhir-bridge/src/test/resources/Observation`
-  * Source http://hl7.org/fhir/R4/observation-examples.html
-  * Example http://hl7.org/fhir/R4/observation-example-respiratory-rate.json.html
+  * Source https://simplifier.net/ForschungsnetzCovid-19/~resources?fhirVersion=R4&sortBy=RankScore_desc
+  * You can set a filter to the Examples
+  * Caution: 
+    * the profile must be a profile from simplifier-Covid 19, fitting to the profile you just downloaded
+    * the profile must have a working UUID (like :code:`subject: { reference: Patient/07f602e0-579e-4fe3-95af-381728bf0d49 }`)
+
   
 * Operational template (OPT format)
 
   * Target directory :code:`fhir-bridge/src/main/resources/opt`
   * Source http://88.198.146.13/ckm/projects/1246.152.26/resourcecentre (GECCO Core)
   * Example (The example files are listed in the overview)
+  * Check the OPT in Pablos Tool:  toolkit.cabolabs.com 
   
 * Remember to check the downloaded files for content and syntax errors.
 
@@ -76,9 +84,17 @@ The following files must be copied into the respective target directories.
   * Check for xml: https://xmllint.com/en
   * Check for json: https://jsonlint.com/
 
+Design the mapping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Design the mapping by looking for 1..1 in the Fhir-profile and the fields in the OPT. 
+
+* Example https://drive.google.com/file/d/1naGVhto6efWfF2sDoO86pYTnaUiiMq3J/view?usp=sharing
+
+Do the mapping in code
+^^^^^^^^^^^^^^^^^^^^^^
 
 Structure Definition (Enum)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 
 * Add an entry with the FHIR URL to :code:`src/main/java/org/ehrbase/fhirbridge/fhir/Profile.java`
  
@@ -91,7 +107,7 @@ Structure Definition (Enum)
 
 
 Use the SDK generator to create new classes from the operational template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 
 * (Windows example started from the path :code:``../openEHR_SDK/generator/target`)::
 
@@ -127,7 +143,7 @@ Use the SDK generator to create new classes from the operational template
        
 
 Implement mapping (example breathing rate)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""
 
 * Create a new class in :code:`/fhir-bridge/src/main/java/org/ehrbase/fhirbridge/mapping`
   * :code:`FHIRObservation[MAPPING]Openehr[MAPPING].java`
@@ -138,38 +154,33 @@ Implement mapping (example breathing rate)
 
 
 CreateObservation
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 
-Temporarily and initial
-"""""""""""""""""""""""
+**Temporarily and initial**
+
 
 * In :code:`/fhir-bridge/src/main/java/org/ehrbase/fhirbridge/rest/EhrbaseService.java` create method :code:`save[MAPPING]`
 * Therefore copy and adapt :code:`saveTemp` 
 
-Regularly
-"""""""""
+**Regularly**
+
 
 * In :code:`fhir-bridge/src/main/java/org/ehrbase/fhirbridge/fhir/provider/ObservationResourceProvider.java`
 * Add an :code:`else` branch in the :code:`createObservation` method (
 * Therefore copy and adapt the :code:`BodyTemperature` example
 
 
-Unit test
----------
+Integration test
+^^^^^^^^^^^^^^^^
 
 * Adapt name of the file in json-Example :code:`/fhir-bridge/src/test/resources/Observation/observation-resprate-example.json`
-* Add a test in :code:`/fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationIT.java`
+* Add a test in :code:`/fhir-bridge/src/test/java/org/ehrbase/fhirbridge/FhirBridgeApplicationIT.java` 
 
-  * Therefore copy and adapt the :code:`createBodyTemp` example
+  * Therefore copy and adapt the :code:`createBodyTemp` example in the bottom of the file (for merging reasons)
   
-* Adapt the patient-id in the json-example file::
-
-    "subject": {
-    "reference": "Patient/07f602e0-579e-4fe3-95af-381728bf0d49"
-    },
 
 Upload templates (POSTMAN)
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Download these files: https://github.com/ehrbase/documentation/tree/master/examples
 
@@ -184,7 +195,7 @@ Upload templates (POSTMAN)
 
 
 Test whether the template is available in ehrbase
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Is Site available? Swagger UI http://localhost:8080/ehrbase/swagger-ui.html 
 * Is your template visible?
@@ -194,7 +205,7 @@ Test whether the template is available in ehrbase
   * Response code 200 -> successful
   
 Reintegrate changes into develop
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Check that all your tests run without any failure and you do not have uncommited changes
 * Reintegrate the develop branch before sending your pull request::
@@ -210,6 +221,6 @@ Reintegrate changes into develop
     git commit -m "YOUR MESSAGE"
     git push
 
-* Start a pull-request https://github.com/ehrbase/fhir-bridge/branches  and assign a reviewer
+* Start a pull-request https://github.com/ehrbase/fhir-bridge/branches, assign a reviewer and coordinate a review call if needed
 
    
