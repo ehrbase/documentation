@@ -33,7 +33,7 @@ used to create Archetypes in ADL 1.4:
 
 - `Archetype Editor <https://www.openehr.org/downloads/archetypeeditor/home>`_
 - `LinkEHR Editor <https://linkehr.veratech.es/>`_
-- `ADL Designer <https://ehrscape.marand.si/designerv2/>`_ (web only)
+- `ADL Designer <https://tools.openehr.org/designer/>`_ (web only)
 
 The creation of Archetypes is a topic for itself and we will provide another tutorial. Note, that
 normally system developers should not be too much concerned with the definition and management of 
