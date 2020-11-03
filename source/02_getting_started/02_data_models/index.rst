@@ -34,8 +34,8 @@ on its lifecycle status (published, draft etc.). Choose to get the latest publis
 as export format. Clicking **Bulk Export** will then download a zip folder containing all Archetypes meeting the criteria.   
 
 Next, install the `Template Designer <http://downloads.oceaninformatics.com/downloads/TemplateDesigner/>`_. The process should
-be straight forward (At least on Windows). Alternatively, the `ADL Designer <https://ehrscape.marand.si/designerv2/>`_
-can also be used to create Templates. However, you will need to upload your files or provide them through a git instance.
+be straight forward (At least on Windows). Alternatively, the `ADL Designer <https://tools.openehr.org/designer/>`_
+can also be used to create Templates by following `this guide <https://openehr.atlassian.net/wiki/spaces/healthmod/pages/415465475/Archetype+Designer+-+template+building+manual>`_
 
 Open the Template Designer. The first step is to configure a *Knowledge Repository*. 
 

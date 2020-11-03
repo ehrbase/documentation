@@ -69,7 +69,7 @@ Template. You can think of Templates as data sets that can be used to capture da
 a Template, there are currently two tools available:
 
 - `Template Designer <http://downloads.oceaninformatics.com/downloads/TemplateDesigner/>`_
-- `ADL Designer <https://ehrscape.marand.si/designerv2/>`_ (web only)
+- `ADL Designer <https://tools.openehr.org/designer/>`_ (web only)
 
 We will soonly add another tutorial to give some more details about the creation of Templates.
 The Template Designer and the ADL Designer have an export format called Operational Template (OPT).
