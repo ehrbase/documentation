@@ -14,7 +14,7 @@ development approach based on an adaptive database that can consume new data def
 at runtime. This allows to manage the high complexity of the medical domain. 
 
 As of now, openEHR defines the service access layer based on REST. 
-However, there could be other protocols used in future as the underlying openEHR datamodel 
+However, there could be other protocols used in the future as the underlying openEHR datamodel 
 is agnostic in terms of API definition. The following figure gives a high-level summary
 of the approach:
 
@@ -23,7 +23,7 @@ of the approach:
    :alt: alternate text
    :align: center
 
-Above figure shows the basic concept of separating the clinical definitions on the left side,
+The above figure shows the basic concept of separating the clinical definitions on the left side,
 from the technical implementation inside the platform (which is EHRbase in our case) on the right side.
 
 Domain experts define the clinical information models (called Archetypes), which are re-usable models of 

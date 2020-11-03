@@ -20,7 +20,7 @@ the `International Clinical Knowledge Manager <https://openehr.org/ckm>`_
 
 
 On the left side, you can find different categories of Archetypes, for example observations that
-contain data models like blood pressure, body temperature or glasgow coma scale. For our tutorial,
+contain data models like blood pressure, body temperature or Glasgow coma scale. For our tutorial,
 we want to get a copy of the archetypes from the Clinical Knowledge Manager.
    
 Under Archetypes (marked in the image), you will find a function called *Bulk Export*.
