@@ -114,7 +114,7 @@ So the paths built from the above example would look like:
 :code:`vital_signs/body_temperature/any_event/temperature|magnitude`
 :code:`vital_signs/body_temperature/any_event/temperature|unit`
 
-The value of these above keys would the actual data. Representing this in JSON would look like:
+The value of these above keys would be the actual data. Representing this in JSON would look like:
 
 .. code-block:: JSON
 
@@ -129,7 +129,7 @@ To resolve this, we have to index the path like so:
 :code:`vital_signs/body_temperature:0/any_event:0/temperature|magnitude`
 :code:`vital_signs/body_temperature:0/any_event:0/temperature|unit`
 
-With these paths, and more context data, a composition with multiple recordings of body temperature will look like
+With these paths, and more context data, a composition with multiple recordings of body temperature will look like:
 
 .. code-block:: JSON
 

@@ -35,7 +35,7 @@ as export format. Clicking **Bulk Export** will then download a zip folder conta
 
 Next, install the `Template Designer <http://downloads.oceaninformatics.com/downloads/TemplateDesigner/>`_. The process should
 be straight forward (At least on Windows). Alternatively, the `ADL Designer <https://tools.openehr.org/designer/>`_
-can also be used to create Templates by following `this guide <https://openehr.atlassian.net/wiki/spaces/healthmod/pages/415465475/Archetype+Designer+-+template+building+manual>`_
+can also be used to create Templates by following `this guide <https://openehr.atlassian.net/wiki/spaces/healthmod/pages/415465475/Archetype+Designer+-+template+building+manual>`_.
 
 Open the Template Designer. The first step is to configure a *Knowledge Repository*. 
 
