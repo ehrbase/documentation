@@ -1,0 +1,111 @@
+.. _h-what-is-reference-label:
+
+####################################
+Release Notes EHRbase 0.14.0 (beta)
+####################################
+
+This release of EHRbase (v0.14.0, October 1st 2020) is the second beta release.
+
+The following changes are included in this version:
+
+Added
+*****
+
+- Add admin template API functionality (see: https://github.com/ehrbase/ehrbase/pull/301)
+- Add admin API endpoint stubs (see: https://github.com/ehrbase/ehrbase/pull/280)
+- Add support for FeederAudit in Locatable. Refactored Composition Serializer for DB encoding (see https://github.com/ehrbase/ehrbase/tree/feature/311_feeder_audit, https://github.com/ehrbase/openEHR_SDK/tree/feature/311_feeder_audit)
+- Change the strategy to resolve CONTAINS in AQL (https://github.com/ehrbase/ehrbase/pull/276)
+- Persist caches to java.io.tmpdir  (see: https://github.com/ehrbase/ehrbase/pull/308)
+- Precalculate containment tree from OPT template (see https://github.com/ehrbase/ehrbase/pull/312) 
+
+Changed
+*******
+
+- Detection of duplicate directories on EHR on POST
+- Using ObjectVersionId for DIRECTORY Controller and Service Layers (see: https://github.com/ehrbase/ehrbase/pull/297)
+- Added Junit5 support via spring-boot-starter-test (https://github.com/ehrbase/ehrbase/pull/298)
+- Enable cartesian products on embedded arrays in JSONB (see https://github.com/ehrbase/ehrbase/pull/309)
+- Use new OPT-Parser from sdk (see https://github.com/ehrbase/ehrbase/pull/314)
+- Add CORS config to enable clients to detect auth method (see https://github.com/ehrbase/ehrbase/pull/354)
+
+Fixed
+*****
+
+- Detect duplicates on POST Directory (see: https://github.com/ehrbase/ehrbase/pull/281)
+- Support context-less composition (see: https://github.com/ehrbase/ehrbase/pull/288)
+- Fixed missing AQL level of parenthesis when using NOT in WHERE clause (see https://github.com/ehrbase/ehrbase/pull/293)
+- Allow duplicated paths in AQL resultsets (see: https://github.com/ehrbase/ehrbase/issues/263)
+- Transaction timestamps are now truncated to ms (see: https://github.com/ehrbase/ehrbase/pull/299)
+- Change response code on not found directory to 412 if not found (see: https://github.com/ehrbase/ehrbase/pull/304)
+ 
+General Features
+****************
+
+- openEHR Reference Model Version 1.0.4
+- Serialisation of Reference Model Objects in Canonical JSON and XML 
+- Archetype Definition Language 1.4
+- Data Validation against Operational Templates
+- openEHR REST API Endpoints (see below for details)
+
+
+openEHR REST API 
+^^^^^^^^^^^^^^^^
+
+Based on the `official openEHR REST API <https://specifications.openehr.org/releases/ITS-REST/latest/>`_ the following endpoints are implemented:
+
+- EHR (CREATE EHR, CREATE EHR with Id)
+- EHR_STATUS
+- COMPOSITION (Create, Update, Delete, Get Composition by Version Id, Get composition at time)
+- CONTRIBUTION (Create, Get of compositions. Other versioned object like EHR_STATUS coming soonly)
+- DIRECTORY (Create, Update, Delete, Get folder in directory version, get folder in directory version at time)
+- QUERY (Execute ad-hoc (non-stored) AQL Query, Execute stored query, parameters))
+- STORED_QUERY (List Stored Queries, Store a query, Get stored query, delete, parameters)
+- ADL 1.4 TEMPLATE (Upload a Template, List Templates, Get Template)
+
+.. note::  The Swagger UI is generally WIP and currently does not distinguish between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
+
+.. note::  The data format for contributions sent through the REST API is not yet defined in the openEHR. Please refer to the examples. Also note that the format might be subject of change.   
+
+Conformance Tests 
+^^^^^^^^^^^^^^^^^
+
+EHRbase ships with a set of tests verifying the conformance with the openEHR REST API. For now the tests include the following endpoints: 
+
+- EHR
+- EHR_STATUS
+- COMPOSITION
+- CONTRIBUTION
+- ADL 1.4 TEMPLATE
+- DIRECTORY
+- QUERY
+
+
+What (basic) features you might miss
+************************************
+- VERSIONED_OBJECT Endpoints are not implemented
+- EHR functions like is_modifyable and is_queryable are not yet supported
+
+Known Issues
+************
+
+As EHRbase is still in alpha status, there are plenty of known issues. If you try things out, please be aware that the 
+following issues are known and documented: 
+
+Archetype Query Language 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ehr e projection not supported
+
+- Not supported variables in archetype_id predicates
+
+.. code-block:: sql
+
+   select e/ehr_id/value, e/time_created/value, e/system_id/value from EHR 
+   e CONTAINS COMPOSITION c [$archetype_id]
+   
+- TIMEWINDOW keyword is not supported
+
+.. code-block:: sql
+
+   SELECT e/ehr_id/value FROM EHR e TIMEWINDOW PT12H/2019-10-24
+
