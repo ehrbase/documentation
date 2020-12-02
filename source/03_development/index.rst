@@ -15,3 +15,4 @@ documents the software in detail.
    04_docker_images/index
    05_technical_docs/index
    06_security/index
+   07_admin/index
