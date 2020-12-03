@@ -41,7 +41,7 @@ The response will be formatted as follows:
 
 **Status Codes**
 
-Depending on several request conditions or errors during the request handling there will be on of the following status codes returned:
+Depending on several request conditions or errors during the request handling there will be one of the following status codes returned:
 
 .. csv-table::
     :header: "Code", "Cause/Meaning"
@@ -128,7 +128,7 @@ There are no extra headers returned
 
 **Status Codes**
 
-Depending on several request conditions or errors during the request handling there will be on of the following status codes returned:
+Depending on several request conditions or errors during the request handling there will be one of the following status codes returned:
 
 .. csv-table::
     :header: "Code", "Cause/Meaning"
