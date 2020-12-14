@@ -16,3 +16,4 @@ documents the software in detail.
    05_technical_docs/index
    06_security/index
    07_admin/index
+   08_status_and_metrics/index

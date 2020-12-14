@@ -43,7 +43,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.imgmath',
     'sphinx.ext.githubpages',
-	'sphinx_rtd_theme'
+    'sphinx_rtd_theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -186,7 +186,8 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'https://docs.python.org/': None,
+                       'admin-security': ('03_development/07_admin/00_security', None)}
 
 # -- Options for todo extension ----------------------------------------------
 
