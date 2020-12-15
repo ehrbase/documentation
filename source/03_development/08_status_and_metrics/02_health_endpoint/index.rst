@@ -16,7 +16,7 @@ enabled* to **true** and re-build and re-start EHRbase.
 
 An example response for health on Kubernetes would look like this:
 
-.. image:: ../../../images/status_health_example_response.png
+.. image:: ./images/status_health_example_response.png
 
 This example also contains the output of the probes for liveness and readiness. If the status equals
 **UP** the probe reports success.

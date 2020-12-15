@@ -14,7 +14,7 @@ for more detailed metrics that have to be requested in a separate request.
 
 Example output:
 
-.. image:: ../../../images/status_metrics_example_response.png
+.. image:: ./images/status_metrics_example_response.png
 
 You can use the values from this list in a further request as the sub-path of metrics and you
 will get the detailed metric for that point.
@@ -22,7 +22,7 @@ will get the detailed metric for that point.
 As an example you can use the path **http.server.reqests** to get information on all serves http
 requests as shown below:
 
-.. image:: ../../../images/status_metric_http_example_response.png
+.. image:: ./images/status_metric_http_example_response.png
 
 This example shows also a list of available tags. If you see a list you can filter and aggregate
 the resuklts by using query paramerters on the same metric.
@@ -30,6 +30,6 @@ the resuklts by using query paramerters on the same metric.
 In our example we can also apply a filter for all unauthorized request by adding the tag like this:
 **/status/metrics/http.server.requests?tag=status:401** which could look like this:
 
-.. image:: ../../../images/status_metric_http_tag_example_response.png
+.. image:: ./images/status_metric_http_tag_example_response.png
 
 You can find more information on using tags on metrics in the `official documentation <https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics-endpoint>`_.

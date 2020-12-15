@@ -46,17 +46,22 @@ build your own image form Dockerfile:
 .. csv-table::
    :header: "Parameter", "Usage", "Example"
 
-    DB_URL,                     Database URL. Must point to the running database server.,    jdbc:postgresql://ehrdb:5432/ehrbase
-    DB_USER,                    Database user configured for the ehr schema.,                ehrbase
-    DB_PASS,                    DB user password,                                            ehrbase
-    SYSTEM_NAME,                Name of local system,                                        local.ehrbase.org
-    SECURITY_AUTHTYPE,          HTTP security method,                                        BASIC / OAUTH
-    SECURITY_AUTHUSER,          BASIC Auth username,                                         myuser
-    SECURITY_AUTHPASSWORD,      BASIC Auth password,                                         myPassword432
-    SECURITY_AUTHADMINUSER,     BASIC auth admin user,	                                     myadmin
-    SECURITY_AUTHADMINPASSWORD, BASIC auth admin password,                                   mySuperAwesomePassword123
-    ADMINAPI_ACTIVE,            Should admin endpoints be enabled,                           true / false
-    ADMINAPI_ALLOWDELETEALL,    Allow admin to delete all resources - i.e. all EHRs,         true / false
+    DB_URL,                                 Database URL. Must point to the running database server.,    jdbc:postgresql://ehrdb:5432/ehrbase
+    DB_USER,                                Database user configured for the ehr schema.,                ehrbase
+    DB_PASS,                                DB user password,                                            ehrbase
+    SYSTEM_NAME,                            Name of local system,                                        local.ehrbase.org
+    SECURITY_AUTHTYPE,                      HTTP security method,                                        BASIC / OAUTH
+    SECURITY_AUTHUSER,                      BASIC Auth username,                                         myuser
+    SECURITY_AUTHPASSWORD,                  BASIC Auth password,                                         myPassword432
+    SECURITY_AUTHADMINUSER,                 BASIC auth admin user,	                                      myadmin
+    SECURITY_AUTHADMINPASSWORD,             BASIC auth admin password,                                   mySuperAwesomePassword123
+    ADMINAPI_ACTIVE,                        Should admin endpoints be enabled,                           true / false
+    ADMINAPI_ALLOWDELETEALL,                Allow admin to delete all resources - i.e. all EHRs,         true / false
+    MANAGEMENT_ENDPOINT_ENV_ENABLE,         Enable /status/env endpoint from actuator                    true / false
+    MANAGEMENT_ENDPOINT_HEALTH_ENABLE,      Enable /status/health endpoint from actuator               true / false
+    MANAGEMENT_ENDPOINT_INFO_ENABLE,        Enable /status/info endpoint from actuator                   true / false
+    MANAGEMENT_ENDPOINT_METRICS_ENABLE,     Enable /status/metrics endpoint from actuator             true / false
+    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLE,  Enable /status/prometheus endpoint from actuator       true / false
 
 
 .. note::

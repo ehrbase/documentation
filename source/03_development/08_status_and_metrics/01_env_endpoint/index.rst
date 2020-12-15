@@ -10,5 +10,5 @@ as information on the Java Runtime Executable.
 
 An example response on a Windows system running EHRbase could look like this:
 
-.. image:: ../../../images/status_env_example_response.png
+.. image:: ./images/status_env_example_response.png
 
