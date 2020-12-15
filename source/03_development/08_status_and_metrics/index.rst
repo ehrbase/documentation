@@ -34,9 +34,10 @@ status API and all sub endpoints are available at "https://api.ehrbase.org/ehrba
    :name: Status and Metrics
    :maxdepth: 2
 
-   00_security/index
-   01_env_endpoint/index
-   02_health_endpoint/index
-   03_info_endpoint/index 
-   04_metrics_endpoint/index
-   05_prometheus_endpoint/index
+   security/index
+   usage/index
+   env_endpoint/index
+   health_endpoint/index
+   info_endpoint/index 
+   metrics_endpoint/index
+   prometheus_endpoint/index
