@@ -3,8 +3,8 @@ Run DB with default parameters
 
 .. code-block:: bash
 
-    docker pull ehrbaseorg/ehrbase-database-docker:11.5
-    docker run --name ehrdb -d -p 5432:5432 ehrbaseorg/ehrbase-database-docker:11.5
+    docker pull ehrbase/ehrbase-postgres:11.10
+    docker run --name ehrdb -d -p 5432:5432 ehrbase/ehrbase-postgres:11.10
 
 
 

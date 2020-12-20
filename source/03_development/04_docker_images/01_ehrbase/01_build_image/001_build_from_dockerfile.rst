@@ -21,7 +21,7 @@ EHRbase's Dockerfile defines some environent variables with default values which
 
 .. code-block:: bash
 
-    docker run ehrbaseorg/ehrbase
+    docker run ehrbase/ehrbase
 
 the running Docker container will have environent variables with default values as shown in code snippet from related part of Dockerfile below:
 
@@ -53,7 +53,7 @@ The values of all `ARG(s)` can be overwritten during image build time to adjust 
                  --build-arg SYSTEM_NAME=your-system-name \
                  -t give-your-image-a-name:and-tag .
 
-In addition to overriding default ENV values during build time it is also possible to override ENV values and even add new ENVs to a container's run time. Check next example (which assumes you pulled or created an image named `ehrbaseorg/ehrbase`):
+In addition to overriding default ENV values during build time it is also possible to override ENV values and even add new ENVs to a container's run time. Check next example (which assumes you pulled or created an image named `ehrbase/ehrbase`):
 
 .. code-block:: bash
 
@@ -61,7 +61,7 @@ In addition to overriding default ENV values during build time it is also possib
                -e DB_USER=foouser \
                -e DB_PASS=foopass \
                -e SYSTEM_NAME=what.ever.org \
-               ehrbaseorg/ehrbase
+               ehrbase/ehrbase
 
 
 

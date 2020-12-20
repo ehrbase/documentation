@@ -10,7 +10,7 @@ To run EHRbase in a Docker Container first pull the official Docker image from D
 
 .. code-block:: bash
 
-    docker pull ehrbaseorg/ehrbase
+    docker pull ehrbase/ehrbase
 
 
 **OR**
@@ -40,7 +40,7 @@ build your own image form Dockerfile:
                -e DB_PASS=foopass \
                -e SYSTEM_NAME=what.ever.org \
                -p 8080:8080 \
-               ehrbaseorg/ehrbase
+               ehrbase/ehrbase
 
 
 .. csv-table::

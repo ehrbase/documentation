@@ -18,7 +18,7 @@ start the EHRbase with an environment variable per endpoint you want to enable.
 
 .. code-block:: bash
    
-   $~/: docker run -e MANAGEMENT_ENDPOINT_ENV_ENABLE=true --name ehrbase --network ehrbase-net -p 8080:8080 -d ehrbaseorg/ehrbase:latest
+   $~/: docker run -e MANAGEMENT_ENDPOINT_ENV_ENABLE=true --name ehrbase --network ehrbase-net -p 8080:8080 -d ehrbase/ehrbase:latest
 
 The following table lists all available endpoints that can be enabled with environment variables:
 
