@@ -6,3 +6,4 @@ This part of the documentation explains how to run EHRbase as a Docker Container
 
 
 .. include:: 002_using_docker_image.rst
+.. include:: 002_docker_environment_examples.rst
