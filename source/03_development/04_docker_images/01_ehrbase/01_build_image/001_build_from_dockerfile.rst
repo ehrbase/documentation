@@ -33,14 +33,13 @@ the running Docker container will have environent variables with default values 
     ARG DB_USER="ehrbase"
     ARG DB_PASS="ehrbase"
     ARG SYSTEM_NAME=docker.ehrbase.org
-    ARG SECURITY_AUTHTYPE=NONE
-
+    
     ENV EHRBASE_VERSION=${EHRBASE_VERSION}
     ENV DB_USER=$DB_USER
     ENV DB_PASS=$DB_PASS
     ENV DB_URL=$DB_URL
     ENV SYSTEM_NAME=$SYSTEM_NAME
-    ENV SECURITY_AUTHTYPE=$SECURITY_AUTHTYPE
+    ENV SECURITY_AUTHTYPE="NONE"
     ...
 
 The values of all `ARG(s)` can be overwritten during image build time to adjust default (run time) behaviour of your custom Docker image. Use `--build-arg ARG_name=value` to override default values when building your image. See example below:
