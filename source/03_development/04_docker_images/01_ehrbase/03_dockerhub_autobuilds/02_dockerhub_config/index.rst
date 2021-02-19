@@ -13,8 +13,6 @@ Docker Hub Configuration
    :target: images/dockerhub_config_1.png
    :alt: Connect Docker Hub with your Github Org
 
-.. warning:: It is not sufficient to connect the tech-user although he has owner privileges in EHRbase Organisation. Once the connection by "real" owner is established everything else can be configured with the tech-user login to Docker Hub (docker.com)
-
 .. image:: images/dockerhub_config_2.png
    :target: images/dockerhub_config_2.png
    :alt: Use the real owner of the Github Org or repository to establish connection
