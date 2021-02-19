@@ -6,8 +6,8 @@ Docker Hub Configuration
 
 1. Create a Dockerfile in root of Github repository
 2. Login to Docker Hub (docker.com) with the tech-user
-3. Login to Github as the "real" owner of the Organisation
-4. Connect the "real" owner to Docker Hub granting access to EHRbase Organisation to enable Autobuilds
+3. Login to Github with the tech-user (he has owner access to the Organisation)
+4. Connect tech-user to Docker Hub granting access to EHRbase Organisation to enable Autobuilds
 
 .. image:: images/dockerhub_config_1.png
    :target: images/dockerhub_config_1.png
