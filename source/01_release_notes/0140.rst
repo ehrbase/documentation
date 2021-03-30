@@ -88,7 +88,7 @@ What (basic) features you might miss
 Known Issues
 ************
 
-As EHRbase is still in alpha status, there are plenty of known issues. If you try things out, please be aware that the 
+As EHRbase is still in beta status, there are some known issues. If you try things out, please be aware that the 
 following issues are known and documented: 
 
 Archetype Query Language 
@@ -108,4 +108,3 @@ Archetype Query Language
 .. code-block:: sql
 
    SELECT e/ehr_id/value FROM EHR e TIMEWINDOW PT12H/2019-10-24
-
