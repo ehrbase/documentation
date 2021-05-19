@@ -39,3 +39,20 @@ Run the docker image with this setting.
 
 You have to prepare the authentication server including a valid client at the target server to
 get this setup run.
+
+Use OAuth2 and Attribute-based Access Control
+---------------------------------------------
+
+Run the docker image with this setting.
+
+.. code-block:: bash
+
+  docker run --network ehrbase-net --name ehrbase 
+  -e SECURITY_AUTHTYPE=OAUTH \
+  -e SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI=https://keycloak.example.com/auth/realms/ehrbase \
+  -e ABAC_ENABLED=true
+  -e ABAC_SERVER=http://localhost:3001/rest/v1/policy/execute/name/
+  -d -p 8080:8080 ehrbase/ehrbase:latest
+
+Additionally, add the configuration of the endpoints and policies either here with additional -e parameters
+or more user-friendly in a separate docker-compose.yml file.
