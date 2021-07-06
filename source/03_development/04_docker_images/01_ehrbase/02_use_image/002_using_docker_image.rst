@@ -49,7 +49,7 @@ build your own image form Dockerfile:
     DB_URL,                                 Database URL. Must point to the running database server.,    jdbc:postgresql://ehrdb:5432/ehrbase
     DB_USER,                                Database user configured for the ehr schema.,                ehrbase
     DB_PASS,                                DB user password,                                            ehrbase
-    SERVER_NODENAME,                        Name of local system,                                        local.ehrbase.org
+    SERVER_NODENAME,                        Name of the server,                                          local.ehrbase.org
     SECURITY_AUTHTYPE,                      HTTP security method,                                        BASIC / OAUTH
     SECURITY_AUTHUSER,                      BASIC Auth username,                                         myuser
     SECURITY_AUTHPASSWORD,                  BASIC Auth password,                                         myPassword432
