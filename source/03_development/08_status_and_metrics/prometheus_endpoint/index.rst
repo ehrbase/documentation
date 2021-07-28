@@ -1,5 +1,5 @@
 ******************
-/status/prometheus
+/management/prometheus
 ******************
 
 .. note:: Added in EHRbase version 0.15.0

@@ -1278,12 +1278,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}"
 									]
@@ -1304,12 +1304,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}"
 									]
@@ -1338,12 +1338,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}/composition/:composition_id",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}/composition/:composition_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}",
 										"composition",
@@ -1392,12 +1392,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}/contribution/:contribution_id",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}/contribution/:contribution_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}",
 										"contribution",
@@ -1427,12 +1427,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}/contribution/:contribution_id",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}/contribution/:contribution_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}",
 										"contribution",
@@ -1469,12 +1469,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/ehr/{{ehr_id}}/directory/:directory_id",
+									"raw": "{{admin_api_uri}}/ehr/{{ehr_id}}/directory/:directory_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"ehr",
 										"{{ehr_id}}",
 										"directory",
@@ -1523,12 +1523,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{api_uri}}/admin/template/:template_id",
+									"raw": "{{admin_api_uri}}/template/:template_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"template",
 										":template_id"
 									],
@@ -1556,12 +1556,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/template/:template_id",
+									"raw": "{{admin_api_uri}}/template/:template_id",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"template",
 										":template_id"
 									],
@@ -1589,12 +1589,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_uri}}/admin/template/all",
+									"raw": "{{admin_api_uri}}/template/all",
 									"host": [
-										"{{api_uri}}"
+										"{{admin_api_uri}}"
 									],
 									"path": [
-										"admin",
+
 										"template",
 										"all"
 									]
@@ -1619,12 +1619,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_uri}}/admin/status",
+							"raw": "{{admin_api_uri}}/status",
 							"host": [
-								"{{api_uri}}"
+								"{{admin_api_uri}}"
 							],
 							"path": [
-								"admin",
+
 								"status"
 							]
 						},
