@@ -25,18 +25,18 @@ The following table lists all available endpoints that can be enabled with envir
 .. csv-table::
    :header: "Parameter", "Usage", "Example"
 
-    MANAGEMENT_ENDPOINT_ENV_ENABLED,         Enable /status/env endpoint from actuator,                  true / false
-    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,      Enable /status/health endpoint from actuator,               true / false
-    MANAGEMENT_ENDPOINT_INFO_ENABLED,        Enable /status/info endpoint from actuator,                 true / false
-    MANAGEMENT_ENDPOINT_METRICS_ENABLED,     Enable /status/metrics endpoint from actuator,              true / false
-    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED,  Enable /status/prometheus endpoint from actuator,           true / false
+    MANAGEMENT_ENDPOINT_ENV_ENABLED,         Enable /management/env endpoint from actuator,                  true / false
+    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,      Enable /management/health endpoint from actuator,               true / false
+    MANAGEMENT_ENDPOINT_INFO_ENABLED,        Enable /management/info endpoint from actuator,                 true / false
+    MANAGEMENT_ENDPOINT_METRICS_ENABLED,     Enable /management/metrics endpoint from actuator,              true / false
+    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED,  Enable /management/prometheus endpoint from actuator,           true / false
 
 Additionally you can configure the following actuator settings if required:
 
 .. csv-table::
    :header: "Parameter", "Usage", "Example"
 
-   MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLE, Enable Kubernetes probe endpoints /status/health/liveness and /status/health/readiness explicit in non Kubernetes environments, true/false
+   MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLE, Enable Kubernetes probe endpoints /management/health/liveness and /management/health/readiness explicit in non Kubernetes environments, true/false
    MANAGEMENT_ENDPOINTS_WEB_EXPOSUSE,        Expose enabled endpoint to clients. Only set if required,   env,health,info
-   MANAGEMENT_ENDPOINTS_WEB_BASEPATH,        Change base path for all endpoints,                         /status
+   MANAGEMENT_ENDPOINTS_WEB_BASEPATH,        Change base path for all endpoints,                         /management
 

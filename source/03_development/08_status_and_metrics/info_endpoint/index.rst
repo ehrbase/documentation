@@ -1,5 +1,5 @@
 *********************
-/status/info
+/management/info
 *********************
 
 .. note:: Added in EHRbase version 0.15.0
@@ -11,5 +11,5 @@ include this version when creating a bug issue in any EHRbase related project.
 
 This is an example response for the info service:
 
-.. image:: ./images/status_info_example_response.png
+.. image:: ./images/management_info_example_response.png
 

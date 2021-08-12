@@ -26,9 +26,9 @@ Another possible use case could be detection of attacks against the EHRbase serv
 high occurrence of authorization client errors. 
 As you see there are many things you can do with these endpoints.
 
-The Status and Metrics API interface is available at the "/status" resource which will be appended 
+The Status and Metrics API interface is available at the "/management" resource which will be appended
 to the base URL of the ehrbase instance. E.g. if EHRbase is running at "https://api.ehrbase.org" the
-status API and all sub endpoints are available at "https://api.ehrbase.org/ehrbase/status".
+status API and all sub endpoints are available at "https://api.ehrbase.org/ehrbase/management".
 
 .. toctree::
    :name: Status and Metrics
