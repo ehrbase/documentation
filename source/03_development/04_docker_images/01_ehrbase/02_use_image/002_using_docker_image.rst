@@ -57,11 +57,12 @@ build your own image form Dockerfile:
     SECURITY_AUTHADMINPASSWORD,             BASIC auth admin password,                                   mySuperAwesomePassword123
     ADMINAPI_ACTIVE,                        Should admin endpoints be enabled,                           true / false
     ADMINAPI_ALLOWDELETEALL,                Allow admin to delete all resources - i.e. all EHRs,         true / false
-    MANAGEMENT_ENDPOINT_ENV_ENABLED,        Enable /management/env endpoint from actuator                    true / false
-    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,     Enable /management/health endpoint from actuator               true / false
-    MANAGEMENT_ENDPOINT_INFO_ENABLED,       Enable /management/info endpoint from actuator                   true / false
-    MANAGEMENT_ENDPOINT_METRICS_ENABLED,    Enable /management/metrics endpoint from actuator             true / false
-    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED, Enable /management/prometheus endpoint from actuator       true / false
+    MANAGEMENT_ENDPOINT_ENV_ENABLED,        Enable /management/env endpoint from actuator,               true / false
+    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,     Enable /management/health endpoint from actuator,            true / false
+    MANAGEMENT_ENDPOINT_INFO_ENABLED,       Enable /management/info endpoint from actuator,              true / false
+    MANAGEMENT_ENDPOINT_METRICS_ENABLED,    Enable /management/metrics endpoint from actuator,           true / false
+    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED, Enable /management/prometheus endpoint from actuator,        true / false
+    SERVER_DISABLESTRICTVALIDATION,         Disable strict validation of openEHR input,                  true / false
 
 
 .. note::
