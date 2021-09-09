@@ -9,7 +9,7 @@ The following pages show the release notes
 .. toctree::
    :name: Development
    :maxdepth: 3
-
+   0172.rst
    0171.rst
    0160.rst
    0150.rst
