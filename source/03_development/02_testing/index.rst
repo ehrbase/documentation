@@ -2,9 +2,6 @@
 Testing
 *******
 
-.. warning:: WIP
-
-For the moment, please see the `EHRbase GitHub repository <https://github.com/ehrbase/ehrbase/tree/develop/tests>`_
-for testing information.
-
-.. include:: 00_continuous_integration.rst
+.. include:: 00_integration_tests.rst
+.. include:: security_tests.rst
+.. include:: continuous_integration.rst
