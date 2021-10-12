@@ -1,5 +1,9 @@
 .. role:: raw-html-m2r(raw)
    :format: html
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
 
 
 EHRbase Integration Tests with Robot Framework :raw-html-m2r:`<!-- omit in toc -->`
@@ -39,17 +43,18 @@ Prerequisites
 
 1) Docker, Java 11 & Maven, Python 3.7+ & Pip are installed
 2) Robot Framework & dependencies are installed (\ ``pip install -r requirements.txt``\ )
-3) Build artefacts created (\ ``mvn package`` --> application/target/application-x.xx.x.jar)
-3) ⚠️ **No DB / no server running!**
-4) ⚠️ ports ``8080`` and ``5432`` not used by any other application! (check it w/ ``netstat -tulpn``\ )
+3) Build artefacts created (\ ``mvn package`` --> application/target/application-x.xx.x.jar) |br|
+4) ⚠️ **No DB / no server running!** |br|
+5) ⚠️ ports ``8080`` and ``5432`` not used by any other application! (check it w/ ``netstat -tulpn``\ )
 
 Test Environment & SUT
 ----------------------
 
-The test environment of this project consists of three main parts
-1) EHRbase OpenEHR server (application-*.jar)
-2) PostgreSQL database
-3) OS with Docker, Java runtime, Python runtime, Robot Framework (generic test automation framework)
+The test environment of this project consists of three main parts |br|
+|br|
+1) EHRbase OpenEHR server (application-*.jar) |br|
+2) PostgreSQL database |br|
+3) OS with Docker, Java runtime, Python runtime, Robot Framework (generic test automation framework) |br|
 
 Let's refer to the first two parts as the SUT (system under test). The tests are implemented in a way that by default Robot Framework (RF) will take control of the SUT. That means to execute the tests locally all you have to do is to ensure your host machine meets required `prerequisites <#prerequisites>`_. RF will take care of properly starting up, restarting and shutting down SUT as it is required for test execution. There is an option to hand over control of SUT to you, though - described in section `Manually Controlled SUT <#manually-controlled-sut>`_.
 
@@ -144,8 +149,7 @@ In case you don't want Robot to start up and shut down server and database for y
    ⚠️
 
 
-Usage examples:
-^^^^^^^^^^^^^^^
+**Usage Examples:**
 
 .. code-block::
 
@@ -178,8 +182,7 @@ Remote SUT / OR how to execute the tests against other systems
 
 All integration tests in this repository can be executed against other (possiblty remotely accessible) OpenEHR conform systems (other than EHRbase). Here we will demonstrate how to run the test against your own remote system. We'll use EHRSCAPE as an example configuration. If you don't have access to EHRSCAPE you'll have to adjust related parts to your needs.
 
-Preconditions
-^^^^^^^^^^^^^
+**Preconditions**
 
 1) the following environment variables have to be available:
 
@@ -197,8 +200,7 @@ Preconditions
    cd tests
    pip install -r requirements.txt
 
-Customize your configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Customize your configuration**
 
 Open **tests/robot/_resources/suite_settings.robot** and adjust the following part to your needs if you don't have access to EHRSCAPE. If you do any changes here, remember to adjust your environment variables in step 1)
 
@@ -212,8 +214,7 @@ Open **tests/robot/_resources/suite_settings.robot** and adjust the following pa
    ...                     CONTROL=NONE
    @{scapecreds}           %{EHRSCAPE_USER}    %{EHRSCAPE_PASSWORD}
 
-Execute test against EHRSCAPE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Execute test against EHRSCAPE**
 
 The only difference in contrast to normal execution is that you now want to specify that EHRSCAPE configuration from suite_settings.robot should be used. This is done by setting ``SUT`` variable to ``EHRSCAPE`` which you can achieve by passing ``-v SUT:EHRSCAPE`` when calling ``robot``. Check examples below.
 

@@ -1,24 +1,20 @@
-
-A little documentation for my future me (cause I really don't want to go
-through that f:rage: keycloak documentation ever again)
-
 RESTORE KEYCLOAK FROM PREVIOUSLY EXPORTED CONFIGURATION
 =======================================================
 
-(run all commands listed below from within this folder)
+(run all commands listed below from I_OAuth2_Keycloak folder)
 
 1) START KC W/ A MOUNTED VOLUME
 
 .. code-block::
 
-   ```bash
+
    docker run -d --name keycloak \
        -p 8081:8080 \
        -v $(pwd)/exported-keycloak-config:/restore-keycloak-config \
        -e KEYCLOAK_USER=admin \
        -e KEYCLOAK_PASSWORD=admin \
        jboss/keycloak:10.0.2
-   ```
+
 
 
 
@@ -26,7 +22,6 @@ RESTORE KEYCLOAK FROM PREVIOUSLY EXPORTED CONFIGURATION
 
 .. code-block::
 
-   ```bash
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
        -Dkeycloak.migration.action=import \
@@ -34,13 +29,14 @@ RESTORE KEYCLOAK FROM PREVIOUSLY EXPORTED CONFIGURATION
        -Dkeycloak.profile.feature.upload_scripts=enabled \
        -Dkeycloak.migration.dir=/restore-keycloak-config \
        -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
-   ```
 
 
-   When the import is complete use Ctrl-C to exit the session.
+
+
+When the import is complete use Ctrl-C to exit the session.
 
 NOTE: This is a minimal setup using Keycloak's embedded H2 DB which is just enough for testing.
-      It's probably a good idea not to use this in production :)
+It's probably a good idea not to use this in production :)
 
 If you ever have to reconfigure Keycloak Docker setup manually and to recreate the export
 follow the steps below:
@@ -52,20 +48,19 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
 
 .. code-block::
 
-   ```bash
+
    docker run -d --name keycloak \
    -p 8081:8080 \
    -v $(pwd)/exported-keycloak-config:/restore-keycloak-config \
    -e KEYCLOAK_USER=admin \
    -e KEYCLOAK_PASSWORD=admin \
    jboss/keycloak:10.0.2
-   ```
+
 
 
 
 2) LOGIN AS ADMIN AND CONFIGURE KC TO YOUR NEEDS
 
-.. code-block::
 
    - a) create realm: ehrbase
    - b) create client: ehrbase-robot
@@ -73,7 +68,7 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
        - 'Access Type' is set to **public**
        - 'Direct Access Grants Enabled' is set to **ON**
 
-   - c) create user: robot w/ passwort robot
+   - c) create user: robot w/ password robot
 
 
 
@@ -81,7 +76,7 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
 
 .. code-block::
 
-   ```bash
+
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
        -Dkeycloak.migration.action=export \
@@ -89,39 +84,40 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
        -Dkeycloak.migration.dir=/opt/jboss/keycloak/export-dir \
        -Dkeycloak.migration.usersPerFile=1000 \
        -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
-   ```
 
 
 
-   When the export is complete use Ctrl-C to exit the session.
-   The export is complete when you see something like
+
+
+When the export is complete use Ctrl-C to exit the session.
+The export is complete when you see something like
 
 .. code-block::
 
-   ```
+
    Keycloak 10.0.2 (WildFly Core 11.1.1.Final) started in 11390ms - 
    Started 591 of 889 services (606 services are lazy, passive or on-demand)
-   ```
+
 
 
 4) COPY EXPORTED CONFIGURATION FROM CONTAINER TO YOUR HOST
 
 .. code-block::
 
-   ```bash
+
    docker cp keycloak:/opt/jboss/keycloak/export-dir ./exported-keycloak-config
-   ```
 
 
-   optional
-    before copying check the folder exists and contains exported config files:
+
+
+optional before copying check the folder exists and contains exported config files:
 
 .. code-block::
 
-   ```bash
+
    docker exec -it keycloak bash
    ls /opt/jboss/keycloak/export-dir
-   ```
+
 
 
 
@@ -135,14 +131,14 @@ to export complete KC configuration into a single JSON file:
 
 .. code-block::
 
-   ```bash
+
    docker run -d --name keycloak \
        -p 8081:8080 \
        -v $(pwd):/workspace \
        -e KEYCLOAK_USER=admin \
        -e KEYCLOAK_PASSWORD=admin \
        jboss/keycloak:10.0.2
-   ```
+
 
 
 
@@ -152,24 +148,24 @@ to export complete KC configuration into a single JSON file:
 
    Then export your database into a single JSON file:
 
-   ```bash
+
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
        -Dkeycloak.migration.action=export \
        -Dkeycloak.migration.provider=singleFile \
        -Dkeycloak.migration.file=/workspace/exported-kc-config-single-file/keycloak-export.json
        -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
-   ```
+
 
 
 
 3) IMPORT FROM THE COMMAND LINE
 
+Start with a blank canvas ...
+
+
 .. code-block::
 
-   Start with a blank canvas ...
-
-   ```bash
    docker container stop keycloak
    docker container rm keycloak
 
@@ -179,19 +175,22 @@ to export complete KC configuration into a single JSON file:
        -e KEYCLOAK_USER=admin \
        -e KEYCLOAK_PASSWORD=admin \
        jboss/keycloak:10.0.2
-   ```
 
-   To import from a (previously exported) file into your database ...
 
-   ```bash
+
+To import from a (previously exported) file into your database ...
+
+.. code-block::
+
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
        -Dkeycloak.migration.action=import \
        -Dkeycloak.migration.provider=singleFile \
        -Dkeycloak.migration.file=/workspace/exported-kc-config-single-file/keycloak-export.json
-   ```
 
-   When the import is complete use Ctrl-C to exit the session.
+
+
+When the import is complete use Ctrl-C to exit the session.
 
 
 
