@@ -5,7 +5,7 @@ RESTORE KEYCLOAK FROM PREVIOUSLY EXPORTED CONFIGURATION
 
 1) START KC W/ A MOUNTED VOLUME
 
-.. code-block::
+.. code-block:: bash
 
 
    docker run -d --name keycloak \
@@ -20,7 +20,7 @@ RESTORE KEYCLOAK FROM PREVIOUSLY EXPORTED CONFIGURATION
 
 2) RESTORE CONFIG FROM DIRECTORY
 
-.. code-block::
+.. code-block:: bash
 
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
@@ -46,7 +46,7 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
 
 1) START KC W/ A MOUNTED VOLUME
 
-.. code-block::
+.. code-block:: bash
 
 
    docker run -d --name keycloak \
@@ -74,7 +74,7 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
 
 3) EXPORT CONFIGURATION INTO MULTIPLE FILES WITHIN A DIRECTORY
 
-.. code-block::
+.. code-block:: bash
 
 
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
@@ -92,7 +92,7 @@ EXPORT COMPLETE KEYCLOAK CONFIGURATION
 When the export is complete use Ctrl-C to exit the session.
 The export is complete when you see something like
 
-.. code-block::
+.. code-block:: bash
 
 
    Keycloak 10.0.2 (WildFly Core 11.1.1.Final) started in 11390ms - 
@@ -102,7 +102,7 @@ The export is complete when you see something like
 
 4) COPY EXPORTED CONFIGURATION FROM CONTAINER TO YOUR HOST
 
-.. code-block::
+.. code-block:: bash
 
 
    docker cp keycloak:/opt/jboss/keycloak/export-dir ./exported-keycloak-config
@@ -112,7 +112,7 @@ The export is complete when you see something like
 
 optional before copying check the folder exists and contains exported config files:
 
-.. code-block::
+.. code-block:: bash
 
 
    docker exec -it keycloak bash
@@ -129,7 +129,7 @@ to export complete KC configuration into a single JSON file:
 
 1) START KEYCLOAK W/ MOUNTED VOLUME
 
-.. code-block::
+.. code-block:: bash
 
 
    docker run -d --name keycloak \
@@ -144,7 +144,7 @@ to export complete KC configuration into a single JSON file:
 
 2) EXPORT (SINGLE FILE)
 
-.. code-block::
+.. code-block:: bash
 
    Then export your database into a single JSON file:
 
@@ -164,7 +164,7 @@ to export complete KC configuration into a single JSON file:
 Start with a blank canvas ...
 
 
-.. code-block::
+.. code-block:: bash
 
    docker container stop keycloak
    docker container rm keycloak
@@ -180,7 +180,7 @@ Start with a blank canvas ...
 
 To import from a (previously exported) file into your database ...
 
-.. code-block::
+.. code-block:: bash
 
    docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
        -Djboss.socket.binding.port-offset=100 \
@@ -198,7 +198,7 @@ When the import is complete use Ctrl-C to exit the session.
 
 ----
 
-.. code-block::
+.. code-block:: bash
 
        ** WARNING **                                 
        DO NOT TRY TO RESTORE KEYCLOAK W/ `-e KEYCLOAK_IMPORT=/path-to/exported-config.json`
