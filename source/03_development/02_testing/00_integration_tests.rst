@@ -68,7 +68,7 @@ With Robot Command
 
 The following examples will run all test-cases that are inside ``robot/`` folder
 
-.. code-block::
+.. code-block:: bash
 
    # 1) from project's root
    cd tests/
@@ -76,11 +76,11 @@ The following examples will run all test-cases that are inside ``robot/`` folder
    # 2) call robot command
    robot robot/     # Linux
    robot ./robot/   # Mac OS
-   robot .\robot  # Windoofs
+   robot .\robot  # Windows
 
 Everything between ``robot`` command and the last argument are commandline option to fine control test execution and the processing of test results. Examples:
 
-.. code-block::
+.. code-block:: bash
 
    # QUICK COPY/PASTE EXAMPLES TO RUN ONLY A SPECIFIC TEST-SUITE
 
@@ -151,7 +151,7 @@ In case you don't want Robot to start up and shut down server and database for y
 
 **Usage Examples:**
 
-.. code-block::
+.. code-block:: bash
 
    robot --variable nodocker:true robot/TEST_SUITE_FOLDER
 
@@ -161,7 +161,7 @@ In case you don't want Robot to start up and shut down server and database for y
 
 Robot will print proper warning in console if it can't connect to server or database:
 
-.. code-block::
+.. code-block:: bash
 
    [ WARN ] //////////////////////////////////////////////////////////
    [ WARN ] //                                                     ///
@@ -186,7 +186,7 @@ All integration tests in this repository can be executed against other (possiblt
 
 1) the following environment variables have to be available:
 
-.. code-block::
+.. code-block:: bash
 
      BASIC_AUTH (basic auth string for EHRSCAPE, i.e.: export BASIC_AUTH="Basic abc...")
      EHRSCAPE_USER
@@ -195,7 +195,7 @@ All integration tests in this repository can be executed against other (possiblt
 2) Python 3.7+ installed
 3) Test dependencies installed
 
-.. code-block::
+.. code-block:: bash
 
    cd tests
    pip install -r requirements.txt
@@ -204,7 +204,7 @@ All integration tests in this repository can be executed against other (possiblt
 
 Open **tests/robot/_resources/suite_settings.robot** and adjust the following part to your needs if you don't have access to EHRSCAPE. If you do any changes here, remember to adjust your environment variables in step 1)
 
-.. code-block::
+.. code-block:: bash
 
    &{EHRSCAPE}             URL=https://rest.ehrscape.com/rest/openehr/v1
    ...                     HEARTBEAT=https://rest.ehrscape.com/
@@ -223,7 +223,7 @@ Run all tests at one (\ **not** recommended)
 
 This is not recommend because it may take from 30 to 60 minutes and makes it harder to analyse the results.
 
-.. code-block::
+.. code-block:: bash
 
    robot -v SUT:EHRSCAPE -e future -e circleci -e TODO -e obsolete -e libtest -d results -L TRACE --noncritical not-ready robot/
 
@@ -236,7 +236,7 @@ Execute the test suite that you are interested in by copy&pasting one of the lin
 
    Best practice is also to reset your system under test to a clear state before executing the next test suite.
 
-   .. code-block::
+   .. code-block:: bash
 
       robot -v SUT:EHRSCAPE -d results/composition -e future -e circleci -e TODO -e obsolete -e libtest -L TRACE --noncritical not-ready --name COMPO robot/COMPOSITION_TESTS
       robot -v SUT:EHRSCAPE -d results/contribution -e future -e circleci -e TODO -e obsolete -e libtest -L TRACE --noncritical not-ready --name CONTRI robot/CONTRIBUTION_TESTS
