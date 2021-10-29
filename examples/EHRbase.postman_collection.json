@@ -48,7 +48,7 @@
 			"name": "Compositions",
 			"item": [
 				{
-					"name": "Create AddictionAlcohol composition (fixed)",
+					"name": "Create AddictionAlcohol composition (canonical XML)",
 					"event": [
 						{
 							"listen": "test",
@@ -104,7 +104,7 @@
 					"response": []
 				},
 				{
-					"name": "Update AddictionAlcohol composition (fixed)",
+					"name": "Update AddictionAlcohol composition (canonical XML)",
 					"event": [
 						{
 							"listen": "test",
@@ -166,7 +166,7 @@
 					"response": []
 				},
 				{
-					"name": "Retreive AddictionAlcohol composition",
+					"name": "Retreive AddictionAlcohol composition (canonical XML)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -177,7 +177,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_uri}}/ehr/{{ehr_id}}/composition/:composition_id",
+							"raw": "{{api_uri}}/ehr/{{ehr_id}}/composition/{{last_composition_id}}",
 							"host": [
 								"{{api_uri}}"
 							],
@@ -185,20 +185,14 @@
 								"ehr",
 								"{{ehr_id}}",
 								"composition",
-								":composition_id"
-							],
-							"variable": [
-								{
-									"key": "composition_id",
-									"value": "847a4dc4-d6cb-46e3-8177-89973828ac81::local.ehrbase.org::1"
-								}
+								"{{last_composition_id}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete AddictionAlcohol composition",
+					"name": "Delete AddictionAlcohol composition (canonical XML)",
 					"event": [
 						{
 							"listen": "test",
@@ -235,6 +229,142 @@
 							]
 						},
 						"description": "Deletes last inserted composition. To use this request insert a composition via a request that saves the returned composition id to \"last_compositon_id\" environment variable.\n\nThis variable will be cleared after successful deletion."
+					},
+					"response": []
+				},
+				{
+					"name": "Create AddictionAlcohol composition (STRUCTURED)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var response = xml2Json(pm.response.text());",
+									"    pm.environment.set(\"last_composition_id\", response.composition.uid.value);",
+									"    pm.environment.set(\"last_versioned_object_id\", response.composition.uid.value.split(\"::\")[0]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Prefer",
+								"value": "return=representation",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"result_report\": {\n\t\t\"_uid\": [\n\t\t\t\"9ea59686-65b7-418f-b3ec-95b44f192188::piri.ehrscape.com::1\"\n\t\t],\n\t\t\"language\": [{\n\t\t\t\"|code\": \"de\",\n\t\t\t\"|terminology\": \"ISO_639-1\"\n\t\t}],\n\t\t\"territory\": [{\n\t\t\t\"|code\": \"UY\",\n\t\t\t\"|terminology\": \"ISO_3166-1\"\n\t\t}],\n\t\t\"context\": [{\n\t\t\t\"_participation\": [{\n\t\t\t\t\"|function\": \"legal guardian consent author\",\n\t\t\t\t\"|mode\": \"not specified\",\n\t\t\t\t\"|name\": \"Alexandra Alamo\"\n\t\t\t}],\n\t\t\t\"report_id\": [\n\t\t\t\t\"HZOZDFsvvwwCjdcCIUwvTWSFJDXph qSZz.wkags gKvXnLg.MsEdHndZWpZAdCvTCLbjMItOkggIMJxxoVDOsojJeLUvAjCN,NPCszBlcLWsDWCopEdRkgtRmogWqLxisWqFgByKSEcUmCwypCMclLaSPejbjixbBKdiftBSqYIpOzTbBXf bcAnBGKlZgwyMiRICoKfzgwhKjfogUtWdxZawXTTVNYQWxfdxUfBLDJVxysnEeaYFzpWF.OKok\"\n\t\t\t],\n\t\t\t\"status\": [\n\t\t\t\t\"HyTUDJjsAraOKMsMkPX,DWgEojoquvOluqTUasVuJJvYXKjWNEuarLP.ecTGCh. SNBfsrhpfvShgTHEAkJPAHqltkczhZbWLAZJRzgJhSwtKk,WgudNjubXUKYCbiiHkoQGkaNHbFxJhAWnfEIwoRvpFCeoPMlfhHJ qjniCKLtLGKfMAqDXCYCBcPCOchz.hWtPZWzhlQn.qYsDYAOf.u, xvsBA UbFyizcOMYXfVOcfG.CyQIajoeRTrLhP\"\n\t\t\t],\n\t\t\t\"start_time\": [\n\t\t\t\t\"2021-10-04T20:42:18.929-03:00\"\n\t\t\t],\n\t\t\t\"setting\": [{\n\t\t\t\t\"|code\": \"228\",\n\t\t\t\t\"|value\": \"primary medical care\",\n\t\t\t\t\"|terminology\": \"openehr\"\n\t\t\t}]\n\t\t}],\n\t\t\"alcohol_use\": [{\n\t\t\t\"any_event\": [{\n\t\t\t\t\"consumption_details\": [{\n\t\t\t\t\t\"form\": [\n\t\t\t\t\t\t\"IJJz coEQklfiBfLPNyYByzBDArCmmOeejXzoxDHAzx,AoX.VJMSCZpJPUdAfzJBVgFOUCQW.o,TzWZpwkulZsToSsTPmJfGhhQHq.SpDplWUMZjzTPPWCNtnlbAvDcKuFMfNVZgdjyNyyWhYaShYnDooyn,GAZogqbRwfpbmIJHQDRER,HwxHevWTTMMkrInigBieinagi,wLnNpoHCUeObHuqtvyaopvUyytutYYlJfXB,MHT.nZwclNoboLJ\"\n\t\t\t\t\t],\n\t\t\t\t\t\"amount\": [{\n\t\t\t\t\t\t\"standard_drinks\": [{\n\t\t\t\t\t\t\t\"|magnitude\": 763.4,\n\t\t\t\t\t\t\t\"|unit\": \"/h\"\n\t\t\t\t\t\t}]\n\t\t\t\t\t}],\n\t\t\t\t\t\"triggers\": [\n\t\t\t\t\t\t\",XSQNMJVzjHZNgtmLdvV.tbjxfEAqBnHMCVmjgnccMncKBUSJG.Im,JTdYyPWAMrqlkioONffhtI,XVrbyChZvgBvfCMhhNLSDMzjzaZUQXMMyyOmAIgNxjwwGfzLvABvMh.ZqzWeVxGdOVjJBfkRAodMBjlt.RLCNFYffivMe KHFXDyOcinhfYwinFsrJqNIBbczIOwYvrOBUR a omGqtbsAaOyhpyl nNNWGi,uZwCzAmYDhkFzVVoIN.Rt\"\n\t\t\t\t\t],\n\t\t\t\t\t\"context\": [\n\t\t\t\t\t\t\"yT.eP.BdbES.jRsHhhqAlKYLX rlQXnDwuRpxlzPiigjNTdRBnYWsxIQK.wqVnXjBYauADXP,GzHLWEnobh uXSDXibeNzsajeMarvkrldRDRQRnEyecHEbTJKWJdnaoOxnprOGgJkfCnmGnFSWswDRY.X,he,QZeDPFSdzScCWps zsyRyHGuqMXwCnbWBrM,WOZu.K,POqynWjEeNQIhEqyfmHYsGqEkHPZkstPDrCFcbZjuxMRRwdYLduirg\"\n\t\t\t\t\t]\n\t\t\t\t}],\n\t\t\t\t\"behavioural_issues\": [\n\t\t\t\t\t\"BTE,gVxVOsTBDQ.CcsTPRTTzmDPuO.bAvODmtRzKJPAXzthMAG sBwb.ABlTVSY MYwTOolNnURzmJpcGNHczZtiFshFQUcQdc xCOWbUuQourwUpcmReLTAxHsZHVEoK,iBhOPYcSIjHY.xfghAnGzN.nUvsWXGjB.VJvEXaPFTbw,UpDAGOVRFLYxWgDOU,qVQJxCBPlM ,YtKhmgRbHECwqAlZHkIlJxgDypRwTKzaQtdBfAf.SvMDobNmwK\"\n\t\t\t\t],\n\t\t\t\t\"comment\": [\n\t\t\t\t\t\"toBGCbdFANconVJXXuPPNYRSyZzEIIGgAo.IXXimXyoJtvbMiXrWcIXsRMYnbSD.gOiAs.ISwtvdB,Ma,RAqJHNx IFnQxZuZrFuAExKRvttvTOtRbdwopsTERJhkPaDiNH ,rpH,JKPi,Nbpql,V.QwEdMDTxxzlNBoNAVEIlFwVXncDnnRnzeUiVVTgY,.zUrWDmgKgaaLimlM.cBrtXo,C,etrUSwiUTUUeZG qmkQQjVVimvL,eSEim,Hd.\"\n\t\t\t\t],\n\t\t\t\t\"time\": [\n\t\t\t\t\t\"2021-10-04T20:42:19.188-03:00\"\n\t\t\t\t]\n\t\t\t}],\n\t\t\t\"specified_day\": [{\n\t\t\t\t\"consumption_details\": [{\n\t\t\t\t\t\"form\": [\n\t\t\t\t\t\t\"YETnBPELTLvwJUeJ,IxkMALFZURDm.z,LROhlbmDPZRlhbmfPHT zSlAEMTmlOySbuPeepzrMTqIDyHkVWQssPQNi,Nb,XPlyJFfvBQRaW,r lt,WUHZ OnboyTQcYdXalxYXBLfSZlYIhBaEVNXOEAsAYoyWHUSN QrzDJLXtYbpxBtFfRrrEbIdknhNtqTzfPXycxYUUu,B,p.endwCVQkqYQzD,yRrSEyKNkCgsP.zeFYjKnX aVIdSGOwe.\"\n\t\t\t\t\t],\n\t\t\t\t\t\"amount\": [{\n\t\t\t\t\t\t\"standard_drinks\": [{\n\t\t\t\t\t\t\t\"|magnitude\": 250.2,\n\t\t\t\t\t\t\t\"|unit\": \"/h\"\n\t\t\t\t\t\t}]\n\t\t\t\t\t}],\n\t\t\t\t\t\"triggers\": [\n\t\t\t\t\t\t\"qpnyJhSMSlnthJoPnYykjHcJaDfu.HOdDoJWzSdCKwNYwfcKITR,dmNMBWnQFpxpbDGsiOkMGYjWI hQG,kEGKYkuAhUjGwrexiwPfPkyqtEhaf,.UwysscnccyvIwZUFgqioEOdbjUxIU,r,DOgH.lHZtlQVCQImoqZUVtBUmcxqgPpkPShnzKpfUbpaSIWlMzP.,wQqVM,UUZGQhKl,YcclMIIoXuVJOLbljTm cqYWmi,zZv tT hJNkmBAE\"\n\t\t\t\t\t],\n\t\t\t\t\t\"context\": [\n\t\t\t\t\t\t\",UNTTsNkL bM,ogYNtffbEfZEcJRLQlAiw,hjV,DETwBsZXIzwkIXuhchLZgeHgPSnXkxRYovhhWPXKeBVYR XbNGokNAnDTgReiDivpMAbGWimOwybMXrQcNFdTRC.uJnUDPdNnOZorhCfzFMYNDEzRzB TefOOXSBvdyxLVHlHoNyRJJoTtAhnhfddeaLcOxSute.GTOyZtPHUsAIsLzpbVmwUHzGQ HhytJSsYPM.TQzf ZwgHrFVjNdP.uz\"\n\t\t\t\t\t]\n\t\t\t\t}],\n\t\t\t\t\"behavioural_issues\": [\n\t\t\t\t\t\"RzPTcokcvINoKvCWsWXcpKJdqyUTkymeiRZImiFB yzlyQCpgjGALsmNgNTHLyx.EIoJFEUKNOpdWcPhvXtSkOguYgShkjKlqjwlztBTXSWahqCYRxbpnAfbLJcyuz,nLeTtRubytL,LEAkoNhuMevutHWFkEEcLvmWjjUMr,vPILZyjRmdnluzIRrfSgtcgDhfzxQXrWujbASirg,EiCdsswZTMWMXvzLxeGmB,t f,u Ekpbg.yCrOxZsfCQU\"\n\t\t\t\t],\n\t\t\t\t\"comment\": [\n\t\t\t\t\t\"ACqUAbKTpOGvGSA.jIkpNzbpiylDiYoMSdHlZIXSOxBdlIj,NwjFerJtVQrBCsffhYYBVUntPWNWZrCcDLinIZAxRNyYxSnJK DjGWIljyl.czu nyZWkUmIokrbEeCENTBbPU.lfeSoNS.apbHZXSuHAuunmNvF tEgoTqFn .,ayfTiTegkmY jBAf,djWFidmpcUdPz.k.hg..wNoecsItetnOgxdyAYNuxQyXYsjtVzsmiaTejIxUJUfbYU\"\n\t\t\t\t],\n\t\t\t\t\"time\": [\n\t\t\t\t\t\"2021-10-04T20:42:19.239-03:00\"\n\t\t\t\t]\n\t\t\t}],\n\t\t\t\"standard_drink_definition\": [{\n\t\t\t\t\"|magnitude\": 121.7,\n\t\t\t\t\"|unit\": \"gm\"\n\t\t\t}],\n\t\t\t\"average_use_frequency\": [{\n\t\t\t\t\"|magnitude\": 341.2,\n\t\t\t\t\"|unit\": \"/d\"\n\t\t\t}],\n\t\t\t\"language\": [{\n\t\t\t\t\"|code\": \"de\",\n\t\t\t\t\"|terminology\": \"ISO_639-1\"\n\t\t\t}],\n\t\t\t\"encoding\": [{\n\t\t\t\t\"|code\": \"UTF-8\",\n\t\t\t\t\"|terminology\": \"IANA_character-sets\"\n\t\t\t}]\n\t\t}],\n\t\t\"category\": [{\n\t\t\t\"|code\": \"433\",\n\t\t\t\"|value\": \"event\",\n\t\t\t\"|terminology\": \"openehr\"\n\t\t}],\n\t\t\"composer\": [{\n\t\t\t\"|id\": \"2ba6c713-4770-4c16-8896-8cbf74633830\",\n\t\t\t\"|id_namespace\": \"DEMOGRAPHIC\",\n\t\t\t\"|name\": \"Dr. Yamamoto\"\n\t\t}]\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{ecis_api_uri}}/composition?ehrId={{ehr_id}}&templateId=AddictionAlcoholTemplate&format=STRUCTURED",
+							"host": [
+								"{{ecis_api_uri}}"
+							],
+							"path": [
+								"composition"
+							],
+							"query": [
+								{
+									"key": "ehrId",
+									"value": "{{ehr_id}}"
+								},
+								{
+									"key": "templateId",
+									"value": "AddictionAlcoholTemplate"
+								},
+								{
+									"key": "format",
+									"value": "STRUCTURED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create AddictionAlcohol composition (FLAT)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var response = xml2Json(pm.response.text());",
+									"    pm.environment.set(\"last_composition_id\", response.composition.uid.value);",
+									"    pm.environment.set(\"last_versioned_object_id\", response.composition.uid.value.split(\"::\")[0]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Prefer",
+								"value": "return=representation",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"result_report/_uid\": \"9ea59686-65b7-418f-b3ec-95b44f192188::piri.ehrscape.com::1\",\n\t\"result_report/language|code\": \"de\",\n\t\"result_report/language|terminology\": \"ISO_639-1\",\n\t\"result_report/territory|code\": \"UY\",\n\t\"result_report/territory|terminology\": \"ISO_3166-1\",\n\t\"result_report/context/_participation:0|function\": \"legal guardian consent author\",\n\t\"result_report/context/_participation:0|mode\": \"not specified\",\n\t\"result_report/context/_participation:0|name\": \"Alexandra Alamo\",\n\t\"result_report/context/report_id\": \"HZOZDFsvvwwCjdcCIUwvTWSFJDXph qSZz.wkags gKvXnLg.MsEdHndZWpZAdCvTCLbjMItOkggIMJxxoVDOsojJeLUvAjCN,NPCszBlcLWsDWCopEdRkgtRmogWqLxisWqFgByKSEcUmCwypCMclLaSPejbjixbBKdiftBSqYIpOzTbBXf bcAnBGKlZgwyMiRICoKfzgwhKjfogUtWdxZawXTTVNYQWxfdxUfBLDJVxysnEeaYFzpWF.OKok\",\n\t\"result_report/context/status\": \"HyTUDJjsAraOKMsMkPX,DWgEojoquvOluqTUasVuJJvYXKjWNEuarLP.ecTGCh. SNBfsrhpfvShgTHEAkJPAHqltkczhZbWLAZJRzgJhSwtKk,WgudNjubXUKYCbiiHkoQGkaNHbFxJhAWnfEIwoRvpFCeoPMlfhHJ qjniCKLtLGKfMAqDXCYCBcPCOchz.hWtPZWzhlQn.qYsDYAOf.u, xvsBA UbFyizcOMYXfVOcfG.CyQIajoeRTrLhP\",\n\t\"result_report/context/start_time\": \"2021-10-04T20:42:18.929-03:00\",\n\t\"result_report/context/setting|code\": \"228\",\n\t\"result_report/context/setting|value\": \"primary medical care\",\n\t\"result_report/context/setting|terminology\": \"openehr\",\n\t\"result_report/alcohol_use:0/any_event/consumption_details:0/form\": \"IJJz coEQklfiBfLPNyYByzBDArCmmOeejXzoxDHAzx,AoX.VJMSCZpJPUdAfzJBVgFOUCQW.o,TzWZpwkulZsToSsTPmJfGhhQHq.SpDplWUMZjzTPPWCNtnlbAvDcKuFMfNVZgdjyNyyWhYaShYnDooyn,GAZogqbRwfpbmIJHQDRER,HwxHevWTTMMkrInigBieinagi,wLnNpoHCUeObHuqtvyaopvUyytutYYlJfXB,MHT.nZwclNoboLJ\",\n\t\"result_report/alcohol_use:0/any_event/consumption_details:0/amount/standard_drinks|magnitude\": 763.4,\n\t\"result_report/alcohol_use:0/any_event/consumption_details:0/amount/standard_drinks|unit\": \"/h\",\n\t\"result_report/alcohol_use:0/any_event/consumption_details:0/triggers\": \",XSQNMJVzjHZNgtmLdvV.tbjxfEAqBnHMCVmjgnccMncKBUSJG.Im,JTdYyPWAMrqlkioONffhtI,XVrbyChZvgBvfCMhhNLSDMzjzaZUQXMMyyOmAIgNxjwwGfzLvABvMh.ZqzWeVxGdOVjJBfkRAodMBjlt.RLCNFYffivMe KHFXDyOcinhfYwinFsrJqNIBbczIOwYvrOBUR a omGqtbsAaOyhpyl nNNWGi,uZwCzAmYDhkFzVVoIN.Rt\",\n\t\"result_report/alcohol_use:0/any_event/consumption_details:0/context\": \"yT.eP.BdbES.jRsHhhqAlKYLX rlQXnDwuRpxlzPiigjNTdRBnYWsxIQK.wqVnXjBYauADXP,GzHLWEnobh uXSDXibeNzsajeMarvkrldRDRQRnEyecHEbTJKWJdnaoOxnprOGgJkfCnmGnFSWswDRY.X,he,QZeDPFSdzScCWps zsyRyHGuqMXwCnbWBrM,WOZu.K,POqynWjEeNQIhEqyfmHYsGqEkHPZkstPDrCFcbZjuxMRRwdYLduirg\",\n\t\"result_report/alcohol_use:0/any_event/behavioural_issues\": \"BTE,gVxVOsTBDQ.CcsTPRTTzmDPuO.bAvODmtRzKJPAXzthMAG sBwb.ABlTVSY MYwTOolNnURzmJpcGNHczZtiFshFQUcQdc xCOWbUuQourwUpcmReLTAxHsZHVEoK,iBhOPYcSIjHY.xfghAnGzN.nUvsWXGjB.VJvEXaPFTbw,UpDAGOVRFLYxWgDOU,qVQJxCBPlM ,YtKhmgRbHECwqAlZHkIlJxgDypRwTKzaQtdBfAf.SvMDobNmwK\",\n\t\"result_report/alcohol_use:0/any_event/comment\": \"toBGCbdFANconVJXXuPPNYRSyZzEIIGgAo.IXXimXyoJtvbMiXrWcIXsRMYnbSD.gOiAs.ISwtvdB,Ma,RAqJHNx IFnQxZuZrFuAExKRvttvTOtRbdwopsTERJhkPaDiNH ,rpH,JKPi,Nbpql,V.QwEdMDTxxzlNBoNAVEIlFwVXncDnnRnzeUiVVTgY,.zUrWDmgKgaaLimlM.cBrtXo,C,etrUSwiUTUUeZG qmkQQjVVimvL,eSEim,Hd.\",\n\t\"result_report/alcohol_use:0/any_event/time\": \"2021-10-04T20:42:19.188-03:00\",\n\t\"result_report/alcohol_use:0/specified_day:0/consumption_details:0/form\": \"YETnBPELTLvwJUeJ,IxkMALFZURDm.z,LROhlbmDPZRlhbmfPHT zSlAEMTmlOySbuPeepzrMTqIDyHkVWQssPQNi,Nb,XPlyJFfvBQRaW,r lt,WUHZ OnboyTQcYdXalxYXBLfSZlYIhBaEVNXOEAsAYoyWHUSN QrzDJLXtYbpxBtFfRrrEbIdknhNtqTzfPXycxYUUu,B,p.endwCVQkqYQzD,yRrSEyKNkCgsP.zeFYjKnX aVIdSGOwe.\",\n\t\"result_report/alcohol_use:0/specified_day:0/consumption_details:0/amount/standard_drinks|magnitude\": 250.2,\n\t\"result_report/alcohol_use:0/specified_day:0/consumption_details:0/amount/standard_drinks|unit\": \"/h\",\n\t\"result_report/alcohol_use:0/specified_day:0/consumption_details:0/triggers\": \"qpnyJhSMSlnthJoPnYykjHcJaDfu.HOdDoJWzSdCKwNYwfcKITR,dmNMBWnQFpxpbDGsiOkMGYjWI hQG,kEGKYkuAhUjGwrexiwPfPkyqtEhaf,.UwysscnccyvIwZUFgqioEOdbjUxIU,r,DOgH.lHZtlQVCQImoqZUVtBUmcxqgPpkPShnzKpfUbpaSIWlMzP.,wQqVM,UUZGQhKl,YcclMIIoXuVJOLbljTm cqYWmi,zZv tT hJNkmBAE\",\n\t\"result_report/alcohol_use:0/specified_day:0/consumption_details:0/context\": \",UNTTsNkL bM,ogYNtffbEfZEcJRLQlAiw,hjV,DETwBsZXIzwkIXuhchLZgeHgPSnXkxRYovhhWPXKeBVYR XbNGokNAnDTgReiDivpMAbGWimOwybMXrQcNFdTRC.uJnUDPdNnOZorhCfzFMYNDEzRzB TefOOXSBvdyxLVHlHoNyRJJoTtAhnhfddeaLcOxSute.GTOyZtPHUsAIsLzpbVmwUHzGQ HhytJSsYPM.TQzf ZwgHrFVjNdP.uz\",\n\t\"result_report/alcohol_use:0/specified_day:0/behavioural_issues\": \"RzPTcokcvINoKvCWsWXcpKJdqyUTkymeiRZImiFB yzlyQCpgjGALsmNgNTHLyx.EIoJFEUKNOpdWcPhvXtSkOguYgShkjKlqjwlztBTXSWahqCYRxbpnAfbLJcyuz,nLeTtRubytL,LEAkoNhuMevutHWFkEEcLvmWjjUMr,vPILZyjRmdnluzIRrfSgtcgDhfzxQXrWujbASirg,EiCdsswZTMWMXvzLxeGmB,t f,u Ekpbg.yCrOxZsfCQU\",\n\t\"result_report/alcohol_use:0/specified_day:0/comment\": \"ACqUAbKTpOGvGSA.jIkpNzbpiylDiYoMSdHlZIXSOxBdlIj,NwjFerJtVQrBCsffhYYBVUntPWNWZrCcDLinIZAxRNyYxSnJK DjGWIljyl.czu nyZWkUmIokrbEeCENTBbPU.lfeSoNS.apbHZXSuHAuunmNvF tEgoTqFn .,ayfTiTegkmY jBAf,djWFidmpcUdPz.k.hg..wNoecsItetnOgxdyAYNuxQyXYsjtVzsmiaTejIxUJUfbYU\",\n\t\"result_report/alcohol_use:0/specified_day:0/time\": \"2021-10-04T20:42:19.239-03:00\",\n\t\"result_report/alcohol_use:0/standard_drink_definition|magnitude\": 121.7,\n\t\"result_report/alcohol_use:0/standard_drink_definition|unit\": \"gm\",\n\t\"result_report/alcohol_use:0/average_use_frequency|magnitude\": 341.2,\n\t\"result_report/alcohol_use:0/average_use_frequency|unit\": \"/d\",\n\t\"result_report/alcohol_use:0/language|code\": \"de\",\n\t\"result_report/alcohol_use:0/language|terminology\": \"ISO_639-1\",\n\t\"result_report/alcohol_use:0/encoding|code\": \"UTF-8\",\n\t\"result_report/alcohol_use:0/encoding|terminology\": \"IANA_character-sets\",\n\t\"result_report/category|code\": \"433\",\n\t\"result_report/category|value\": \"event\",\n\t\"result_report/category|terminology\": \"openehr\",\n\t\"result_report/composer|id\": \"2ba6c713-4770-4c16-8896-8cbf74633830\",\n\t\"result_report/composer|id_namespace\": \"DEMOGRAPHIC\",\n\t\"result_report/composer|name\": \"Dr. Yamamoto\"\n}"
+						},
+						"url": {
+							"raw": "{{ecis_api_uri}}/composition?ehrId={{ehr_id}}&templateId=AddictionAlcoholTemplate&format=FLAT",
+							"host": [
+								"{{ecis_api_uri}}"
+							],
+							"path": [
+								"composition"
+							],
+							"query": [
+								{
+									"key": "ehrId",
+									"value": "{{ehr_id}}"
+								},
+								{
+									"key": "templateId",
+									"value": "AddictionAlcoholTemplate"
+								},
+								{
+									"key": "format",
+									"value": "FLAT"
+								}
+							]
+						}
 					},
 					"response": []
 				}
