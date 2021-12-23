@@ -31,7 +31,7 @@ DV_TEXT
 +--------------+----------------------+-------------+----------+-------+
 | Flat Path    | Flat type            | RM Path     | Requerd  | Note  |
 +==============+======================+=============+==========+=======+
-|              | String               | value       | yes      |       |
+|\|value       | String               | value       | yes      |       |
 +--------------+----------------------+-------------+----------+-------+
 | \|formatting | String               | formatting  | no       |       |
 +--------------+----------------------+-------------+----------+-------+
@@ -107,3 +107,52 @@ TERM_MAPPING
 DV_CODED_TEXT 
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_coded_text_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|value": "term1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|code": "at0006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|terminology": "local"
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|value": "term1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|code": "at0006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|terminology": "local",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|formatting": "plain",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_language|preferred_term": "English",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0|match": "=",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0/target|terminology": "SNOMED-CT",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0/target|code": "21794005",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0/purpose|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0/purpose|code": "671",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text/_mapping:0/purpose|value": "research study"
+  } 
+
+
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| Flat Path      | Flat type       | RM Path                             | Requerd  | Note                                       |
++================+=================+=====================================+==========+============================================+
+| \|code         | String          | defining_code.code_string           | yes      |                                            |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| \|vlaue        | String          | value                               | (yes)    | only required for external  terminologies  |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| \|terminology  | String          | defining_code.terminology_id.value  | (yes)    | only required for external  terminologies  |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| |formatting    | String          | formatting                          | no       |                                            |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| /_language     | `CODE_PHRASE`_  | language                            | no       |                                            |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| /_encoding     | `CODE_PHRASE`_  | encoding                            | no       |                                            |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+| /_mapping:i    | `TERM_MAPPING`_ | mappings                            | no       |                                            |
++----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+
+
