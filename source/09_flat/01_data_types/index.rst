@@ -225,7 +225,7 @@ DV_PROPORTION
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|numerator": 20.5,
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|denominator": 12.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|type": 0,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|type": 0
   } 
 
 .. code-block:: javascript
@@ -269,7 +269,7 @@ DV_PROPORTION
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
 | \|type                      | Integer                             | type                     | yes      | ValueSet proportion_kind  |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
-|                             | String                              | magnitude                | no       | calculated on output      |
+|                             | Real                                | magnitude                | no       | calculated on output      |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
 | \|magnitude_status          | String                              | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)  |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
@@ -279,6 +279,47 @@ DV_PROPORTION
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
 | /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_PROPORTION>  | _other_reference_ranges  | no       |                           |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
+
+DV_COUNT  
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_count_class)
+
+.. code-block:: javascript
+
+ {
+   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count": 7
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count": 7,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count|magnitude_status": "~",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count|normal_status": "N",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count|accuracy": 50.5,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count|accuracy_is_percent": true,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count/_normal_range/lower": 1,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count/_normal_range/upper": 8,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count/_other_reference_ranges:0/lower": 8,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count/_other_reference_ranges:0/upper": 10,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count/_other_reference_ranges:0/meaning": "high"
+  } 
+
+
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                           | RM Path                  | Requerd  | Note                       |
++=============================+=====================================+==========================+==========+============================+
+|                             | Integer                             | magnitude                | Yes      |                            |
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                              | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                              | normal_status            | no       | Valuset normal_status      |
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_COUNT>           | normal_range             | no       |                            |
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_COUNT>       | _other_reference_ranges  | no       |                            |
++-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
+
 
 
 DV_INTERVAL 
