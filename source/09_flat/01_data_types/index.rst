@@ -320,6 +320,176 @@ DV_COUNT
 | /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_COUNT>       | _other_reference_ranges  | no       |                            |
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
 
+DV_DATE    
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12"
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date|magnitude_status": "~",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date|normal_status": "N",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_accuracy": "P2D",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_normal_range/lower": "2022-01-12",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_normal_range/upper": "2022-02-12",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_other_reference_ranges:0/lower": "2022-02-12",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_other_reference_ranges:0/upper": "2022-03-12",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date/_other_reference_ranges:0/meaning": "high"
+  } 
+
+
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                     | RM Path                  | Requerd  | Note                       |
++=============================+===============================+==========================+==========+============================+
+|                             | String                        | value                    | Yes      | ISO8601 date               |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_accuracy                  | `DV_DURATION`_                | accuracy                 | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                        | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                        | normal_status            | no       | Valuset normal_status      |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_DATE>      | normal_range             | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_DATE>  | _other_reference_ranges  | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+
+DV_DATE_TIME    
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
+
+.. code-block:: javascript
+
+ {
+    "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time": "2022-01-12T13:22:34.000868+01:00"
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time": "2022-01-12T13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time|magnitude_status": "~",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time|normal_status": "N",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_accuracy": "P2DT9H52M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_normal_range/lower": "2022-01-12T13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_normal_range/upper": "2022-02-12T13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/lower": "2022-02-12T13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/upper": "2022-03-12T13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/meaning": "high",
+  } 
+
+
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                          | RM Path                  | Requerd  | Note                       |
++=============================+====================================+==========================+==========+============================+
+|                             | String                             | value                    | Yes      | ISO8601 date               |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| /_accuracy                  | `DV_DURATION`_                     | accuracy                 | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                             | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                             | normal_status            | no       | Valuset normal_status      |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_DATE_TIME>      | normal_range             | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_DATE_TIME>  | _other_reference_ranges  | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+
+
+
+DV_TIME    
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12"
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time": "13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time|magnitude_status": "~",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time|normal_status": "N",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_accuracy": "PT9H52M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_normal_range/lower": "13:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_normal_range/upper": "14:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_other_reference_ranges:0/lower": "14:10:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_other_reference_ranges:0/upper": "15:22:34.000868+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time/_other_reference_ranges:0/meaning": "high"
+  } 
+
+
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                     | RM Path                  | Requerd  | Note                       |
++=============================+===============================+==========================+==========+============================+
+|                             | String                        | value                    | Yes      | ISO8601 date               |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_accuracy                  | `DV_DURATION`_                | accuracy                 | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                        | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                        | normal_status            | no       | Valuset normal_status      |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_TIME>      | normal_range             | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_TIME>  | _other_reference_ranges  | no       |                            |
++-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
+
+
+DV_DURATION   
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_duration_class)
+
+.. code-block:: javascript
+
+ {
+   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration": "P2DT11H33M"
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration": "P2DT11H33M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration|magnitude_status": "~",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration|normal_status": "N",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration|accuracy": 50.5,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration|accuracy_is_percent": true,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration/_normal_range/lower": "P2DT11H33M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration/_normal_range/upper": "P2DT12H33M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration/_other_reference_ranges:0/lower": "P2DT11H33M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration/_other_reference_ranges:0/upper": "P2DT15H33M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration/_other_reference_ranges:0/meaning": "high"
+  } 
+
+
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                         | RM Path                  | Requerd  | Note                       |
++=============================+===================================+==========================+==========+============================+
+|                             | String                            | value                    | Yes      | ISO8601 duration           |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| \|accuracy                  | Real                              | accuracy                 | no       |                            |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| accuracy_is_percent         | Boolean                           | accuracy_is_percent      | no       |                            |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                            | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                            | normal_status            | no       | Valuset normal_status      |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_DURATION>      | normal_range             | no       |                            |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_DURATION>  | _other_reference_ranges  | no       |                            |
++-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
+
 
 
 DV_INTERVAL 
