@@ -145,7 +145,7 @@ DV_CODED_TEXT
 +================+=================+=====================================+==========+============================================+
 | \|code         | String          | defining_code.code_string           | yes      |                                            |
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
-| \|vlaue        | String          | value                               | (yes)    | only required for external  terminologies  |
+| \|value        | String          | value                               | (yes)    | only required for external  terminologies  |
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
 | \|terminology  | String          | defining_code.terminology_id.value  | (yes)    | only required for external  terminologies  |
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
@@ -157,6 +157,54 @@ DV_CODED_TEXT
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
 | /_mapping:i    | `TERM_MAPPING`_ | mappings                            | no       |                                            |
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
+
+DV_ORDINAL
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_ordinal_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|code": "at0015",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|value": "value1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|ordinal": 1
+  }
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|code": "at0015",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|value": "value1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|ordinal": 1,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/lower|code": "at0015",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/lower|value": "value1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/lower|ordinal": 1,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/upper|code": "at0015",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/upper|value": "value1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_normal_range/upper|ordinal": 1,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0/lower|code": "at0016",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0/lower|value": "value2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0/lower|ordinal": 2,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0|upper_unbounded": true,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0|upper_included": false,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal/_other_reference_ranges:0/meaning": "high"
+  }
+
+
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
++=============================+==================================+========================================+==========+==================================================+
+| \|code                      | String                           | symbol.defining_code.code_string       | Yes      |                                                  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| \|value                     | String                           | symbol.value                           | (Yes)    | my be left out if symbol is defined in template  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| \|ordinal                   | Integer                          | value                                  | (Yes)    | my be left out if symbol is defined in template  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_ORDINAL>      | normal_range                           | no       |                                                  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_ORDINAL>  | _other_reference_ranges                | no       |                                                  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+
 
 DV_QUANTITY 
 --------------
