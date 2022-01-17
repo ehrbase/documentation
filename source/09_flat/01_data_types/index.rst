@@ -205,6 +205,64 @@ DV_ORDINAL
 | /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_ORDINAL>  | _other_reference_ranges                | no       |                                                  |
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
 
+DV_BOOLEAN 
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_boolean_class)
+
+.. code-block:: javascript
+
+ {
+    "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_boolean": true
+  }
+
+
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
++=============================+==================================+========================================+==========+==================================================+
+|                             | Boolean                          | value                                  | Yes      |                                                  |
++-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
+
+
+DV_IDENTIFIER  
+--------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_quantity_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|id": "A123",
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|id": "A123",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|issuer": "Issuer",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|assigner": "Assigner",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|type": "Prescription"
+  } 
+
+
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| Flat Path                   | Flat type                          | RM Path                  | Requerd  | Note                       |
++=============================+====================================+==========================+==========+============================+
+| \|magnitude                 | String                             | magnitude                | yes      |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|unit                      | Real                               | unit                     | yes      |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|magnitude_status          | String                             | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|normal_status             | String                             | normal_status            | no       | Valuset normal_status      |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|accuracy                  | Real                               | accuracy                 | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| \|accuracy_is_percent       | Boolean                            | accuracy_is_percent      | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| /_normal_range              | `DV_INTERVAL`_ <DV_QUANTITY>       | normal_range             | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+| /_other_reference_ranges:i  | `REFERENCE_RANGE`_ <DV_QUANTITY>   | _other_reference_ranges  | no       |                            |
++-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
+
 
 DV_QUANTITY 
 --------------
