@@ -38,7 +38,7 @@ build your own image form Dockerfile:
     docker run -e DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase \
                -e DB_USER=foouser \
                -e DB_PASS=foopass \
-               -e SYSTEM_NAME=what.ever.org \
+               -e SERVER_NODENAME=what.ever.org \
                -p 8080:8080 \
                ehrbase/ehrbase
 
@@ -49,7 +49,7 @@ build your own image form Dockerfile:
     DB_URL,                                 Database URL. Must point to the running database server.,    jdbc:postgresql://ehrdb:5432/ehrbase
     DB_USER,                                Database user configured for the ehr schema.,                ehrbase
     DB_PASS,                                DB user password,                                            ehrbase
-    SYSTEM_NAME,                            Name of local system,                                        local.ehrbase.org
+    SERVER_NODENAME,                        Name of the server,                                          local.ehrbase.org
     SECURITY_AUTHTYPE,                      HTTP security method,                                        BASIC / OAUTH
     SECURITY_AUTHUSER,                      BASIC Auth username,                                         myuser
     SECURITY_AUTHPASSWORD,                  BASIC Auth password,                                         myPassword432
@@ -57,11 +57,12 @@ build your own image form Dockerfile:
     SECURITY_AUTHADMINPASSWORD,             BASIC auth admin password,                                   mySuperAwesomePassword123
     ADMINAPI_ACTIVE,                        Should admin endpoints be enabled,                           true / false
     ADMINAPI_ALLOWDELETEALL,                Allow admin to delete all resources - i.e. all EHRs,         true / false
-    MANAGEMENT_ENDPOINT_ENV_ENABLED,        Enable /status/env endpoint from actuator                    true / false
-    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,     Enable /status/health endpoint from actuator               true / false
-    MANAGEMENT_ENDPOINT_INFO_ENABLED,       Enable /status/info endpoint from actuator                   true / false
-    MANAGEMENT_ENDPOINT_METRICS_ENABLED,    Enable /status/metrics endpoint from actuator             true / false
-    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED, Enable /status/prometheus endpoint from actuator       true / false
+    MANAGEMENT_ENDPOINT_ENV_ENABLED,        Enable /management/env endpoint from actuator,               true / false
+    MANAGEMENT_ENDPOINT_HEALTH_ENABLED,     Enable /management/health endpoint from actuator,            true / false
+    MANAGEMENT_ENDPOINT_INFO_ENABLED,       Enable /management/info endpoint from actuator,              true / false
+    MANAGEMENT_ENDPOINT_METRICS_ENABLED,    Enable /management/metrics endpoint from actuator,           true / false
+    MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED, Enable /management/prometheus endpoint from actuator,        true / false
+    SERVER_DISABLESTRICTVALIDATION,         Disable strict validation of openEHR input,                  true / false
 
 
 .. note::

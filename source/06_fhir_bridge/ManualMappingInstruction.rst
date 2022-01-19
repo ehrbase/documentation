@@ -35,7 +35,7 @@ run. For example (Birgit 2020-10-16)
    docker rm ehrdb
    docker rm ehrbase
    docker run --name ehrdb --network ehrbase-net -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 ehrbase/ehrbase-postgres:latest
-   docker run --name ehrbase --network ehrbase-net -d -p 8080:8080 -e DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase -e DB_USER=ehrbase -e DB_PASS=ehrbase -e AUTH_TYPE=none -e SYSTEM_ALLOW_TEMPLATE_OVERWRITE=true -e SYSTEM_NAME=local.ehrbase.org ehrbase/ehrbase:0.14.0
+   docker run --name ehrbase --network ehrbase-net -d -p 8080:8080 -e DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase -e DB_USER=ehrbase -e DB_PASS=ehrbase -e AUTH_TYPE=none -e SYSTEM_ALLOW_TEMPLATE_OVERWRITE=true -e SERVER_NODENAME=local.ehrbase.org ehrbase/ehrbase:latest
    docker run -p 9999:5432 --name fhir-bridge -e POSTGRES_PASSWORD=fhir_bridge -e POSTGRES_USER=fhir_bridge -d postgres
 
 Build

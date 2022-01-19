@@ -32,13 +32,13 @@ the running Docker container will have environent variables with default values 
     ARG DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase
     ARG DB_USER="ehrbase"
     ARG DB_PASS="ehrbase"
-    ARG SYSTEM_NAME=docker.ehrbase.org
+    ARG SERVER_NODENAME=docker.ehrbase.org
     
     ENV EHRBASE_VERSION=${EHRBASE_VERSION}
     ENV DB_USER=$DB_USER
     ENV DB_PASS=$DB_PASS
     ENV DB_URL=$DB_URL
-    ENV SYSTEM_NAME=$SYSTEM_NAME
+    ENV SERVER_NODENAME=$SERVER_NODENAME
     ENV SECURITY_AUTHTYPE="NONE"
     ...
 
@@ -49,7 +49,7 @@ The values of all `ARG(s)` can be overwritten during image build time to adjust 
     docker build --build-arg DB_URL=your-db-url \
                  --build-arg DB_USER=your-db-user \
                  --build-arg DB_PASS=your-db-pass \
-                 --build-arg SYSTEM_NAME=your-system-name \
+                 --build-arg SERVER_NODENAME=your-system-name \
                  -t give-your-image-a-name:and-tag .
 
 In addition to overriding default ENV values during build time it is also possible to override ENV values and even add new ENVs to a container's run time. Check next example (which assumes you pulled or created an image named `ehrbase/ehrbase`):
@@ -59,7 +59,7 @@ In addition to overriding default ENV values during build time it is also possib
     docker run -e DB_URL=jdbc:postgresql://ehrdb:5432/ehrbase \
                -e DB_USER=foouser \
                -e DB_PASS=foopass \
-               -e SYSTEM_NAME=what.ever.org \
+               -e SERVER_NODENAME=what.ever.org \
                ehrbase/ehrbase
 
 

@@ -1,0 +1,75 @@
+.. _h-what-is-reference-label:
+
+####################################
+Release Notes EHRbase 0.16.0 (beta)
+####################################
+
+This release of EHRbase (v0.16.0, March 30 2021) is the fourth beta release.
+
+The following changes are included in this version:
+
+Added
+*****
+
+- Endpoints and integration tests for VERSIONED_COMPOSITION (see: https://github.com/ehrbase/ehrbase/pull/448)
+- ATNA Logging for composition endpoints, querying and operations on the EHR object (see: https://github.com/ehrbase/ehrbase/pull/452)
+- EHRbase Release Checklist (see: https://github.com/ehrbase/ehrbase/pull/451)
+- CACHE_ENABLED ENV to Dockerfile (see: https://github.com/ehrbase/ehrbase/pull/467)
+
+Changed
+*******
+
+- Updated the SDK dependency to the latest version (see: https://github.com/ehrbase/ehrbase/pull/463)
+- Force retrieval of operational template from DB (see: https://github.com/ehrbase/ehrbase/pull/468)
+
+Fixed
+*****
+
+- WHERE field construct (see: https://github.com/ehrbase/ehrbase/pull/439)
+- Inconsistent behavior in SMICS Virology Query (see: https://github.com/ehrbase/ehrbase/pull/456)
+- Bunch of AQL issues (see: https://github.com/ehrbase/ehrbase/pull/461)
+- AQL: Error in processing OR in Contains clause (see: https://github.com/ehrbase/ehrbase/pull/462)
+- Cache issue on Startup (see: https://github.com/ehrbase/ehrbase/pull/465)
+
+
+
+General Features
+****************
+
+- openEHR Reference Model Version 1.0.4
+- Serialisation of Reference Model Objects in Canonical JSON and XML 
+- Archetype Definition Language 1.4
+- Data Validation against Operational Templates
+- openEHR REST API Endpoints (see below for details)
+
+
+openEHR REST API 
+^^^^^^^^^^^^^^^^
+
+Based on the `official openEHR REST API <https://specifications.openehr.org/releases/ITS-REST/latest/>`_ the following endpoints are implemented:
+
+- EHR (CREATE EHR, CREATE EHR with Id)
+- EHR_STATUS
+- COMPOSITION (Create, Update, Delete, Get Composition by Version Id, Get composition at time)
+- CONTRIBUTION (Create, Get of compositions. Other versioned object like EHR_STATUS coming soonly)
+- DIRECTORY (Create, Update, Delete, Get folder in directory version, get folder in directory version at time)
+- QUERY (Execute ad-hoc (non-stored) AQL Query, Execute stored query, parameters))
+- STORED_QUERY (List Stored Queries, Store a query, Get stored query, delete, parameters)
+- ADL 1.4 TEMPLATE (Upload a Template, List Templates, Get Template)
+
+.. note::  The Swagger UI is generally WIP and currently does not distinguish between implemented endpoints and stubs! This means that you will see some endpoints that you cannot use)
+
+.. note::  The data format for contributions sent through the REST API is not yet defined in the openEHR. Please refer to the examples. Also note that the format might be subject of change.   
+
+Conformance Tests 
+^^^^^^^^^^^^^^^^^
+
+EHRbase ships with a set of tests verifying the conformance with the openEHR REST API. For now the tests include the following endpoints: 
+
+- EHR
+- EHR_STATUS
+- COMPOSITION
+- CONTRIBUTION
+- ADL 1.4 TEMPLATE
+- DIRECTORY
+- QUERY

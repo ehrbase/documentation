@@ -15,7 +15,7 @@ To generally enable the Admin API set the `ADMINAPI_ACTIVE` environment variable
 
 .. _Spring Boot Externalized Configuration: https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config
 
-The Admin API interface is available at the "/admin" resource which will be appended to the base URL of the openEHR REST interface. E.g. if the base URL is "https://api.ehrbase.org/ehrbase/rest/openehr/v1" the admin API and all sub resources are available at "https://api.ehrbase.org/ehrbase/rest/openehr/v1/admin".
+The Admin API interface is available at the "/admin" resource which will be appended to the base URL of the openEHR REST interface. E.g. if the base URL is "https://api.ehrbase.org/ehrbase" the admin API and all sub resources are available at "https://api.ehrbase.org/ehrbase/rest/admin".
 
 .. toctree::
    :name: Admin API
