@@ -743,4 +743,99 @@ REFERENCE_RANGE
 +--------------------+--------------+------------------------+----------+--------------------+
 
 
+DV_PARSABLE  
+-----------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_parsable_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable": "Formal instructions on carrying out the procedure...",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable|formalism": "GLIF 1.0",
+
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable": "Formal instructions on carrying out the procedure...",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable|formalism": "GLIF 1.0",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable/_language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable/_language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable/_charset|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable/_charset|terminology": "IANA_character-sets"
+  } 
+
+
++--------------+-----------------+------------+----------+---------+
+| Flat Path    | Flat type       | RM Path    | Requerd  | Note    |
++==============+=================+============+==========+=========+
+| \|value      | String          | value      | Yes      |         |
++--------------+-----------------+------------+----------+---------+
+| \|formalism  | String          | formalism  | Yes      |         |
++--------------+-----------------+------------+----------+---------+
+| /_charset    | `CODE_PHRASE`_  | charset    | no       |         |
++--------------+-----------------+------------+----------+---------+
+| /_language   | `CODE_PHRASE`_  | language   | no       |         |
++--------------+-----------------+------------+----------+---------+
+
+DV_MULTIMEDIA   
+-----------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia": "http://med.tube.com/sample",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|mediatype": "video/H261",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|size": 504903212,
+  } 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia": "http://med.tube.com/sample",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|mediatype": "video/H261",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|size": 504903212,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|compression_algorithm": "zlib",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|alternatetext": "alternate text",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|integrity_check": "b90360558e5420cef47015b1afbd70a156f940afa470b0515f95eacc2edcef6a",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|integrity_check_algorithm": "SHA-256",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_thumbnail|data": "Z2hnZ2pnamdnag==",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_thumbnail|mediatype": "image/png",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_thumbnail|size": 504,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_charset|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_charset|terminology": "IANA_character-sets",
+  } 
+
+
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| Flat Path                    | Flat type          | RM Path                            | Requerd  | Note                                         |
++==============================+====================+====================================+==========+==============================================+
+|                              | String             | uri.value                          | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|media_type                 | String             | media_type.code_string             | Yes      | valuset (IANA_media-types)                   |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|size                       | Integer            | size                               | Yes      |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|alternatetext              | String             | alternate_text                     | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|compression_algorithm      | String             | compression_algorithm.code_string  | no       | valueset (openehr_compression_algorithms)    |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|integrity_check_algorithm  | String             | integrity_check_algorithm          | no       | valuset(openehr_integrity_check_algorithms)  |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|integrity_check            | String             | integrity_check                    | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| \|data                       | String             | dta                                | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| /_thumbnail                  | `DV_MULTIMEDIA`_   | thumbnail                          | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| /_charset                    | `CODE_PHRASE`_     | charset                            | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+| /_language                   | `CODE_PHRASE`_     | language                           | no       |                                              |
++------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
+
+
 
