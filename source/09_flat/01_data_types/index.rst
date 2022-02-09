@@ -1,6 +1,114 @@
 Data Types
 =================
 
+PARTY_PROXY 
+-----------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_proxy_class )
+
+See `PARTY_SELF`_ ; `PARTY_IDENTIFIED`_ and `PARTY_RELATED`_. 
+
+ 
+
+PARTY_SELF
+----------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_self_class)
+
+
+PARTY_SELF is indected by not setting an Id, Identifier or name. 
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_other_participation:0|function": "requester",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_other_participation:0|mode": "face-to-face communication",
+  } 
+
+
+
+PARTY_IDENTIFIED 
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_identified_class )
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  } 
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer|id": "1234-5678",
+  "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|id": "122",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|issuer": "issuer",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|assigner": "assigner",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|type": "type"
+  } 
+
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
++=================+===================+============================+==========+=========================+
+| \|name          | String            | name                       | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id            | String            | external_ref.id.value      | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_scheme     | Integer           | external_ref.id.scheme     | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_namespace  | String            | external_ref.id.namespace  | (yes)    | required if id is set   |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| /_identifier:i  | `DV_IDENTIFIER`_  | identifiers                | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+
+	
+
+PARTY_RELATED 
+-------------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_related_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer/relationship|code" : "10",
+  "conformance-ehrbase.de.v0/composer/relationship|value" : "mother",
+  "conformance-ehrbase.de.v0/composer/relationship|terminology" : "openehr"
+
+  } 
+.. code-block:: javascript
+
+ {
+ "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer|id": "1234-5678",
+  "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK",
+  "conformance-ehrbase.de.v0/composer/relationship|code" : "10",
+  "conformance-ehrbase.de.v0/composer/relationship|value" : "mother",
+  "conformance-ehrbase.de.v0/composer/relationship|terminology" : "openehr"
+  "conformance-ehrbase.de.v0/composer/_identifier:0|id": "122",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|issuer": "issuer",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|assigner": "assigner",
+  "conformance-ehrbase.de.v0/composer/_identifier:0|type": "type"
+  } 
+
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
++=================+===================+============================+==========+=========================+
+| \|name          | String            | name                       | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id            | String            | external_ref.id.value      | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_scheme     | Integer           | external_ref.id.scheme     | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_namespace  | String            | external_ref.id.namespace  | (yes)    | required if id is set   |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| /_identifier:i  | `DV_IDENTIFIER`_  | identifiers                | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| /_relationship  | `DV_CODED_TEXT`_  | relationship               | (yes)    |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+
+
 DV_TEXT
 -------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_text_class )
