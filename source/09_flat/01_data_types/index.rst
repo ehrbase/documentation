@@ -1,6 +1,189 @@
 Data Types
 =================
 
+FEEDER_AUDIT
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_feeder_audit_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|system_id": "orig",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/location|id": "12342341",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/location|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/location|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/location|name": "Org 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/subject|id": "456",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/subject|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/subject|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/subject|name": "Per 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/provider|id": "456",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/provider|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/provider|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit/provider|name": "Per 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|time": "2021-12-21T16:02:58.0094262+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:0|id": "id1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:0|issuer": "issuer1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:0|assigner": "assigner1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:0|type": "PERSON",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:1|id": "id2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:1|issuer": "issuer2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:1|assigner": "assigner2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_item_id:1|type": "PERSON",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/original_content": "Hello world!",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/original_content|formalism": "text/plain",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:0|id": "id1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:0|issuer": "issuer1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:0|assigner": "assigner1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:0|type": "PERSON",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:1|id": "id2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:1|issuer": "issuer2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:1|assigner": "assigner2",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_item_id:1|type": "PERSON",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/location|id": "12342341",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/location|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/location|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/location|name": "Org 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/subject|id": "456",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/subject|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/subject|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/subject|name": "Per 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|id": "456",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|name": "Per 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit|time": "2021-12-21T16:02:58.0094262+01:00",
+  }
+
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| Flat Path                      | Flat type                  | RM Path                      | Requerd  | Note                                                                    |
++================================+============================+==============================+==========+=========================================================================+
+| /originating_system_item_id:i  | `DV_IDENTIFIER`_           | originating_system_item_ids  | no       |                                                                         |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| /feeder_system_item_id:i       | `DV_IDENTIFIER`_           | feeder_system_item_ids       | no       |                                                                         |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| /original_content              | `DV_PARSABLE`_             | original_content             | no       | one one of original_content and original_content_multimedia can be set  |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| /original_content_multimedia   | `DV_MULTIMEDIA`_           | original_content             | no       | one one of original_content and original_content_multimedia can be set  |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| /originating_system_audit      | `PARTY_IDENTIFIED`_        | originating_system_audit     | yes      |                                                                         |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+| /feeder_system_audit           | `FEEDER_AUDIT_DETAILS`_    | feeder_system_audit          | no       |                                                                         |
++--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
+
+
+
+FEEDER_AUDIT_DETAILS
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_feeder_audit_details_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|system_id": "orig",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject|id": "1234-5678",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject|id_namespace": "EHR.NETWORK",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject/_identifier:0|id": "122",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject/_identifier:0|issuer": "issuer",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject/_identifier:0|assigner": "assigner",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject/_identifier:0|type": "type",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider|id": "1234-5678",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider|id_namespace": "EHR.NETWORK",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider/_identifier:0|id": "122",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider/_identifier:0|issuer": "issuer",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider/_identifier:0|assigner": "assigner",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/provider/_identifier:0|type": "type",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/location|id": "12342341",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/location|id_scheme": "NMC",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/location|id_namespace": "uk.org.nmc",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/location|name": "Org 1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|time": "2021-12-21T16:02:58.0094262+01:00"
+  }
+
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| Flat Path    | Flat type             | RM Path    | Requerd  | Note                                                        |
++==============+=======================+============+==========+=============================================================+
+| \|system_id  | String                | system_id  | yes      |                                                             |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| \|version_id | String                | version_id | no       |                                                             |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| \|time       | String                | time.value | no       |                                                             |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| /subject     | `PARTY_PROXY`_        | subject    | no       | add /subject\|_type:"PARTY_SELF" to  set this to PERY_SELF  |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| /provider    | `PARTY_IDENTIFIED`_   | provider   | no       |                                                             |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+| /location    | `PARTY_IDENTIFIED`_   | location   | no       |                                                             |
++--------------+-----------------------+------------+----------+-------------------------------------------------------------+
+
+
+EVENT_CONTEXT
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/context/start_time": "2021-12-21T14:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/setting|code": "238",
+  "conformance-ehrbase.de.v0/context/setting|value": "other care",
+  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id": "9091",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|name": "Hospital",
+  "conformance-ehrbase.de.v0/context/_participation:0|function": "requester",
+  "conformance-ehrbase.de.v0/context/_participation:0|mode": "face-to-face communication",
+  "conformance-ehrbase.de.v0/context/_participation:0|name": "Dr. Marcus Johnson",
+  "conformance-ehrbase.de.v0/context/_participation:0|id": "199",
+  "conformance-ehrbase.de.v0/context/_participation:0|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_participation:0|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/start_time": "2021-12-21T14:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/_end_time": "2021-12-21T15:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/_location": "2021-12-21T15:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/setting|code": "238",
+  "conformance-ehrbase.de.v0/context/setting|value": "other care",
+  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr"
+  }
+
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
++=================+===================+============================+==========+=========================+
+| \|name          | String            | name                       | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id            | String            | external_ref.id.value      | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_scheme     | Integer           | external_ref.id.scheme     | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_namespace  | String            | external_ref.id.namespace  | (yes)    | required if id is set   |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| /_identifier:i  | `DV_IDENTIFIER`_  | identifiers                | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+
+
+
 PARTY_PROXY 
 -----------
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_proxy_class )
@@ -14,16 +197,24 @@ PARTY_SELF
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_self_class)
 
 
-PARTY_SELF is indected by not setting an Id, Identifier or name. 
-
 .. code-block:: javascript
 
  {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_other_participation:0|function": "requester",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_other_participation:0|mode": "face-to-face communication",
+  "ctx/composer_self": true,
+  "conformance-ehrbase.de.v0/composer|id": "1234-5678",
+  "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK",
   } 
 
-
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
++=================+===================+============================+==========+=========================+
+| \|id            | String            | external_ref.id.value      | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_scheme     | Integer           | external_ref.id.scheme     | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id_namespace  | String            | external_ref.id.namespace  | (yes)    | required if id is set   |
++-----------------+-------------------+----------------------------+----------+-------------------------+
 
 PARTY_IDENTIFIED 
 ----------------
