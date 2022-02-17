@@ -1,5 +1,126 @@
-Data Types
+RM-Mappings
 =================
+
+COMPOSITION
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_composition_class)
+
+.. code-block:: javascript
+
+ {
+   
+  "conformance-ehrbase.de.v0/language|code": "en",
+  "conformance-ehrbase.de.v0/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/territory|code": "US",
+  "conformance-ehrbase.de.v0/territory|terminology": "ISO_3166-1",
+  "conformance-ehrbase.de.v0/category|code": "433",
+  "conformance-ehrbase.de.v0/category|value": "event",
+  "conformance-ehrbase.de.v0/category|terminology": "openehr",
+  "conformance-ehrbase.de.v0/context/start_time": "2021-12-21T14:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/setting|code": "238",
+  "conformance-ehrbase.de.v0/context/setting|value": "other care",
+  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/time": "2021-12-21T16:02:58.0094262+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/_uid": "6e3a9506-b81c-4d74-a37f-1464fb7106b2::piri.ehrscape.com::1",
+  "conformance-ehrbase.de.v0/language|code": "en",
+  "conformance-ehrbase.de.v0/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/territory|code": "US",
+  "conformance-ehrbase.de.v0/territory|terminology": "ISO_3166-1",
+  "conformance-ehrbase.de.v0/category|code": "433",
+  "conformance-ehrbase.de.v0/category|value": "event",
+  "conformance-ehrbase.de.v0/category|terminology": "openehr",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id": "9091",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_health_care_facility|name": "Hospital",
+  "conformance-ehrbase.de.v0/context/_participation:0|function": "requester",
+  "conformance-ehrbase.de.v0/context/_participation:0|mode": "face-to-face communication",
+  "conformance-ehrbase.de.v0/context/_participation:0|name": "Dr. Marcus Johnson",
+  "conformance-ehrbase.de.v0/context/_participation:0|id": "199",
+  "conformance-ehrbase.de.v0/context/_participation:0|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/_participation:0|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/context/start_time": "2021-12-21T14:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/_end_time": "2021-12-21T15:19:31.649613+01:00",
+  "conformance-ehrbase.de.v0/context/_location": "microbiology lab 2",
+  "conformance-ehrbase.de.v0/context/setting|code": "238",
+  "conformance-ehrbase.de.v0/context/setting|value": "other care",
+  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/time": "2021-12-21T16:02:58.0094262+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer|id": "1234-5678",
+  "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
+  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK"
+  }
+
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| Flat Path       | Flat type          | RM Path       | Required | Note                                                      |
++=================+====================+===============+==========+===========================================================+
+| /language       | `CODE_PHRASE`_     | language      | Yes      |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /territory      | `CODE_PHRASE`_     | territory     | Yes      |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /category       | `DV_CODED_TEXT`_   | category      | yes      |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /composer       | `PARTY_PROXY`_     | composer      | yes      | add ctx/composer_self:true to set composer to PARTY_SELF  |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /context        | `EVENT_CONTEXT`_   | context       | yes      |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /_link:0        | `LINK`_            | links         | no       |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /_feeder_audit  | `FEEDER_AUDIT`_    | feeder_audit  | no       |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+| /_uid           | STRING             | uid.value     | no       |                                                           |
++-----------------+--------------------+---------------+----------+-----------------------------------------------------------+
+
+
+
+LINK
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/common.html#_link_class)
+
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  }
+
++-----------------+--------------------+---------------+----------+---------+
+| Flat Path       | Flat type          | RM Path       | Required | Note    |
++=================+====================+===============+==========+=========+
++-----------------+--------------------+---------------+----------+---------+
+| \|type          | STRING             | type.value    | yes      |         |
++-----------------+--------------------+---------------+----------+---------+
+| \|meaning       | STRING             | meaning.value | yes      |         |
++-----------------+--------------------+---------------+----------+---------+
+| \|type          | STRING             | type.value    | yes      |         |
++-----------------+--------------------+---------------+----------+---------+
+
+
+
 
 FEEDER_AUDIT
 ---------------------
@@ -64,7 +185,7 @@ FEEDER_AUDIT
   }
 
 +--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
-| Flat Path                      | Flat type                  | RM Path                      | Requerd  | Note                                                                    |
+| Flat Path                      | Flat type                  | RM Path                      | Required | Note                                                                    |
 +================================+============================+==============================+==========+=========================================================================+
 | /originating_system_item_id:i  | `DV_IDENTIFIER`_           | originating_system_item_ids  | no       |                                                                         |
 +--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
@@ -119,7 +240,7 @@ FEEDER_AUDIT_DETAILS
   }
 
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
-| Flat Path    | Flat type             | RM Path    | Requerd  | Note                                                        |
+| Flat Path    | Flat type             | RM Path    | Required | Note                                                        |
 +==============+=======================+============+==========+=============================================================+
 | \|system_id  | String                | system_id  | yes      |                                                             |
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
@@ -169,7 +290,7 @@ EVENT_CONTEXT
   }
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
-| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
+| Flat Path       | Flat type         | RM Path                    | Required | Note                    |
 +=================+===================+============================+==========+=========================+
 | \|name          | String            | name                       | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -207,7 +328,7 @@ PARTY_SELF
   } 
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
-| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
+| Flat Path       | Flat type         | RM Path                    | Required | Note                    |
 +=================+===================+============================+==========+=========================+
 | \|id            | String            | external_ref.id.value      | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -239,7 +360,7 @@ PARTY_IDENTIFIED
   } 
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
-| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
+| Flat Path       | Flat type         | RM Path                    | Required | Note                    |
 +=================+===================+============================+==========+=========================+
 | \|name          | String            | name                       | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -284,7 +405,7 @@ PARTY_RELATED
   } 
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
-| Flat Path       | Flat type         | RM Path                    | Requerd  | Note                    |
+| Flat Path       | Flat type         | RM Path                    | Required | Note                    |
 +=================+===================+============================+==========+=========================+
 | \|name          | String            | name                       | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -328,7 +449,7 @@ DV_TEXT
   } 
 
 +--------------+----------------------+-------------+----------+-------+
-| Flat Path    | Flat type            | RM Path     | Requerd  | Note  |
+| Flat Path    | Flat type            | RM Path     | Required | Note  |
 +==============+======================+=============+==========+=======+
 |\|value       | String               | value       | yes      |       |
 +--------------+----------------------+-------------+----------+-------+
@@ -362,7 +483,7 @@ CODE_PHRASE
   } 
 
 +-------------------+------------+-----------------------+----------+-------+
-| Flat Path         | Flat type  | RM Path               | Requerd  | Note  |
+| Flat Path         | Flat type  | RM Path               | Required | Note  |
 +===================+============+=======================+==========+=======+
 | \|code            | String     | code_string           | yes      |       |
 +-------------------+------------+-----------------------+----------+-------+
@@ -396,7 +517,7 @@ TERM_MAPPING
   } 
 
 +------------+----------------------+----------+----------+--------+
-| Flat Path  | Flat type            | RM Path  | Requerd  | Note   |
+| Flat Path  | Flat type            | RM Path  | Required | Note   |
 +============+======================+==========+==========+========+
 | \|match    | String               | match    | yes      |        |
 +------------+----------------------+----------+----------+--------+
@@ -440,7 +561,7 @@ DV_CODED_TEXT
 
 
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
-| Flat Path      | Flat type       | RM Path                             | Requerd  | Note                                       |
+| Flat Path      | Flat type       | RM Path                             | Required | Note                                       |
 +================+=================+=====================================+==========+============================================+
 | \|code         | String          | defining_code.code_string           | yes      |                                            |
 +----------------+-----------------+-------------------------------------+----------+--------------------------------------------+
@@ -491,7 +612,7 @@ DV_ORDINAL
 
 
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
-| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
+| Flat Path                   | Flat type                        | RM Path                                | Required | Note                                             |
 +=============================+==================================+========================================+==========+==================================================+
 | \|code                      | String                           | symbol.defining_code.code_string       | Yes      |                                                  |
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
@@ -516,7 +637,7 @@ DV_BOOLEAN
 
 
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
-| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
+| Flat Path                   | Flat type                        | RM Path                                | Required | Note                                             |
 +=============================+==================================+========================================+==========+==================================================+
 |                             | Boolean                          | value                                  | Yes      |                                                  |
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
@@ -533,7 +654,7 @@ DV_URI
 
 
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
-| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
+| Flat Path                   | Flat type                        | RM Path                                | Required | Note                                             |
 +=============================+==================================+========================================+==========+==================================================+
 |                             | String                           | value                                  | Yes      |                                                  |
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
@@ -550,7 +671,7 @@ DV_EHR_URI
 
 
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
-| Flat Path                   | Flat type                        | RM Path                                | Requerd  | Note                                             |
+| Flat Path                   | Flat type                        | RM Path                                | Required | Note                                             |
 +=============================+==================================+========================================+==========+==================================================+
 |                             | String                           | value                                  | Yes      |                                                  |
 +-----------------------------+----------------------------------+----------------------------------------+----------+--------------------------------------------------+
@@ -577,7 +698,7 @@ DV_IDENTIFIER
 
 
 +-----------------------------+----------------------------------+--------------------------+----------+---------------------------------------+
-| Flat Path                   | Flat type                        | RM Path                  | Requerd  | Note                                  |
+| Flat Path                   | Flat type                        | RM Path                  | Required | Note                                  |
 +=============================+==================================+==========================+==========+=======================================+
 | \|id                        | String                           | id                       | Yes      | For the input \|id might be left out. |
 +-----------------------------+----------------------------------+--------------------------+----------+---------------------------------------+
@@ -630,7 +751,7 @@ DV_QUANTITY
 
 
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                          | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                          | RM Path                  | Required | Note                       |
 +=============================+====================================+==========================+==========+============================+
 | \|magnitude                 | String                             | magnitude                | yes      |                            |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
@@ -695,7 +816,7 @@ DV_PROPORTION
 
 
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
-| Flat Path                   | Flat type                           | RM Path                  | Requerd  | Note                      |
+| Flat Path                   | Flat type                           | RM Path                  | Required | Note                      |
 +=============================+=====================================+==========================+==========+===========================+
 | \|numerator                 | Real                                | numerator                | yes      |                           |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
@@ -741,7 +862,7 @@ DV_COUNT
 
 
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                           | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                           | RM Path                  | Required | Note                       |
 +=============================+=====================================+==========================+==========+============================+
 |                             | Integer                             | magnitude                | Yes      |                            |
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
@@ -780,7 +901,7 @@ DV_DATE
 
 
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                     | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                     | RM Path                  | Required | Note                       |
 +=============================+===============================+==========================+==========+============================+
 |                             | String                        | value                    | Yes      | ISO8601 date               |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
@@ -821,7 +942,7 @@ DV_DATE_TIME
 
 
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                          | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                          | RM Path                  | Required | Note                       |
 +=============================+====================================+==========================+==========+============================+
 |                             | String                             | value                    | Yes      | ISO8601 date               |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
@@ -864,7 +985,7 @@ DV_TIME
 
 
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                     | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                     | RM Path                  | Required | Note                       |
 +=============================+===============================+==========================+==========+============================+
 |                             | String                        | value                    | Yes      | ISO8601 date               |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
@@ -907,7 +1028,7 @@ DV_DURATION
 
 
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
-| Flat Path                   | Flat type                         | RM Path                  | Requerd  | Note                       |
+| Flat Path                   | Flat type                         | RM Path                  | Required | Note                       |
 +=============================+===================================+==========================+==========+============================+
 |                             | String                            | value                    | Yes      | ISO8601 duration           |
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
@@ -972,7 +1093,7 @@ DV_INTERVAL
 
 
 +--------------------+------------+------------------+----------+--------------------+
-| Flat Path          | Flat type  | RM Path          | Requerd  | Note               |
+| Flat Path          | Flat type  | RM Path          | Required | Note               |
 +====================+============+==================+==========+====================+
 | /lower             | T          | /lower           | no       |                    |
 +--------------------+------------+------------------+----------+--------------------+
@@ -1024,7 +1145,7 @@ REFERENCE_RANGE
 
 
 +--------------------+--------------+------------------------+----------+--------------------+
-| Flat Path          | Flat type    | RM Path                | Requerd  | Note               |
+| Flat Path          | Flat type    | RM Path                | Required | Note               |
 +====================+==============+========================+==========+====================+
 | /lower             | T            | range.lower            | no       |                    |
 +--------------------+--------------+------------------------+----------+--------------------+
@@ -1067,7 +1188,7 @@ DV_PARSABLE
 
 
 +--------------+-----------------+------------+----------+---------+
-| Flat Path    | Flat type       | RM Path    | Requerd  | Note    |
+| Flat Path    | Flat type       | RM Path    | Required | Note    |
 +==============+=================+============+==========+=========+
 | \|value      | String          | value      | Yes      |         |
 +--------------+-----------------+------------+----------+---------+
@@ -1111,7 +1232,7 @@ DV_MULTIMEDIA
 
 
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
-| Flat Path                    | Flat type          | RM Path                            | Requerd  | Note                                         |
+| Flat Path                    | Flat type          | RM Path                            | Required | Note                                         |
 +==============================+====================+====================================+==========+==============================================+
 |                              | String             | uri.value                          | no       |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
