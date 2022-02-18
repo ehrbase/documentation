@@ -1,5 +1,6 @@
 RM-Mappings
 =================
+.. warning:: WIP
 
 COMPOSITION
 ---------------------
@@ -157,6 +158,184 @@ ADMIN_ENTRY
 +------------------+------------------+-----------------+-----------+-----------------------------------------------------------------------+
 | /_uid            | STRING           | uid.value       | no        |                                                                       |
 +------------------+------------------+-----------------+-----------+-----------------------------------------------------------------------+
+
+INSTRUCTION
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_instruction_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/dv_text": "DV_TEXT 91",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/expiry_time": "2022-01-31T10:33:28.724259+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/narrative": "Human readable instruction narrative",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|terminology": "IANA_character-sets",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/action_archetype_id": "/openEHR-EHR-CLUSTER.conformance_action.v0/",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/dv_text": "DV_TEXT 91",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/expiry_time": "2022-01-31T10:33:28.724259+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/narrative": "Human readable instruction narrative",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_wf_definition|value": "wf_definition",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_wf_definition|formalism": "formalism",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|function": "requester",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|mode": "face-to-face communication",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|name": "Dr. Marcus Johnson",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|id": "199",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:0|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|function": "performer",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|mode": "not specified",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|name": "Lara Markham",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|id": "198",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_other_participation:1|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|type": "GUIDELINE",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id": "3445",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_work_flow_id|type": "WORKFLOW",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_work_flow_id|namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_work_flow_id|id": "335645",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_work_flow_id|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_uid":"9fcc1c70-9349-444d-b9cb-8fa817697f5e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_feeder_audit/originating_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_feeder_audit/originating_system_audit|system_id": "orig",
+  }
+
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| Flat Path        | Flat type        | RM Path        | Required  | Note                                             |
++==================+==================+================+===========+==================================================+
+| /language        | `CODE_PHRASE`_   | language       | Yes       |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /territory       | `CODE_PHRASE`_   | territory      | Yes       |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /narrative       | `DV_TEXT`_       | narrative      | yes       |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_expiry_time    | `DV_DATE_TIME`_  | expiry_time    | Yes       |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_wf_definition  | `DV_PARSABLE`_   | wf_definition  | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /subject         | `PARTY_PROXY`_   | subject        | no        | will be set to PARTY_SELF if not explicitly set  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_guideline_id   | `OBJECT_REF`_    | guideline_id   | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_work_flow_id   | `OBJECT_REF`_    | workflow_id    | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_link:i         | `LINK`_          | links          | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_feeder_audit   | `FEEDER_AUDIT`_  | feeder_audit   | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+| /_uid            | STRING           | uid.value      | no        |                                                  |
++------------------+------------------+----------------+-----------+--------------------------------------------------+
+
+
+ACTION
+---------------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_evaluation_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text": "dv_text in description",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text2": "dv_text in protocol",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/time": "2022-01-31T10:33:28.72414+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|terminology": "IANA_character-sets",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text": "dv_text in description",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text2": "dv_text in protocol",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|path": "/content[openEHR-EHR-SECTION.conformance_section.v0]/items[openEHR-EHR-INSTRUCTION.conformance_instruction.v0]",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|composition_uid": "4cdc3017-d8c5-4cd3-9900-f3bb7171d006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|activity_id": "activities[at0001]",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/time": "2022-01-31T10:33:28.72414+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|code": "en",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|terminology": "ISO_639-1",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|code": "UTF-8",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|function": "requester",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|mode": "face-to-face communication",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|name": "Dr. Marcus Johnson",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|id": "199",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:0|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|function": "performer",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|mode": "not specified",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|name": "Lara Markham",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|id": "198",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|id_namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_other_participation:1|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_guideline_id|type": "GUIDELINE",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_guideline_id|namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_guideline_id|id": "3445",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_guideline_id|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_work_flow_id|type": "WORKFLOW",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_work_flow_id|namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_work_flow_id|id": "335645",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_work_flow_id|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_uid":"9fcc1c70-9349-444d-b9cb-8fa817697f5e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_feeder_audit/originating_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_feeder_audit/originating_system_audit|system_id": "orig",
+  }
+
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| Flat Path              | Flat type                | RM Path              | Required  | Note                                             |
++========================+==========================+======================+===========+==================================================+
+| /language              | `CODE_PHRASE`_           | language             | Yes       |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /territory             | `CODE_PHRASE`_           | territory            | Yes       |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /time                  | `DV_DATE_TIME`_          | time                 | YES       |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /ism_transition        | `ISM_TRANSITION`_        | ism_transition       | Yes       |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_instruction_details  | `INSTRUCTION_DETAILS`_   | instruction_details  | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /subject               | `PARTY_PROXY`_           | subject              | no        | will be set to PARTY_SELF if not explicitly set  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_guideline_id         | `OBJECT_REF`_            | guideline_id         | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_work_flow_id         | `OBJECT_REF`_            | workflow_id          | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_link:i               | `LINK`_                  | links                | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_feeder_audit         | `FEEDER_AUDIT`_          | feeder_audit         | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+| /_uid                  | STRING                   | uid.value            | no        |                                                  |
++------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
+
 
 EVALUATION
 ---------------------
@@ -328,6 +507,86 @@ OBSERVATION
 | /_uid            | STRING           | uid.value       | no        |                                                                       |
 +------------------+------------------+-----------------+-----------+-----------------------------------------------------------------------+
 
+ELEMENT
+-------
+(see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_element_class)
+
+.. note:: In teh flat Formate there is no difference between ELEMENT and is value.
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_uid":"9fcc1c70-9349-444d-b9cb-8fa817697f5e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_feeder_audit/originating_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_feeder_audit/originating_system_audit|system_id": "orig",
+ }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|code": "253",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|value": "unknown",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_reason": "sample reason",
+  }
+
++-----------------+--------------------+---------------+-----------+---------+
+| Flat Path       | Flat type          | RM Path       | Required  | Note    |
++=================+====================+===============+===========+=========+
+| /_null_flavour  | `DV_CODED_TEXT`_   | null_flavour  | no        |         |
++-----------------+--------------------+---------------+-----------+---------+
+| /_null_reason   | `DV_TEXT`_         | null_reason   | no        |         |
++-----------------+--------------------+---------------+-----------+---------+
+| /_link:i        | `LINK`_            | links         | no        |         |
++-----------------+--------------------+---------------+-----------+---------+
+| /_feeder_audit  | `FEEDER_AUDIT`_    | feeder_audit  | no        |         |
++-----------------+--------------------+---------------+-----------+---------+
+| /_uid           | STRING             | uid.value     | no        |         |
++-----------------+--------------------+---------------+-----------+---------+
+
+
+
+CLUSTER
+--------
+(see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_cluster_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/labresult/text_value": "labresult 4",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/labresult/text_value": "labresult 4",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_feeder_audit/originating_system_audit|version_id": "final",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_uid":"9fcc1c70-9349-444d-b9cb-8fa817697f5e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|type": "problem",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|meaning": "problem related note",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  }
+
++-----------------+-------------------+---------------+-----------+---------+
+| Flat Path       | Flat type         | RM Path       | Required  | Note    |
++=================+===================+===============+===========+=========+
+| /_link:i        | `LINK`_           | links         | no        |         |
++-----------------+-------------------+---------------+-----------+---------+
+| /_feeder_audit  | `FEEDER_AUDIT`_   | feeder_audit  | no        |         |
++-----------------+-------------------+---------------+-----------+---------+
+| /_uid           | STRING            | uid.value     | no        |         |
++-----------------+-------------------+---------------+-----------+---------+
+
 
 LINK
 ---------------------
@@ -489,6 +748,87 @@ FEEDER_AUDIT_DETAILS
 | /location    | `PARTY_IDENTIFIED`_   | location   | no       |                                                             |
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
 
+ACTIVITY
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_activity_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/action_archetype_id": "/openEHR-EHR-CLUSTER.conformance_action.v0/",
+
+  }
+
++-----------------------+------------------+----------------------+-----------+------------------------------------------+
+| Flat Path             | Flat type        | RM Path              | Required  | Note                                     |
++=======================+==================+======================+===========+==========================================+
+| /timing               | `DV_PARSABLE`_   | timing               | no        |                                          |
++-----------------------+------------------+----------------------+-----------+------------------------------------------+
+| /action_archetype_id  | STRING           | action_archetype_id  | no        | Will be set to /.*/ if not set explicit. |
++-----------------------+------------------+----------------------+-----------+------------------------------------------+
+
+
+ISM_TRANSITION
+--------------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_activity_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+
+  }
+
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| Flat Path             | Flat type          | RM Path              | Required  | Note                                     |
++=======================+====================+======================+===========+==========================================+
+| /current_state        | `DV_CODED_TEXT`_   | current_state        | yes       |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+
+INSTRUCTION_DETAILS
+--------------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_instruction_details_class)
+
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|path": "/content[openEHR-EHR-SECTION.conformance_section.v0]/items[openEHR-EHR-INSTRUCTION.conformance_instruction.v0]",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|composition_uid": "4cdc3017-d8c5-4cd3-9900-f3bb7171d006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|activity_id": "activities[at0001]",
+
+  }
+
++--------------------+------------+----------------------+-----------+---------+
+| Flat Path          | Flat type  | RM Path              | Required  | Note    |
++====================+============+======================+===========+=========+
+| \|path             | STRING     | instruction_id.path  | yes       |         |
++--------------------+------------+----------------------+-----------+---------+
+| \|composition_uid  | STRING     | instruction_id.id    | yes       |         |
++--------------------+------------+----------------------+-----------+---------+
+| \|activity_id      | STRING     | activity_id          | yes       |         |
++--------------------+------------+----------------------+-----------+---------+
+
+
 
 EVENT_CONTEXT
 ----------------
@@ -530,11 +870,36 @@ EVENT_CONTEXT
 +-----------------+-------------------+----------------------------+----------+-------------------------+
 | \|id            | String            | external_ref.id.value      | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
-| \|id_scheme     | Integer           | external_ref.id.scheme     | no       |                         |
+| \|id_scheme     | String            | external_ref.id.scheme     | no       |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
 | \|id_namespace  | String            | external_ref.id.namespace  | (yes)    | required if id is set   |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
 | /_identifier:i  | `DV_IDENTIFIER`_  | identifiers                | no       |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+
+OBJECT_REF
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|type": "GUIDELINE",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|namespace": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id": "3445",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id_scheme": "HOSPITAL-NS",
+  }
+
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| Flat Path       | Flat type         | RM Path                    | Required | Note                    |
++=================+===================+============================+==========+=========================+
+| \|type          | String            | type                       | yes      |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|id            | String            | id.value                   | yes      |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|scheme        | String            | id.scheme                  | yes      |                         |
++-----------------+-------------------+----------------------------+----------+-------------------------+
+| \|namespace     | String            | namespace                  | yes      |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
 
 
