@@ -902,6 +902,58 @@ OBJECT_REF
 | \|namespace     | String            | namespace                  | yes      |                         |
 +-----------------+-------------------+----------------------------+----------+-------------------------+
 
+INTERVAL_EVENT
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_interval_event_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/width": "P30D",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|code": "146",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|value": "mean",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr",
+  }
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0|sample_count": 5,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/width": "P30D",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|code": "146",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|value": "mean",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr",
+  }
+
++-----------------+-------------------+----------------+-----------+---------+
+| Flat Path       | Flat type         | RM Path        | Required  | Note    |
++=================+===================+================+===========+=========+
+| /width          | `DV_DURATION`_    | width          | yes       |         |
++-----------------+-------------------+----------------+-----------+---------+
+| /math_function  | `DV_CODED_TEXT`_  | math_function  | yes       |         |
++-----------------+-------------------+----------------+-----------+---------+
+| \|sample_count  | INTEGER           | sample_count   | no        |         |
++-----------------+-------------------+----------------+-----------+---------+
+
+
+POINT_EVENT
+----------------
+(see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text": "DV_TEXT value",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/time": "2021-12-21T16:02:58.0094262+01:00",
+  }
+
++--------------------+------------------+--------------------+-----------+---------+
+| Flat Path          | Flat type        | RM Path            | Required  | Note    |
++====================+==================+====================+===========+=========+
+| /time              | `DV_DATE_TIME`_  | time               | yes       |         |
++--------------------+------------------+--------------------+-----------+---------+
 
 
 PARTY_PROXY 
