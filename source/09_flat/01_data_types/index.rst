@@ -511,7 +511,7 @@ ELEMENT
 -------
 (see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_element_class)
 
-.. note:: In teh flat Formate there is no difference between ELEMENT and is value.
+.. note:: Using FLAT format there is no difference between an ELEMENT and its value.
 
 .. code-block:: javascript
 
@@ -1872,7 +1872,7 @@ DV_INTERVAL
 +====================+============+====================+===========+============================================+
 | /lower             | T          | lower              | no        |                                            |
 +--------------------+------------+--------------------+-----------+--------------------------------------------+
-| upper              | T          | upper              | no        |                                            |
+| /upper             | T          | upper              | no        |                                            |
 +--------------------+------------+--------------------+-----------+--------------------------------------------+
 | \|lower_unbounded  | BOOLEAN    | \|lower_unbounded  | no        | defaults to false. only in output if true  |
 +--------------------+------------+--------------------+-----------+--------------------------------------------+
