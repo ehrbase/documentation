@@ -1697,70 +1697,6 @@ DV_DURATION
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
 
 
-
-DV_INTERVAL 
---------------
-(see also https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_interval_class)
-
-.. code-block:: javascript
-
- {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|magnitude": 72.83,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|unit": "Unit",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:1/interval_dv_quantity/upper|magnitude": 150.83,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:1/interval_dv_quantity/upper|unit": "Unit",
-  } 
-
-.. code-block:: javascript
-
- {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|numerator": 20.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|denominator": 12.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|type": 0,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion": 1.6532258064516128,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|magnitude_status": "~",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|normal_status": "N",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|accuracy": 50.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|accuracy_is_percent": true,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|precision": 1,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/lower|numerator": 20.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/lower|denominator": 12.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/lower|type": 0,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/lower": 1.6532258064516128,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/upper|numerator": 25.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/upper|denominator": 12.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/upper|type": 0,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_normal_range/upper": 2.0564516129032255,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/lower|numerator": 20.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/lower|denominator": 18.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/lower|type": 0,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/lower": 1.1141304347826089,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/upper|numerator": 25.5,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/upper|denominator": 12.4,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/upper|type": 0,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/upper": 2.0564516129032255,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion/_other_reference_ranges:0/meaning": "high"
-  } 
-
-
-+--------------------+------------+------------------+----------+--------------------+
-| Flat Path          | Flat type  | RM Path          | Required | Note               |
-+====================+============+==================+==========+====================+
-| /lower             | T          | /lower           | no       |                    |
-+--------------------+------------+------------------+----------+--------------------+
-| /upper             | T          | /upper           | no       |                    |
-+--------------------+------------+------------------+----------+--------------------+
-| \|lower_unbounded  | Boolean    | lower_unbounded  | no       | defaults to false  |
-+--------------------+------------+------------------+----------+--------------------+
-| \|upper_unbounded  | Boolean    | upper_unbounded  | no       | defaults to false  |
-+--------------------+------------+------------------+----------+--------------------+
-| \|lower_included   | Boolean    | lower_included   | no       | defaults to true   |
-+--------------------+------------+------------------+----------+--------------------+
-| \|upper_included   | Boolean    | upper_included   | no       | defaults to true   |
-+--------------------+------------+------------------+----------+--------------------+
-
-
-
 REFERENCE_RANGE  
 -----------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_reference_range_class)
@@ -1908,5 +1844,43 @@ DV_MULTIMEDIA
 | /_language                   | `CODE_PHRASE`_     | language                           | no       |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
 
+
+DV_INTERVAL
+------------
+(see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_interval_class)
+
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|magnitude": 72.83,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|unit": "Unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/upper|magnitude": 80.83,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/upper|unit": "Unit",
+  }
+.. code-block:: javascript
+
+ {
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|magnitude": 72.83,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|unit": "Unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|lower_included": false,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|upper_unbounded": true,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|upper_included": false,
+  }
+
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| Flat Path          | Flat type  | RM Path            | Required  | Note                                       |
++====================+============+====================+===========+============================================+
+| /lower             | T          | lower              | no        |                                            |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| upper              | T          | upper              | no        |                                            |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| \|lower_unbounded  | BOOLEAN    | \|lower_unbounded  | no        | defaults to false. only in output if true  |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| \|upper_unbounded  | BOOLEAN    | upper_unbounded    | no        | defaults to false, only in output if true  |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| \|lower_included   | BOOLEAN    | lower_included     | no        | defaults to true. only in output if false  |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
+| \|upper_included   | BOOLEAN    | upper_included     | no        | defaults to true. only in output if false  |
++--------------------+------------+--------------------+-----------+--------------------------------------------+
 
 
