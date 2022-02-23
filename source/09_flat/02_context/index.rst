@@ -3,9 +3,9 @@ Context Information
 
 .. warning:: WIP
 
-To simplify the input, the flat formate offers the option to set context values  which set values in the rm-tree.
+To simplify the input, the flat formate offers the option to set context values which set default values in the rm-tree.
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/language": "de",
@@ -36,29 +36,29 @@ To simplify the input, the flat formate offers the option to set context values 
   "ctx/participation_identifiers:1|id:1": "id4",
   "ctx/participation_identifiers:1|type:1": "PERSON",
   "ctx/health_care_facility|name": "Hospital",
-  "ctx/health_care_facility|id": "9091",
+  "ctx/health_care_facility|id": "9091"
   }
 
 
 composer: composer_name; composer_id; composer_self
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/composer_name": "Silvia Blake",
   "ctx/composer_id": "123",
   "ctx/id_namespace": "HOSPITAL-NS",
-  "ctx/id_scheme": "HOSPITAL-NS",
+  "ctx/id_scheme": "HOSPITAL-NS"
  }
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/composer_self": true,
   "ctx/composer_id": "123",
   "ctx/id_namespace": "HOSPITAL-NS",
-  "ctx/id_scheme": "HOSPITAL-NS",
+  "ctx/id_scheme": "HOSPITAL-NS"
  }
 
 
@@ -70,12 +70,12 @@ composer: composer_name; composer_id; composer_self
 id_namespace, id_scheme
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/composer_id": "123",
   "ctx/id_namespace": "HOSPITAL-NS",
-  "ctx/id_scheme": "HOSPITAL-NS",
+  "ctx/id_scheme": "HOSPITAL-NS"
  }
 
 * id_namespace : default namespace for external references: OBJECT_REF.namespace
@@ -84,11 +84,11 @@ id_namespace, id_scheme
 language, territory
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/language": "de",
-  "ctx/territory": "US",
+  "ctx/territory": "US"
  }
 
 * language : set the default language for ENTRY.language && COMPOSITION.language
@@ -97,13 +97,13 @@ language, territory
 work_flow_id
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/work_flow_id|id": "567",
   "ctx/work_flow_id|id_scheme": "HOSPITAL-NS",
   "ctx/work_flow_id|namespace": "HOSPITAL-NS",
-  "ctx/work_flow_id|type": "ORGANISATION",
+  "ctx/work_flow_id|type": "ORGANISATION"
  }
 
 * set the default for ENTRY.workflowId
@@ -113,7 +113,7 @@ work_flow_id
 participation
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/participation_name:0": "Dr. Marcus Johnson",
@@ -132,7 +132,7 @@ participation
   "ctx/participation_identifiers:1|issuer:1": "issuer4",
   "ctx/participation_identifiers:1|assigner:1": "assigner4",
   "ctx/participation_identifiers:1|id:1": "id4",
-  "ctx/participation_identifiers:1|type:1": "PERSON",
+  "ctx/participation_identifiers:1|type:1": "PERSON"
  }
 
 * sets the default for EVENT_CONTEXT.participations && ENTRY.otherParticipations
@@ -141,13 +141,13 @@ participation
 health_care_facility
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/health_care_facility|name": "Hospital",
   "ctx/health_care_facility|id": "9091",
   "ctx/id_namespace": "HOSPITAL-NS",
-  "ctx/id_scheme": "HOSPITAL-NS",
+  "ctx/id_scheme": "HOSPITAL-NS"
  }
 
 set the default for COMPOSITION.context.healthCareFacility
@@ -155,10 +155,10 @@ set the default for COMPOSITION.context.healthCareFacility
 time
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/time": "2021-04-01T12:40:31.418954+02:00",
+  "ctx/time": "2021-04-01T12:40:31.418954+02:00"
  }
 
 * set the default time for ACTION.time, COMPOSITION.context.startTime, OBSERVATION.history.orgin, EVENT.time
@@ -167,10 +167,10 @@ time
 end_time
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/end_time": "2021-05-01T12:40:31.418954+02:00",
+  "ctx/end_time": "2021-05-01T12:40:31.418954+02:00"
  }
 
 * set the default time COMPOSITION.context.endTime
@@ -178,10 +178,10 @@ end_time
 history_origin
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/history_origin": "2021-05-01T12:40:31.418954+02:00",
+  "ctx/history_origin": "2021-05-01T12:40:31.418954+02:00"
  }
 
 * set the default time for OBSERVATION.history.orgin
@@ -190,10 +190,10 @@ history_origin
 action_time
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/action_time": "2021-05-01T12:40:31.418954+02:00",
+  "ctx/action_time": "2021-05-01T12:40:31.418954+02:00"
  }
 
 * set the default time for ACTION.time
@@ -201,10 +201,10 @@ action_time
 activity_timing
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/activity_timing": "R4/2022-01-31T10:00:00+01:00/P3M",
+  "ctx/activity_timing": "R4/2022-01-31T10:00:00+01:00/P3M"
  }
 
 * set the default for ACTIVITY.timing
@@ -212,13 +212,13 @@ activity_timing
 provider
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/provider_name": "Silvia Blake",
   "ctx/provider_id": "123",
   "ctx/id_namespace": "HOSPITAL-NS",
-  "ctx/id_scheme": "HOSPITAL-NS",
+  "ctx/id_scheme": "HOSPITAL-NS"
  }
 
 * set the default PARTY_IDENTIFIED for ENTRY.provider
@@ -226,16 +226,16 @@ provider
 action_ism_transition_current_state
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/action_ism_transition_current_state": "completed",
+  "ctx/action_ism_transition_current_state": "completed"
  }
 
- .. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/action_ism_transition_current_state": "532",
+  "ctx/action_ism_transition_current_state": "532"
  }
 
 
@@ -245,10 +245,10 @@ action_ism_transition_current_state
 instruction_narrative
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/instruction_narrative": "Human readable instruction narrative",
+  "ctx/instruction_narrative": "Human readable instruction narrative"
  }
 
 * set the default for INSTRUCTION.narrative
@@ -256,10 +256,10 @@ instruction_narrative
 location
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/location": "Lab B2",
+  "ctx/location": "Lab B2"
  }
 
 * set the default for COMPOSITION.context.location
@@ -267,16 +267,16 @@ location
 setting
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/setting": "other care",
+  "ctx/setting": "other care"
  }
 
- .. code-block:: javascript
+.. code-block:: json
 
  {
-  "ctx/setting": "238",
+  "ctx/setting": "238"
  }
 
 
@@ -287,12 +287,12 @@ setting
 link
 --------------------------------------------------------
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/link:0|type": "problem",
   "ctx/link:0|meaning": "problem related note",
-  "ctx/link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "ctx/link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e"
  }
 
 * set the default for LOCATABLE.links
