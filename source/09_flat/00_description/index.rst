@@ -3,7 +3,7 @@ General Description
 
 .. warning:: WIP
 
-The Flat format offers a simplified representation of a openEHR Composition. Data is represented as a map Human readable parts to value.
+The Flat format offers a simplified representation of a openEHR Composition. Data is represented as a map of human readable parts to values.
 
 .. code-block:: json
 
@@ -23,7 +23,7 @@ The Flat format offers a simplified representation of a openEHR Composition. Dat
 
 Web-template 
 --------------
-Its based on a simplified representation of the template the Web-template.
+The Flat format is based on a simplified representation of the template the so called Web-template.
 
 To get one from a template call the get Web-template Endpoint.
 

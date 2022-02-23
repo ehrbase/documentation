@@ -240,7 +240,7 @@ action_ism_transition_current_state
 
 
 * set the default  for ACTION.ismTransition.currentState
-* either value or code is acepted
+* either value or code is accepted
 
 instruction_narrative
 --------------------------------------------------------
@@ -281,7 +281,7 @@ setting
 
 
 * set the default for COMPOSITION.context.setting
-* either value or code is acepted
+* either value or code is accepted
 * ctx/setting will be set to "other care" if not set explicitly  
 
 link
