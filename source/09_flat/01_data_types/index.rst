@@ -793,7 +793,14 @@ ISM_TRANSITION
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr"
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|code": "548",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|value": "finish",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|code": "at0006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|value": "transition",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|terminology": "local",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/_reason:0": "reason 1"
 
   }
 
@@ -801,6 +808,12 @@ ISM_TRANSITION
 | Flat Path             | Flat type          | RM Path              | Required  | Note                                     |
 +=======================+====================+======================+===========+==========================================+
 | /current_state        | `DV_CODED_TEXT`_   | current_state        | yes       |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /transition           | `DV_CODED_TEXT`_   | transition           | no        |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /careflow_step        | `DV_CODED_TEXT`_   | careflow_step        | no        |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /_reason:i            | `DV_TEXT`_         | reason               | no        |                                          |
 +-----------------------+--------------------+----------------------+-----------+------------------------------------------+
 
 INSTRUCTION_DETAILS
