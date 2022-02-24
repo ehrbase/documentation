@@ -20,14 +20,14 @@ To set up a default client it is necessary to create a new instance,
 which requires the following components as parameters:
 
 - ``OpenEhrClientConfig`` containing the base URI of the openEHR REST API backend server
-- And a ``TemplateProvider`` (see below)
+- Optional (if not given, templates will be queried from the remote system) add a ``TemplateProvider`` (see below)
 
 Together a typical setup might look like:
 
 .. code-block:: java
 
     DefaultRestClient client = new DefaultRestClient(
-        new OpenEhrClientConfig(new URI("http://localhost:8080/ehrbase/rest/openehr/v1/")),
+        new OpenEhrClientConfig(new URI("http://localhost:8080/ehrbase/")),
         templateProvider);
 
 .. _sdk-reference-client_module-client-template_provider-label:

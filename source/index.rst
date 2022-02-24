@@ -32,8 +32,10 @@ We will add detailed documentation as soon as possible.
    04_sdk/index
    05_load_testing/index
    06_fhir_bridge/index
+   07_audit/index
    08_terminology_validation/index
    09_flat/index
+
 
 Indices and tables
 ==================

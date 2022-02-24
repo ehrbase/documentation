@@ -10,7 +10,7 @@ Admin API
 
 This section covers the Admin API for EHRbase which can be used for administrative tasks or help in development.
 
-To generally enable the Admin API set the `ADMINAPI_ACTIVE` environment variable to true 
+To generally enable the Admin API set the `ADMIN_API_ACTIVE` environment variable to true
 (see `Spring Boot Externalized Configuration`_ for more details and options on how to set such configuration attributes).
 
 .. _Spring Boot Externalized Configuration: https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config

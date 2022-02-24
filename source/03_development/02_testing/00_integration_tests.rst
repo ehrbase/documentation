@@ -170,8 +170,8 @@ Robot will print proper warning in console if it can't connect to server or data
    [ WARN ] //                                                     ///
    [ WARN ] //////////////////////////////////////////////////////////
    [ WARN ] 
-   [ WARN ] [ check "Manually Controlled SUT" in test README ]
-   [ WARN ] [ https://github.com/ehrbase/ehrbase/blob/develop/tests/README.md#manually-sut ]
+   [ WARN ] [ check "Manually Controlled SUT" in Integration Test Documentation ]
+   [ WARN ] [ https://docs.ehrbase.org/en/latest/03_development/02_testing/index.html#local-sut--manually-controlled-sut ]
    [ WARN ] 
    [ ERROR ] ABORTING EXECUTION DUE TO TEST ENVIRONMENT ISSUES:
    [ ERROR ] Could not connect to server!
