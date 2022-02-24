@@ -21,9 +21,9 @@ The Flat format offers a simplified representation of a openEHR Composition. Dat
   }
 
 
-Web-template 
+Web-Template
 --------------
-The Flat format is based on a simplified representation of the template the so called Web-template.
+The Flat format is based on a simplified representation of a template, the so called Web-Template.
 
 To get one from a template call the get Web-template Endpoint.
 
@@ -121,8 +121,8 @@ Flat Path
 
 To build a Flat Path
 
-* add the id from the `Web-template`_ together
-* if a element is multi valued add a index
+* add the id from the `Web-Template`_ together
+* if a element is multi valued add an index
 * Once at A Data Value uses "|" to select the Attribute
 
 .. code-block:: json
@@ -134,7 +134,7 @@ To build a Flat Path
 
 RM-Attributes
 --------------
-Some attributes are not defended by the template but by the RM-Model. If those are optional there are not part of the `Web-template`_ and are selected by "_attributeName"
+Some attributes are not defended by the template but by the RM-Model. If those are optional there are not part of the `Web-Template`_ and are selected by "_attributeName"
 
 .. code-block:: json
 
