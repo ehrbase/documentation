@@ -123,7 +123,7 @@ To build a Flat Path
 
 * add the id from the `Web-Template`_ together
 * if a element is multi valued add an index
-* Once at A Data Value uses "|" to select the Attribute
+* once at a data value, use "|" to select the attribute
 
 .. code-block:: json
 
