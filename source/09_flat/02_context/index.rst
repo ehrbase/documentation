@@ -161,7 +161,8 @@ time
   "ctx/time": "2021-04-01T12:40:31.418954+02:00"
  }
 
-* set the default time for ACTION.time, COMPOSITION.context.startTime, OBSERVATION.history.orgin, EVENT.time
+* set the default time for ACTION.time, COMPOSITION.context.startTime, OBSERVATION.history.origin
+* EVENT.time will be set to history.origin (plus offset if set to a minimum in the template)
 * ctx/time will be set to now() if not set explicitly
 
 end_time
@@ -184,7 +185,8 @@ history_origin
   "ctx/history_origin": "2021-05-01T12:40:31.418954+02:00"
  }
 
-* set the default time for OBSERVATION.history.orgin
+* set the default time for OBSERVATION.history.origin
+* EVENT.time will be set to history.origin (plus offset if set to a minimum in the template)
 
 
 action_time
