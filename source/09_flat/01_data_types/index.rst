@@ -6,7 +6,7 @@ COMPOSITION
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_composition_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
    
@@ -28,13 +28,12 @@ COMPOSITION
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|code": "UTF-8",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|terminology": "IANA_character-sets",
-  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
-
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/_uid": "6e3a9506-b81c-4d74-a37f-1464fb7106b2::piri.ehrscape.com::1",
+  "conformance-ehrbase.de.v0/_uid": "6e3a9506-b81c-4d74-a37f-1464fb7106b2::ehrbase.org::1",
   "conformance-ehrbase.de.v0/language|code": "en",
   "conformance-ehrbase.de.v0/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/territory|code": "US",
@@ -98,17 +97,17 @@ ADMIN_ENTRY
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_admin_entry_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/dv_text": "DV_TEXT 56",
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/encoding|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/encoding|terminology": "IANA_character-sets"
 
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/dv_text": "DV_TEXT 56",
@@ -137,7 +136,7 @@ ADMIN_ENTRY
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/_link:0|meaning": "problem related note",
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/_feeder_audit/originating_system_audit|version_id": "final",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_admin_entry/_feeder_audit/originating_system_audit|system_id": "orig"
 
   }
 
@@ -163,7 +162,7 @@ INSTRUCTION
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_instruction_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
@@ -175,9 +174,9 @@ INSTRUCTION
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/encoding|terminology": "IANA_character-sets"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
@@ -218,7 +217,7 @@ INSTRUCTION
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_link:0|meaning": "problem related note",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_feeder_audit/originating_system_audit|version_id": "final",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_feeder_audit/originating_system_audit|system_id": "orig"
   }
 
 +------------------+------------------+----------------+-----------+--------------------------------------------------+
@@ -252,7 +251,7 @@ ACTION
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_evaluation_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text": "dv_text in description",
@@ -264,9 +263,9 @@ ACTION
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/encoding|terminology": "IANA_character-sets"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/dv_text": "dv_text in description",
@@ -307,7 +306,7 @@ ACTION
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/_link:0|meaning": "problem related note",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/_feeder_audit/originating_system_audit|version_id": "final",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_feeder_audit/originating_system_audit|system_id": "orig"
   }
 
 +------------------------+--------------------------+----------------------+-----------+--------------------------------------------------+
@@ -341,7 +340,7 @@ EVALUATION
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_evaluation_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
 
@@ -350,10 +349,10 @@ EVALUATION
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/encoding|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/encoding|terminology": "IANA_character-sets"
 
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/dv_text": "dv_text in data",
@@ -387,7 +386,7 @@ EVALUATION
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_link:0|meaning": "problem related note",
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_feeder_audit/originating_system_audit|version_id": "final",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_evaluation/_feeder_audit/originating_system_audit|system_id": "orig"
 
   }
 
@@ -415,7 +414,7 @@ OBSERVATION
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_composition_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
 
@@ -427,10 +426,10 @@ OBSERVATION
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/encoding|terminology": "IANA_character-sets"
 
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
@@ -481,7 +480,7 @@ OBSERVATION
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/originating_system_audit|version_id": "final",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/originating_system_audit|system_id": "orig",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/original_content": "Hello world!",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/original_content|formalism": "text/plain",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/original_content|formalism": "text/plain"
 
   }
 
@@ -513,13 +512,13 @@ ELEMENT
 
 .. note:: Using FLAT format there is no difference between an ELEMENT and its value.
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
@@ -529,15 +528,15 @@ ELEMENT
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_link:0|meaning": "problem related note",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_feeder_audit/originating_system_audit|version_id": "final",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_feeder_audit/originating_system_audit|system_id": "orig"
  }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|code": "253",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|value": "unknown",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_flavour|terminology": "openehr",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_reason": "sample reason",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_null_reason": "sample reason"
   }
 
 +-----------------+--------------------+---------------+-----------+---------+
@@ -560,12 +559,12 @@ CLUSTER
 --------
 (see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_cluster_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/labresult/text_value": "labresult 4",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/labresult/text_value": "labresult 4"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/labresult/text_value": "labresult 4",
@@ -574,7 +573,7 @@ CLUSTER
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_uid":"9fcc1c70-9349-444d-b9cb-8fa817697f5e",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|type": "problem",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|meaning": "problem related note",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/conformance_cluster/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e"
   }
 
 +-----------------+-------------------+---------------+-----------+---------+
@@ -593,12 +592,12 @@ LINK
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_link_class)
 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/_link:0|type": "problem",
   "conformance-ehrbase.de.v0/_link:0|meaning": "problem related note",
-  "conformance-ehrbase.de.v0/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e",
+  "conformance-ehrbase.de.v0/_link:0|target": "ehr://ehr.network/347a5490-55ee-4da9-b91a-9bba710f730e"
   }
 
 +-----------------+--------------------+---------------+----------+---------+
@@ -619,12 +618,12 @@ FEEDER_AUDIT
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_feeder_audit_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|system_id": "orig"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/originating_system_audit|version_id": "final",
@@ -674,7 +673,7 @@ FEEDER_AUDIT
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|id_namespace": "uk.org.nmc",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|id_scheme": "NMC",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit/provider|name": "Per 1",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit|time": "2021-12-21T16:02:58.0094262+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/_feeder_audit/feeder_system_audit|time": "2021-12-21T16:02:58.0094262+01:00"
   }
 
 +--------------------------------+----------------------------+------------------------------+----------+-------------------------------------------------------------------------+
@@ -699,12 +698,12 @@ FEEDER_AUDIT_DETAILS
 ---------------------
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_feeder_audit_details_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|system_id": "orig",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit|system_id": "orig"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/_feeder_audit/feeder_system_audit/subject|id": "1234-5678",
@@ -741,7 +740,7 @@ FEEDER_AUDIT_DETAILS
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
 | \|time       | String                | time.value | no       |                                                             |
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
-| /subject     | `PARTY_PROXY`_        | subject    | no       | add /subject\|_type:"PARTY_SELF" to  set this to PERY_SELF  |
+| /subject     | `PARTY_PROXY`_        | subject    | no       | add /subject\|_type:"PARTY_SELF" to  set this to PARTY_SELF |
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
 | /provider    | `PARTY_IDENTIFIED`_   | provider   | no       |                                                             |
 +--------------+-----------------------+------------+----------+-------------------------------------------------------------+
@@ -752,20 +751,20 @@ ACTIVITY
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_activity_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/dv_text": "DV_TEXT 45",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing": "R4/2022-01-31T10:00:00+01:00/P3M",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/timing|formalism": "timing",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/action_archetype_id": "/openEHR-EHR-CLUSTER.conformance_action.v0/",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/current_activity/action_archetype_id": "/openEHR-EHR-CLUSTER.conformance_action.v0/"
 
   }
 
@@ -782,19 +781,26 @@ ISM_TRANSITION
 --------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_activity_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|code": "532",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|value": "completed",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/current_state|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|code": "548",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|value": "finish",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/transition|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|code": "at0006",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|value": "transition",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/careflow_step|terminology": "local",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/ism_transition/_reason:0": "reason 1"
 
   }
 
@@ -803,18 +809,24 @@ ISM_TRANSITION
 +=======================+====================+======================+===========+==========================================+
 | /current_state        | `DV_CODED_TEXT`_   | current_state        | yes       |                                          |
 +-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /transition           | `DV_CODED_TEXT`_   | transition           | no        |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /careflow_step        | `DV_CODED_TEXT`_   | careflow_step        | no        |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
+| /_reason:i            | `DV_TEXT`_         | reason               | no        |                                          |
++-----------------------+--------------------+----------------------+-----------+------------------------------------------+
 
 INSTRUCTION_DETAILS
 --------------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_instruction_details_class)
 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|path": "/content[openEHR-EHR-SECTION.conformance_section.v0]/items[openEHR-EHR-INSTRUCTION.conformance_instruction.v0]",
   "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|composition_uid": "4cdc3017-d8c5-4cd3-9900-f3bb7171d006",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|activity_id": "activities[at0001]",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_action/_instruction_details|activity_id": "activities[at0001]"
 
   }
 
@@ -834,15 +846,15 @@ EVENT_CONTEXT
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/context/start_time": "2021-12-21T14:19:31.649613+01:00",
   "conformance-ehrbase.de.v0/context/setting|code": "238",
   "conformance-ehrbase.de.v0/context/setting|value": "other care",
-  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr",
+  "conformance-ehrbase.de.v0/context/setting|terminology": "openehr"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/context/_health_care_facility|id": "9091",
@@ -881,13 +893,13 @@ OBJECT_REF
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|type": "GUIDELINE",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|namespace": "HOSPITAL-NS",
   "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id": "3445",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id_scheme": "HOSPITAL-NS",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_instruction/_guideline_id|id_scheme": "HOSPITAL-NS"
   }
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -906,7 +918,7 @@ INTERVAL_EVENT
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_structures.html#_interval_event_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
@@ -914,8 +926,10 @@ INTERVAL_EVENT
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/width": "P30D",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|code": "146",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|value": "mean",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr"
   }
+
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
@@ -924,7 +938,7 @@ INTERVAL_EVENT
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/width": "P30D",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|code": "146",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|value": "mean",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/math_function|terminology": "openehr"
   }
 
 +-----------------+-------------------+----------------+-----------+---------+
@@ -942,11 +956,11 @@ POINT_EVENT
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/ehr.html#_event_context_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text": "DV_TEXT value",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/time": "2021-12-21T16:02:58.0094262+01:00",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/time": "2021-12-21T16:02:58.0094262+01:00"
   }
 
 +--------------------+------------------+--------------------+-----------+---------+
@@ -969,13 +983,13 @@ PARTY_SELF
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_self_class)
 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "ctx/composer_self": true,
   "conformance-ehrbase.de.v0/composer|id": "1234-5678",
   "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
-  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK",
+  "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK"
   } 
 
 +-----------------+-------------------+----------------------------+----------+-------------------------+
@@ -992,12 +1006,12 @@ PARTY_IDENTIFIED
 ----------------
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_identified_class )
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake"
   } 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
@@ -1030,7 +1044,7 @@ PARTY_RELATED
 -------------
 (see also https://specifications.openehr.org/releases/RM/latest/common.html#_party_related_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
@@ -1039,16 +1053,16 @@ PARTY_RELATED
   "conformance-ehrbase.de.v0/composer/relationship|terminology" : "openehr"
 
   } 
-.. code-block:: javascript
+.. code-block:: json
 
  {
- "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
+  "conformance-ehrbase.de.v0/composer|name": "Silvia Blake",
   "conformance-ehrbase.de.v0/composer|id": "1234-5678",
   "conformance-ehrbase.de.v0/composer|id_scheme": "UUID",
   "conformance-ehrbase.de.v0/composer|id_namespace": "EHR.NETWORK",
   "conformance-ehrbase.de.v0/composer/relationship|code" : "10",
   "conformance-ehrbase.de.v0/composer/relationship|value" : "mother",
-  "conformance-ehrbase.de.v0/composer/relationship|terminology" : "openehr"
+  "conformance-ehrbase.de.v0/composer/relationship|terminology" : "openehr",
   "conformance-ehrbase.de.v0/composer/_identifier:0|id": "122",
   "conformance-ehrbase.de.v0/composer/_identifier:0|issuer": "issuer",
   "conformance-ehrbase.de.v0/composer/_identifier:0|assigner": "assigner",
@@ -1076,12 +1090,12 @@ DV_TEXT
 -------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_text_class )
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text": "DV_TEXT value"
   } 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text": "DV_TEXT value",
@@ -1119,13 +1133,13 @@ CODE_PHRASE
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_code_phrase_class )
 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_language|terminology": "ISO_639-1"
   }
-.. code-block:: javascript 
+.. code-block:: json 
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_language|code": "en",
@@ -1148,15 +1162,15 @@ TERM_MAPPING
 -------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_term_mapping_class )
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_mapping:0|match": "=",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_mapping:0/target|terminology": "SNOMED-CT",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_mapping:0/target|code": "21794005",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_mapping:0/target|code": "21794005"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_text/_mapping:0|match": "=",
@@ -1182,7 +1196,7 @@ DV_CODED_TEXT
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_coded_text_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|value": "term1",
@@ -1190,7 +1204,7 @@ DV_CODED_TEXT
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|terminology": "local"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_coded_text|value": "term1",
@@ -1233,7 +1247,7 @@ DV_ORDINAL
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_ordinal_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|code": "at0015",
@@ -1241,7 +1255,7 @@ DV_ORDINAL
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|ordinal": 1
   }
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ordinal|code": "at0015",
@@ -1280,7 +1294,7 @@ DV_BOOLEAN
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_boolean_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
     "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_boolean": true
@@ -1297,7 +1311,7 @@ DV_URI
 --------------
 (see also https://specifications.openehr.org/releases/RM/Release-1.0.4/data_types.html#_dv_uri_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
      "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_uri": "https://www.google.com/"
@@ -1314,7 +1328,7 @@ DV_EHR_URI
 --------------
 (see also https://specifications.openehr.org/releases/RM/Release-1.0.4/data_types.html#_dv_ehr_uri_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
     "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_ehr_uri": "ehr://766b3873-0762-4921-91e2-838c8546d47f"
@@ -1332,13 +1346,13 @@ DV_IDENTIFIER
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_quantity_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|id": "A123",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|id": "A123"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_identifier|id": "A123",
@@ -1368,14 +1382,14 @@ DV_QUANTITY
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_quantity_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|unit": "unit"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity|magnitude": 65.9,
@@ -1410,7 +1424,7 @@ DV_QUANTITY
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                             | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                             | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                             | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
 | \|accuracy                  | Real                               | accuracy                 | no       |                            |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
@@ -1426,7 +1440,7 @@ DV_PROPORTION
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_proportion_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|numerator": 20.5,
@@ -1434,7 +1448,7 @@ DV_PROPORTION
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|type": 0
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_proportion|numerator": 20.5,
@@ -1479,7 +1493,7 @@ DV_PROPORTION
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
 | \|magnitude_status          | String                              | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)  |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
-| \|normal_status             | String                              | normal_status            | no       | Valuset normal_status     |
+| \|normal_status             | String                              | normal_status            | no       | ValueSet normal_status    |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_PROPORTION>      | normal_range             | no       |                           |
 +-----------------------------+-------------------------------------+--------------------------+----------+---------------------------+
@@ -1490,13 +1504,13 @@ DV_COUNT
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_count_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
    "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count": 7
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_count": 7,
@@ -1519,7 +1533,7 @@ DV_COUNT
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                              | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                              | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                              | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_COUNT>           | normal_range             | no       |                            |
 +-----------------------------+-------------------------------------+--------------------------+----------+----------------------------+
@@ -1530,13 +1544,13 @@ DV_DATE
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12",
@@ -1560,7 +1574,7 @@ DV_DATE
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                        | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                        | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                        | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_DATE>      | normal_range             | no       |                            |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
@@ -1571,13 +1585,13 @@ DV_DATE_TIME
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
     "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time": "2022-01-12T13:22:34.000868+01:00"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time": "2022-01-12T13:22:34.000868+01:00",
@@ -1588,7 +1602,7 @@ DV_DATE_TIME
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_normal_range/upper": "2022-02-12T13:22:34.000868+01:00",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/lower": "2022-02-12T13:22:34.000868+01:00",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/upper": "2022-03-12T13:22:34.000868+01:00",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/meaning": "high",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date_time/_other_reference_ranges:0/meaning": "high"
   } 
 
 
@@ -1601,7 +1615,7 @@ DV_DATE_TIME
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                             | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                             | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                             | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_DATE_TIME>      | normal_range             | no       |                            |
 +-----------------------------+------------------------------------+--------------------------+----------+----------------------------+
@@ -1614,13 +1628,13 @@ DV_TIME
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_date_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_date": "2022-01-12"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_time": "13:22:34.000868+01:00",
@@ -1644,7 +1658,7 @@ DV_TIME
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                        | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                        | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                        | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_TIME>      | normal_range             | no       |                            |
 +-----------------------------+-------------------------------+--------------------------+----------+----------------------------+
@@ -1656,13 +1670,13 @@ DV_DURATION
 --------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_duration_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
    "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration": "P2DT11H33M"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_duration": "P2DT11H33M",
@@ -1689,7 +1703,7 @@ DV_DURATION
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
 | \|magnitude_status          | String                            | magnitude_status         | no       | ValueSet (",>,>=,<,<=,~)   |
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
-| \|normal_status             | String                            | normal_status            | no       | Valuset normal_status      |
+| \|normal_status             | String                            | normal_status            | no       | ValueSet normal_status     |
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
 | /_normal_range              | `DV_INTERVAL`_ <DV_DURATION>      | normal_range             | no       |                            |
 +-----------------------------+-----------------------------------+--------------------------+----------+----------------------------+
@@ -1701,17 +1715,17 @@ REFERENCE_RANGE
 -----------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_reference_range_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/lower|magnitude": 70.5,
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/lower|unit": "unit",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/upper|magnitude": 77.6,
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/upper|unit": "unit",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/meaning|value": "high",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/meaning|value": "high"
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:0/lower|magnitude": 70.5,
@@ -1727,7 +1741,7 @@ REFERENCE_RANGE
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:1/upper|unit": "unit",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:1/meaning|value": "very high",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:1/meaning|code": "260360000",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:1/meaning|terminology": "SNOMED-CT",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_other_reference_ranges:1/meaning|terminology": "SNOMED-CT"
   } 
 
 
@@ -1754,15 +1768,15 @@ DV_PARSABLE
 -----------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_parsable_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable": "Formal instructions on carrying out the procedure...",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable|formalism": "GLIF 1.0",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable|formalism": "GLIF 1.0"
 
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_parsable": "Formal instructions on carrying out the procedure...",
@@ -1790,15 +1804,15 @@ DV_MULTIMEDIA
 -----------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia": "http://med.tube.com/sample",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|mediatype": "video/H261",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|size": 504903212,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia|size": 504903212
   } 
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia": "http://med.tube.com/sample",
@@ -1814,7 +1828,7 @@ DV_MULTIMEDIA
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_language|code": "en",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_language|terminology": "ISO_639-1",
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_charset|code": "UTF-8",
-  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_charset|terminology": "IANA_character-sets",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_multimedia/_charset|terminology": "IANA_character-sets"
   } 
 
 
@@ -1823,15 +1837,15 @@ DV_MULTIMEDIA
 +==============================+====================+====================================+==========+==============================================+
 |                              | String             | uri.value                          | no       |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
-| \|media_type                 | String             | media_type.code_string             | Yes      | valuset (IANA_media-types)                   |
+| \|media_type                 | String             | media_type.code_string             | Yes      | ValueSet (IANA_media-types)                  |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
 | \|size                       | Integer            | size                               | Yes      |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
 | \|alternatetext              | String             | alternate_text                     | no       |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
-| \|compression_algorithm      | String             | compression_algorithm.code_string  | no       | valueset (openehr_compression_algorithms)    |
+| \|compression_algorithm      | String             | compression_algorithm.code_string  | no       | ValueSet (openehr_compression_algorithms)    |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
-| \|integrity_check_algorithm  | String             | integrity_check_algorithm          | no       | valuset(openehr_integrity_check_algorithms)  |
+| \|integrity_check_algorithm  | String             | integrity_check_algorithm          | no       | ValueSet (openehr_integrity_check_algorithms)|
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
 | \|integrity_check            | String             | integrity_check                    | no       |                                              |
 +------------------------------+--------------------+------------------------------------+----------+----------------------------------------------+
@@ -1849,22 +1863,22 @@ DV_INTERVAL
 ------------
 (see also https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_interval_class)
 
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|magnitude": 72.83,
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|unit": "Unit",
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/upper|magnitude": 80.83,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/upper|unit": "Unit",
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/upper|unit": "Unit"
   }
-.. code-block:: javascript
+.. code-block:: json
 
  {
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|magnitude": 72.83,
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity/lower|unit": "Unit",
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|lower_included": false,
   "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|upper_unbounded": true,
-  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|upper_included": false,
+  "conformance-ehrbase.de.v0/conformance_section/conformance_interval/any_event:0/interval_dv_quantity|upper_included": false
   }
 
 +--------------------+------------+--------------------+-----------+--------------------------------------------+
