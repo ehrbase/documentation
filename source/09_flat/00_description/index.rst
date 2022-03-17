@@ -1,9 +1,9 @@
 General Description
 ===================
 
-.. warning:: WIP
+.. warning:: WIP (Work In Progress)
 
-The Flat format offers a simplified representation of a openEHR Composition. Data is represented as a map of human readable parts to values.
+The Flat format offers a simplified representation of a openEHR Composition. Data is represented as a map of human readable paths to values.
 
 .. code-block:: json
 
@@ -23,15 +23,19 @@ The Flat format offers a simplified representation of a openEHR Composition. Dat
 
 Web-Template
 --------------
-The Flat format is based on a simplified representation of a template, the so called Web-Template.
+The Flat format is based on a simplified representation of a template, the so called __Web-Template__.
 
 To get one from a template call the get Web-template Endpoint.
 
 .. code-block:: javascript
 
- {
- GET http://localhost:8080/ehrbase/rest/ecis/v1/template/{templateId}
-  } 
+   {
+      GET http://localhost:8080/ehrbase/rest/ecis/v1/template/{templateId}
+   } 
+
+Or alternatively export from Archetype Designer (https://tools.openehr.org/) by selecting "Export Web Template" in the export button dropdown.
+
+The result will look something like this:
 
 .. code-block:: json
   :linenos: 
@@ -121,9 +125,9 @@ Flat Path
 
 To build a Flat Path
 
-* add the id from the `Web-Template`_ together
-* if a element is multi valued add an index
-* once at a data value, use "|" to select the attribute
+* concatenate the content from the `id` fields from the `Web-Template`_ hierarchy together
+* if a element is multi valued add an index to the path, e.g. :0
+* once at a data value leaf node, use "|" to select the appropriate attribute
 
 .. code-block:: json
 
