@@ -3,7 +3,7 @@ General Description
 
 .. warning:: WIP (Work In Progress)
 
-The Flat format offers a simplified representation of a openEHR Composition. Data is represented as a map of human readable paths to values.
+The Flat format offers a simplified representation of an openEHR Composition. Data is represented as a map of human readable paths to values.
 
 .. code-block:: json
 
@@ -25,7 +25,7 @@ Web-Template
 --------------
 The Flat format is based on a simplified representation of a template, the so called __Web-Template__.
 
-To get one from a template call the get Web-template Endpoint.
+To get one from a template, call the get Web-template Endpoint.
 
 .. code-block:: javascript
 
@@ -123,10 +123,10 @@ The result will look something like this:
 Flat Path
 --------------
 
-To build a Flat Path
+To build a Flat Path:
 
 * concatenate the content from the `id` fields from the `Web-Template`_ hierarchy together
-* if a element is multi valued add an index to the path, e.g. :0
+* if an element is multi-valued, add an index to the path, e.g. :0
 * once at a data value leaf node, use "|" to select the appropriate attribute
 
 .. code-block:: json
@@ -138,7 +138,7 @@ To build a Flat Path
 
 RM-Attributes
 --------------
-Some attributes are not defended by the template but by the RM-Model. If those are optional there are not part of the `Web-Template`_ and are selected by "_attributeName"
+Some attributes are not defined by the template, but by the Reference Model. If those are optional they are not part of the `Web-Template`_ and are selected by "_attributeName"
 
 .. code-block:: json
 
@@ -155,7 +155,7 @@ See :doc:`/09_flat/01_data_types/index` for details.
 
 Context
 --------------
-To simplify the input, the flat formate offers the option to set context values which set default values in the rm-tree.
+To simplify the input, the flat formate offers the option to set context values, which set default values in the rm-tree.
 
 .. code-block:: json
 
