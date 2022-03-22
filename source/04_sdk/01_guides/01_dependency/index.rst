@@ -7,7 +7,7 @@ To make use of the SDK's features it needs to be included as dependency.
 
 Release-artifacts should be taken from `maven central <https://search.maven.org/search?q=g:org.ehrbase.openehr.sdk>`_.
 
-If you need a specific non-release-version, you can get it from `jitpack.io <https://jitpack.io/#ehrbase/openEHR%20SDK>`_. Consider that there is a different *groupId* comparing to maven central.
+If you need a specific non-release-version, you can get it from `jitpack.io <https://jitpack.io/#ehrbase/openEHR_SDK>`_. Consider that there is a different *groupId* comparing to maven central.
 
 For instance, to build a simple client, include the ``client`` module as dependency.
 
