@@ -18,3 +18,4 @@ documents the software in detail.
    07_admin/index
    08_status_and_metrics/index
    09_abac/index
+   10_plugin_system/index
