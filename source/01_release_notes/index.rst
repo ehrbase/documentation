@@ -4,18 +4,4 @@
 Release Notes
 =========================================
 
-The following pages show the release notes
-
-.. toctree::
-   :name: Development
-   :maxdepth: 3
-   0172.rst
-   0171.rst
-   0160.rst
-   0150.rst
-   0140.rst
-   0130.rst
-   0120.rst
-   0110.rst
-   0100.rst
-   090.rst
+The current release notes can always be found in the `CHANGELOG <https://github.com/ehrbase/ehrbase/blob/develop/CHANGELOG.md>`_ of the EHRbase GitHub repository.
