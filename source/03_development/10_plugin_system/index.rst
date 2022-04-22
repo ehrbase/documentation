@@ -37,9 +37,14 @@ To enable plugins to be loaded, additional configuration parameters need to be s
 .. code-block:: yaml
 
     plugin-manager:
-        enable: true                     # false to disable all plugins
-        plugin-dir: ./my-ehrbase-plugins # directory containing the plugin JARs
-        plugin-context-path: /plugins    # base context path for plugin endpoint URLs
+        enable: true                                   # false to disable all plugins
+        plugin-dir: ./my-ehrbase-plugins               # directory containing the plugin JARs
+        plugin-config-dir: ./my-ehrbase-plugins-config # directory containing the plugin JARs
+        plugin-context-path: /plugins                  # base context path for plugin endpoint URLs
+
+Example plugins
+==================
+Two example plugins can be found in `Example Plugin Repo <https://github.com/ehrbase/ExamplePlugin>`_
 
 Developing plugins
 ==================
@@ -68,46 +73,102 @@ Create a standard Maven project, and insert the following snippets into the ``po
             <plugin.dependencies />
         </properties>
 
+        <dependencyManagement>
+           <dependencies>
+           <!-- Include the ehrbase bom -->
+            <dependency>
+                <groupId>org.ehrbase.openehr</groupId>
+                <artifactId>bom</artifactId>
+                <version>0.21.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+          </dependencies>
+        </dependencyManagement>
+
         <dependencies>
             <!-- plugin SPI module -->
             <dependency>
                 <groupId>org.ehrbase.openehr</groupId>
                 <artifactId>plugin</artifactId>
-                <version>0.20.0-SNAPSHOT</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
 
-        <build>
-            <plugins>
-                <plugin>
-                    <!-- add the required manifest entries to the plugin JAR -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
-                    <configuration>
-                        <archive>
-                            <manifestEntries>
-                                <Plugin-Id>${plugin.id}</Plugin-Id>
-                                <Plugin-Class>${plugin.class}</Plugin-Class>
-                                <Plugin-Version>${plugin.version}</Plugin-Version>
-                                <Plugin-Provider>${plugin.provider}</Plugin-Provider>
-                                <Plugin-Dependencies>${plugin.dependencies}</Plugin-Dependencies>
-                            </manifestEntries>
-                        </archive>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+       <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <finalName>${project.artifactId}-${project.version}-plugin</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <attach>false</attach>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Plugin-Id>${plugin.id}</Plugin-Id>
+                            <Plugin-Version>${plugin.version}</Plugin-Version>
+                            <Plugin-Provider>${plugin.provider}</Plugin-Provider>
+                            <Plugin-Class>${plugin.class}</Plugin-Class>
+                            <Plugin-Dependencies>${plugin.dependencies}</Plugin-Dependencies>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+       </build> 
     </project>
+
+also add under ``src/main/assembly/assembly.xml``
+
+.. code-block:: xml
+
+ <assembly>
+    <id>plugin</id>
+    <formats>
+      <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>true</unpack>
+            <scope>runtime</scope>
+            <outputDirectory>/</outputDirectory>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+        </dependencySet>
+    </dependencySets>
+ </assembly>
+
+Dependencies
+-------------
+The EHRbase bom provides the correct version for als Dependencies used by EHRbase and are provided by it. Thus any depandances in the bom has to be included with scope provided. Additional Dependencies need to be packed into the jar. This is done via the maven-assembly-plugin.
 
 Plugin entrypoint
 -----------------
 
 The manifest entry ``Plugin-Class`` as the entrypoint of the plugin has two variants with respective base classes from the SPI.
 
-* For plugins which will use the full WebApplicationContext (provide Controller endpoints) need to implement ``org.ehrbase.plugin.EhrBasePlugin``
+* For plugins which will use the full WebApplicationContext (provide Controller endpoints) need to implement ``org.ehrbase.plugin.WebMvcEhrBasePlugin``
   as in the `web example plugin <https://github.com/ehrbase/ExamplePlugin/blob/master/web-plugin/src/main/java/org/ehrbase/example_web_plugin/ExampleWebPlugin.java>`_.
-* If the full WebApplicationContext is not required - the simplified default ``org.pf4j.spring.SpringPlugin`` must be implemented
+* If the full WebApplicationContext is not required - the simplified default ``org.ehrbase.plugin.NonWebMvcEhrBasePlugin`` must be implemented
   as in the `simple example plugin <https://github.com/ehrbase/ExamplePlugin/blob/master/simple-plugin/src/main/java/org/ehrbase/example_plugin/ExamplePlugin.java>`_.
 
 For both versions, it is recommended to create a spring configuration class triggering a ComponentScan on the plugin package. 
@@ -133,5 +194,5 @@ Plugin configuration
 
 Plugins can also be configured externally to create plugins which can react to their environment.
 
-.. todo:: 
-    TODO: Document configuration.
+Any file under ``${plugin-config-dir}\${plugin.id}`` of format ``XML,JSON,YAML`` will be accessible as property in the spring application context.
+See `web example plugin <https://github.com/ehrbase/ExamplePlugin/blob/master/web-plugin/src/main/java/org/ehrbase/example_web_plugin/TestProperty.java>`_
