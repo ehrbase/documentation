@@ -187,13 +187,13 @@ and the respective JavaDoc should be consulted on the specific extension point h
 
 To implement an extension point, create an implementation of the specific extension point interface as a component of the plugin,
 and annotate it with ``@Extension`` and a specific ``@Order(#)`` annotation or implement the Order or PriorityOrder interface to define the execution order of the implementation.
-Please be aware that the lowest order value has the highest precedence, meaning it can process the input value first, but will process the return value last (same as with around pointcuts in aspects).
-If multiple extension point implementations of the same interface have the same order value (across plugins), PriorityOrdered takes precedence and after that precedence is determined by descending alphabetical order of the bean names.
+Please be aware that the lowest order value has the highest precedence, meaning it can process the input value first, but will process the return value last (same as with Around advice in aspects).
+If multiple extension point implementations of the same interface have the same order value (across plugins), PriorityOrdered takes precedence. After that precedence is determined by descending alphabetical order of the bean names.
 
-The extension point interfaces define methods with semantics similar to around pointcuts in aspects in most cases.
-When implementing an around method, you will receive an input object and a call chain function.
+The extension point interfaces define methods with semantics similar to Around advice in aspects in most cases.
+When implementing an Around advice extension point method, you will receive an input object and a call chain function.
 The input object contains all or parts of the arguments provided to the intercepted methods in the ehrbase service layer.
-Input DTOs combining multiple arguments are usually not mutable, but if you need to modify the argument values before proceeding, you can create a new instance with modified values.
+Input DTOs combining multiple arguments are usually immutable, but if you need to modify the argument values before proceeding, you can create a new instance with modified values.
 The call chain function argument acts as an analog to ProceedingJoinPoint in aspects.
 To proceed with the service invocation just call apply with your (possibly) modified input object.
 You may also modify the return value of the call chain.
