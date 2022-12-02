@@ -25,7 +25,7 @@ Create Contribution with addition of new Composition
     Composition composition = [..]
     
     // Audit details created 
-    AuditDetails audit = createAuditDetails();
+    AuditDetails audit = [..]
     
     // Contrubution created with Composition addition change type
      ContributionBuilder contribution = ContributionBuilder.builder(audit)
@@ -45,7 +45,7 @@ Create Contribution  with modification of Composition
     Composition composition = [..]
     
     // Audit details created 
-    AuditDetails audit = createAuditDetails();
+    AuditDetails audit = [..]
     
     // Contrubution created with Composition modification change type and containing VersionUid
      ContributionBuilder contribution = ContributionBuilder.builder(audit)
@@ -64,7 +64,7 @@ Composition modification audit using precedent version uid.
     String precedentVersionUid = [..]
     
     // Audit details created 
-    AuditDetails audit = createAuditDetails();
+    AuditDetails audit = [..]
 
     // Contrubution created with Composition modification change type and Precedent version uid
      ContributionBuilder contribution = ContributionBuilder.builder(audit)
@@ -87,7 +87,7 @@ Create Contribution with deletion of Composition
     String compositionPrecedingVersionUid = composition.getVersionUid().toString()
     
     // Audit details created 
-    AuditDetails audit = createAuditDetails();
+    AuditDetails audit = [..]
     
     // Contrubution created with Composition deletion change type. Contrubution can be removed by providing precedent version uid.
     ContributionBuilder contribution = ContributionBuilder.builder(audit)
@@ -109,7 +109,7 @@ Create contribution using Contribution Dto
     Composition composition = [..]
     
     // Audit details created 
-    AuditDetails contributionAudit = createAuditDetails();
+    AuditDetails contributionAudit = [..]
     
     // OriginalVersion must contain AuditDetails and can contain compositions depends on change type
     List<OriginalVersion> originalVersions = [..]
