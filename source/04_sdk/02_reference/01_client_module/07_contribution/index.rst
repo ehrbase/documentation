@@ -3,124 +3,145 @@ Contribution Endpoint
 
 .. warning:: WIP
 
-For managing changes to the repository requires version control mechanism and change-set mechanisms, known as a contribution.  Each contribution references a set of one or more Versions of any of the versioned items in the record that were committed. ``Client currently support create/update/delete composition change types.``  Any Composition change requires a contribution creation. To start working with a contribution we need a composition.
 
 The ``DefaultRestClient`` includes a ``DefaultRestContributionEndpoint`` 
 with the following functionalities.
 
-Create contribution using ContributionBuilder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Saving a contribution is done using the ``saveContribution`` method.
+Save contribution
+^^^^^^^^^^^^^^^^^
 
-.. note:: Please provide data to all fields, which are required as per openEHR Reference Model. 
-    Otherwise the backend server might reject the payload as invalid.
+Saving a contribution is done using the ``saveContribution`` method. The idea is that the client already works with an instance of the contribution. Client currently supports only composition inside contribution with ``create/update/delete`` change types. The creation of ``ContributionCreateDto`` explained below.
 
-Create Contribution with addition of new Composition
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+    A very simplified example of saving contribution:
 
 .. code-block:: java
 
-    // Composition created
+    ContributionCreateDto contribution = [..]
+
+    // Contribution Saved
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+
+Create contribution using ContributionBuilder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A ``ContributionBuilder`` is a class that provides a new contribution instance. Key intentions of the ``ContributionBuilder`` is to hide much of the complexity and make the contribution easy to create. To start working with a ``ContributionBuilder`` we need an instance of the composition and audit details.
+
+.. note:: Please provide data to all fields, which are required as per openEHR Reference Model. 
+    Otherwise the backend server will reject the payload as invalid.
+
+Create contribution with addition of new composition and save contribution 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. code-block:: java
+
     Composition composition = [..]
     
-    // Audit details created 
+    // Create audit details 
     AuditDetails audit = [..]
     
-    // Contrubution created with Composition addition change type
-     ContributionBuilder contribution = ContributionBuilder.builder(audit)
+    // Create contribution with composition creation change type
+    ContributionCreateDto contribution = ContributionBuilder.builder(audit)
                     .addCompositionCreation(composition)
                     .build();
     
-    // Contribution Saved
-    VersionUid contributionEntity = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    // Save contribution
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
 
 
-Create Contribution  with modification of Composition
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+Create contribution with modification of composition and save contribution 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: java
 
-    // Composition modification
     Composition composition = [..]
     
-    // Audit details created 
+    // Create audit details 
     AuditDetails audit = [..]
     
-    // Contrubution created with Composition modification change type and containing VersionUid
-     ContributionBuilder contribution = ContributionBuilder.builder(audit)
+    // Create contribution with composition modification change type and mandatory to contain version uid
+     ContributionCreateDto contribution = ContributionBuilder.builder(audit)
                     .addCompositionModification(composition)
                     .build();
     
-    // Contribution Saved
-    VersionUid contributionEntity = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    // Save contribution 
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
     
-Composition modification audit using precedent version uid.
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Create contribution with modification of composition using version uid and save contribution 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. code-block:: java
 
-    //Precedent version uid
-    String precedentVersionUid = [..]
-    
-    // Audit details created 
-    AuditDetails audit = [..]
-
-    // Contrubution created with Composition modification change type and Precedent version uid
-     ContributionBuilder contribution = ContributionBuilder.builder(audit)
-                    .addCompositionModification(composition, precedentVersionUid)
-                    .build();
-    
-    // Contribution Saved
-    VersionUid contributionEntity = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
-
-
-Create Contribution with deletion of Composition
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-.. code-block:: java
-
-    //Any precedent composition
     Composition composition = [..]
 
-    //Retrieve precedent composition version uid 
-    String compositionPrecedingVersionUid = composition.getVersionUid().toString()
-    
-    // Audit details created 
+    // Retrieve composition version uid 
+    String versionUid = composition.getVersionUid().toString()
+
+    // Create audit details 
     AuditDetails audit = [..]
+
+    // Create contribution with composition modification change type and version uid
+     ContributionCreateDto contribution = ContributionBuilder.builder(audit)
+                    .addCompositionModification(composition, versionUid)
+                    .build();
     
-    // Contrubution created with Composition deletion change type. Contrubution can be removed by providing precedent version uid.
-    ContributionBuilder contribution = ContributionBuilder.builder(audit)
-                    .addCompositionDeletion(compositionPrecedingVersionUid)
+    // Save contribution 
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+
+
+Create contribution with deletion of composition save contribution 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. code-block:: java
+
+    Composition composition = [..]
+
+    // Retrieve composition version uid 
+    String versionUid = composition.getVersionUid().toString()
+
+    // Create audit details 
+    AuditDetails audit = [..]
+
+    // Create contribution with composition deletion change type
+    ContributionCreateDto contribution = ContributionBuilder.builder(audit)
+                    .addCompositionDeletion(versionUid)
                     .build();
     
     // Contribution Saved
-    VersionUid contributionEntity = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
 
-Create contribution using Contribution Dto
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create contribution using ``ContributionCreateDto``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``ContributionCreateDto`` class can be created by providing mandatory audit details and original versions.
 
 .. note:: Please provide data to all fields, which are required as per openEHR Reference Model. 
-    Otherwise the backend server might reject the payload as invalid.
+    Otherwise the backend server will reject the payload as invalid.
+
+    A very simplified example of creating ``ContributionCreateDto``:
 
 .. code-block:: java
 
-    // Composition created
     Composition composition = [..]
     
-    // Audit details created 
-    AuditDetails contributionAudit = [..]
+    // Create audit details 
+    AuditDetails audit = [..]
     
     // OriginalVersion must contain AuditDetails and can contain compositions depends on change type
     List<OriginalVersion> originalVersions = [..]
+    originalVersion.setData(composition);
+    originalVersion.setCommitAudit(audit);
+    // Version uid must be provided in case of composition deletion and modification
+    String versionUid = composition.getVersionUid().toString()
+    originalVersion.setPrecedingVersionUid(new ObjectVersionId(versionUid));
     
-    // Contribution dto is created
-    ContributionCreateDto contributionDto = new ContributionCreateDto();
-    contributionCreateDto.setAudit(contributionAudit);
+    // Create contribution dto
+    ContributionCreateDto contribution = new ContributionCreateDto();
+    contributionCreateDto.setAudit(audit);
     contributionCreateDto.setVersions(originalVersions);
     
-    // Contribution Saved
-    VersionUid contributionEntity = openEhrClient.contributionEndpoint(ehr).saveContribution(contributionDto);
+    // Save contribution
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
 
 Find contribution
 ^^^^^^^^^^^^^^^^^
