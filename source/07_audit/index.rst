@@ -144,7 +144,7 @@ and DICOM Audit Trail Message Format Profile.
 The following configuration file has to be stored in the directory referenced in the volume mounted in the ``logstash`` service
 declared in the Docker Compose file above (i.e. ``./logstash/logstash.conf``).
 
-.. code-block::
+.. code-block:: JavaScript
     :caption: logstash.conf
 
     input {

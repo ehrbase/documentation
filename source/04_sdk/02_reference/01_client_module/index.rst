@@ -18,3 +18,4 @@ Reference documentation of the client module.
    04_composition/index
    05_aql/index
    06_directory/index
+   07_contribution/index
