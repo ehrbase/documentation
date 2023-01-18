@@ -1,4 +1,4 @@
-EHRbase Documentation
+EHRbase Documentation [![Documentation Status](https://readthedocs.org/projects/ehrbase/badge/?version=latest)](https://ehrbase.readthedocs.io/en/latest/?badge=latest)
 ========
 
 How to view it?
