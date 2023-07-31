@@ -151,7 +151,7 @@ Some attributes are not defined by the template, but by the Reference Model. If 
   "conformance-ehrbase.de.v0/conformance_section/conformance_observation/any_event:0/dv_quantity/_normal_range/upper|unit": "unit"
   }
 
-See :doc:`/09_flat/01_data_types/index` for details.
+See :doc:`/08_flat/01_data_types/index` for details.
 
 Context
 --------------
@@ -166,4 +166,4 @@ To simplify the input, the flat formate offers the option to set context values,
   "ctx/composer_name": "Silvia Blake"
   }
 
-See :doc:`/09_flat/02_context/index` for details.
+See :doc:`/08_flat/02_context/index` for details.
