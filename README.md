@@ -1,6 +1,12 @@
 EHRbase Documentation [![Documentation Status](https://readthedocs.org/projects/ehrbase/badge/?version=latest)](https://ehrbase.readthedocs.io/en/latest/?badge=latest)
 ========
 
+EHRbase documentation has moved to a new, more modern home
+----------------------------------------------------------
+
+While the EHRbase documentation can still be found at https://docs.ehrbase.org/ it will no longer be maintained in this repository.
+
+
 How to view it?
 ---------------
 
