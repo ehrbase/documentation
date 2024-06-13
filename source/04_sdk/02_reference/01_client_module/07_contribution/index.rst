@@ -80,7 +80,7 @@ The ``ContributionCreateDto`` class can be created by providing mandatory audit 
 Create contribution using ``ContributionBuilder``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- Key objectives of the ``ContributionBuilder`` are to hide much of the complexity and make the contribution easy to create. To start working with a ``ContributionBuilder`` is needed an instance of the composition and audit details. ContributionBuilder currently supports only composition with ``create/update/delete`` change types. 
+ Key objectives of the ``ContributionBuilder`` are to hide much of the complexity and make the contribution easy to create. To start working with a ``ContributionBuilder`` is needed an instance of the composition and audit details. ContributionBuilder currently supports composition and folders with ``create/update/delete`` change types. 
 
 .. note:: Please provide data to all fields, which are required as per openEHR Reference Model. 
     Otherwise the backend server will reject the payload as invalid.
@@ -109,6 +109,29 @@ Create contribution with addition of new composition and save contribution
     VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
 
 
+Create contribution with addition of new folder and save contribution 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. code-block:: java
+
+    // Folder must inlude audit details
+    Folder folder = [..]
+    
+    // Create contribution audit details 
+    AuditDetails audit = [..]
+    // Minimum required data for audit is setting change type see below 
+    audit.getChangeType().setValue(ContributionChangeType.CREATION.getName());
+    audit.getChangeType().getDefiningCode().setCodeString(String.valueOf(ContributionChangeType.CREATION.getCode()));
+    
+    // Create contribution with folder creation change type
+    ContributionCreateDto contribution = ContributionBuilder.builder(audit)
+                    .addFolderCreation(folder)
+                    .build();
+    
+    // Save contribution
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+
+
 Create contribution with modification of composition and save contribution 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -130,6 +153,8 @@ Create contribution with modification of composition and save contribution
     
     // Save contribution 
     VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    
+   
     
 Create contribution with modification of composition using version uid and save contribution 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -156,6 +181,32 @@ Create contribution with modification of composition using version uid and save 
     // Save contribution 
     VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
 
+    
+Create contribution with modification of folder using version uid and save contribution 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. code-block:: java
+
+    // Folder must inlude audit details
+    Folder folder = [..]
+
+    // Retrieve folder version uid 
+    String versionUid = folder.getVersionUid().toString()
+
+    // Create contribution audit details 
+    AuditDetails audit = [..]
+    // Minimum required data for audit is setting change type see below
+    audit.getChangeType().setValue(ContributionChangeType.CREATION.getName());
+    audit.getChangeType().getDefiningCode().setCodeString(String.valueOf(ContributionChangeType.CREATION.getCode()));
+
+    // Create contribution with folder modification change type and version uid
+     ContributionCreateDto contribution = ContributionBuilder.builder(audit)
+                    .addFolderModification(versionUid)
+                    .build();
+    
+    // Save contribution 
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    
 
 Create contribution with deletion of composition save contribution 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -181,6 +232,34 @@ Create contribution with deletion of composition save contribution
     
     // Contribution Saved
     VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+
+    
+
+Create contribution with deletion of folder save contribution 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. code-block:: java
+
+    // Folder must inlude audit details
+    Folder folder = [..]
+
+    // Retrieve folder version uid 
+    String versionUid = folder.getVersionUid().toString()
+
+    // Create contribution audit details 
+    AuditDetails audit = [..]
+    // Minimum required data for audit is setting change type see below
+    audit.getChangeType().setValue(ContributionChangeType.DELETED.getName());
+    audit.getChangeType().getDefiningCode().setCodeString(String.valueOf(ContributionChangeType.DELETED.getCode()));
+
+    // Create contribution with folder deletion change type
+    ContributionCreateDto contribution = ContributionBuilder.builder(audit)
+                    .addFolderDeletion(folder, versionUid)
+                    .build();
+    
+    // Contribution Saved
+    VersionUid versionUid = openEhrClient.contributionEndpoint(ehr).saveContribution(contribution);
+    
     
 
 Create contribution with various compositions and save contribution 
